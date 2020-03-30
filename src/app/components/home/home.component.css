@@ -1,0 +1,36 @@
+.nav-icon{
+    margin-left: auto;
+    margin-bottom: 8px;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.cover {
+    bottom: 50%;
+}
+.coverUnder {
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    z-index: -2;
+}
+.coverUpper {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    z-index: -1;
+}
+.topic {
+    font-size: 4em;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    z-index: -1;
+}
+.subtopic {
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    z-index: -1;
+}
