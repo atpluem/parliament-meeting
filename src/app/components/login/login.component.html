@@ -1,14 +1,37 @@
+<div class="form-group container">  
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">        
+        <label>Login</label>
+        
+        <div class="form-group">
+            <label for="username">Username: </label>
+            <input type="text" placeholder="Username" class="form-control" formControlName="username"
+                id="username" autocomplete="off">
+            <div class="error" *ngIf="loginForm.controls['username'].hasError('required')
+                && loginForm.controls['username'].touched">Please enter user name</div>
+        </div>
 
-<form action="index.html" class="card card-body">
-    <div class="top">    
-        <h6>Login</h6>
-        <input type="submit" class="btn" value="x">
-    </div>
-    <div class="input-div user text-center">
-        <input type="text" placeholder="Username" class="input">
-    </div>
-    <div class="input-div pass text-center">
-        <input type="password" placeholder="Password" class="input">
-    </div>
-    <input type="submit" class="btn" value="Submit">
-</form>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" placeholder="Password" class="form-control" formControlName="password"
+                id="pwd" autocomplete="off">
+            <div class="error" *ngIf="loginForm.controls['password'].hasError('required')
+                && loginForm.controls['password'].touched">Please enter user name</div>
+        </div>
+
+        <button class="btn btn-success" [disabled]="loginForm.invalid">Submit</button>
+        <div *ngIf="invalidLogin" class="error">
+            <div>Invalied user or password. Please try again</div>
+        </div>
+    </form>
+</div>
+
+<table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      
+    </tr>
+    <tr *ngFor="let mydata of data[0]">
+      <td>{{mydata.name}}</td>
+      <td>{{mydata.email}}</td>
+    </tr>
