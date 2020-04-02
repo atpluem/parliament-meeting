@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,
-    private apiService: LoginService,
+//    private apiService: LoginService,
     private http: HttpClient) {
       // Test DB
       this.http.get('http://localhost/employee.php').subscribe(
