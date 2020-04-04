@@ -14,7 +14,8 @@
         <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="#">About</a>
         <a class="nav-item nav-link" href="#">Meeting</a>
-        <button type="button" class="btn btn-outline-primary" >Login</button>
+        <button *ngIf="loginbtn" type="button" class="btn btn-outline-primary" routerLink="login" routerLinkActive="active">Login</button>
+        <button *ngIf="logoutbtn" type="button" class="btn btn-danger btn-block" (click)="logout()">Logout</button>
       </div>
   </div>
 </nav>

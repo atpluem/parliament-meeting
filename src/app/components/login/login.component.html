@@ -1,26 +1,23 @@
 <div class="form-group container">  
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">        
-        <label>Login</label>
-        
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off">        
+        <label>Login</label>   
+        <!-- Username -->
         <div class="form-group">
             <label for="username">Username: </label>
             <input type="text" placeholder="Username" class="form-control" formControlName="username"
-                id="username" autocomplete="off">
+                id="username" autocomplete="off" name="username">
             <div class="error" *ngIf="loginForm.controls['username'].hasError('required')
                 && loginForm.controls['username'].touched">Please enter user name</div>
         </div>
-
+        <!-- Password -->
         <div class="form-group">
             <label for="pwd">Password:</label>
             <input type="password" placeholder="Password" class="form-control" formControlName="password"
-                id="pwd" autocomplete="off">
+                id="pwd" autocomplete="off" name="password">
             <div class="error" *ngIf="loginForm.controls['password'].hasError('required')
                 && loginForm.controls['password'].touched">Please enter user name</div>
         </div>
 
-        <button class="btn btn-success" [disabled]="loginForm.invalid">Submit</button>
-        <div *ngIf="invalidLogin" class="error">
-            <div>Invalied user or password. Please try again</div>
-        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Submit</button>
     </form>
 </div>

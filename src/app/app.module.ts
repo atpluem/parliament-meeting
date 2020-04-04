@@ -20,6 +20,7 @@ import { from } from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     HttpClientModule,
     ReactiveFormsModule
   ],
