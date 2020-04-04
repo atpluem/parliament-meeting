@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
   redirectUrl: string;
-  baseUrl: string = 'http://localhost/api';
+  baseUrl: string = 'https://parliament-meeting-api.herokuapp.com/';
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient: HttpClient) { }
