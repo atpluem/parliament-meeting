@@ -1,7 +1,35 @@
 
-div {
-   width: 500px;
+.logo {
+   text-align: center;
+   margin-top: 100px;
 }
 input{
-   margin: 5px;
+   width: auto;
+}
+#suntopic {
+   margin-left: 10px;
+}
+#card-group {
+   width: 300px;
+   margin-top: 15px;
+   padding-top: 0px;
+   padding-bottom: 10px;
+}
+.login-text {
+   text-align: center;
+   margin-top: 100px;
+   margin-bottom: 0;
+   padding-bottom: 0;
+}
+.coverUnder {
+   position: absolute;
+   width: 100%;
+   bottom: 0;
+   z-index: -2;
+}
+.coverUpper {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   z-index: -1;
 }

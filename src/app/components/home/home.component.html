@@ -14,7 +14,7 @@
         <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="#">About</a>
         <a class="nav-item nav-link" href="#">Meeting</a>
-        <button *ngIf="loginbtn" type="button" class="btn btn-outline-primary" routerLink="login" routerLinkActive="active">Login</button>
+        <button *ngIf="loginbtn" type="button" class="btn btn-outline-primary" [routerLink]="['/login']" routerLinkActive="active">Login</button>
         <button *ngIf="logoutbtn" type="button" class="btn btn-danger btn-block" (click)="logout()">Logout</button>
       </div>
   </div>
@@ -23,8 +23,8 @@
 <div class="cover">
   <h1 class="topic">PARLIAMENT</h1>
   <h1 class="subtopic">MEETING</h1>
-  <img class="coverUnder" src="assets/coverUnder.png" alt="">
-  <img class="coverUpper" src="assets/coverUpper.png" alt="">
+  <!-- <img class="coverUnder" src="assets/coverUnder.png" alt=""> -->
+  <!-- <img class="coverUpper" src="assets/coverUpper.png" alt=""> -->
 </div>
 
 

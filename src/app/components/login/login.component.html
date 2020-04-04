@@ -1,9 +1,16 @@
-<div class="form-group container">  
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off">        
-        <label>Login</label>   
+<div class="logo">
+    <a href="">
+        <img src="assets/LogoBig.png" [routerLink]="['/home']" height="42" width="42">
+    </a>
+    <div>
+        Sign in to Parliament
+    </div> 
+</div>
+<div class="card form-group container" id="card-group">  
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off">           
         <!-- Username -->
         <div class="form-group">
-            <label for="username">Username: </label>
+            <label for="username" id="suntopic">Username</label>
             <input type="text" placeholder="Username" class="form-control" formControlName="username"
                 id="username" autocomplete="off" name="username">
             <div class="error" *ngIf="loginForm.controls['username'].hasError('required')
@@ -11,13 +18,15 @@
         </div>
         <!-- Password -->
         <div class="form-group">
-            <label for="pwd">Password:</label>
+            <label for="pwd" id="suntopic">Password</label>
             <input type="password" placeholder="Password" class="form-control" formControlName="password"
                 id="pwd" autocomplete="off" name="password">
             <div class="error" *ngIf="loginForm.controls['password'].hasError('required')
-                && loginForm.controls['password'].touched">Please enter user name</div>
+                && loginForm.controls['password'].touched">Please enter password</div>
         </div>
 
         <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Submit</button>
     </form>
 </div>
+<img class="coverUnder" src="assets/coverUnder.png" alt="">
+<img class="coverUpper" src="assets/coverUpper.png" alt="">
