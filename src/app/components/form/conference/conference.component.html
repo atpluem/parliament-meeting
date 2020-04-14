@@ -1,0 +1,94 @@
+<div class="form-group card">
+    <h2>CONFERENCE</h2>
+    <form action="off">
+        <div class="container row">
+            <!-- Column 1 -->
+            <div class="col-sm">
+                <div class="form-group">
+                    <!-- Conference Topic -->
+                    <div class="form-group ">
+                        <label for="topicname">TOPIC NAME</label>
+                        <input type="text" placeholder="xxx" class="form-control" formControlName="topicname"
+                            id="topicname" autocomplete="off" name="topicname">
+                        <div class="error" *ngIf="conferenceForm.controls['topicname'].hasError('required')
+                            && conferenceForm.controls['topicname'].touched">Please enter Topic</div>
+                    </div>
+                    <!-- Chairman ID -->
+                    <div class="form-group ">
+                        <label for="chairmanid">CHAIRMAN ID</label>
+                        <input type="text" placeholder="xxx" class="form-control" formControlName="chairmanid"
+                            id="chairmanid" autocomplete="off" name="chairmanid">
+                        <div class="error" *ngIf="conferenceForm.controls['chairmanid'].hasError('required')
+                            && conferenceForm.controls['chairmanid'].touched">Please enter ID card</div>
+                    </div>
+                    <div class="form-gruop">
+                        <div>
+                            <label for="conferencetype">CONFERENCE TYPE</label>
+                        </div>
+                        <a class="btn btn-light" id="dropdown" data-toggle="dropdown">Choose</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">party name 1</a>
+                            <a class="dropdown-item" href="#">party name 2</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column 2 -->
+            <div class="col-sm">
+                <div class="form-gruop">
+                    <div>
+                        <label for="DOC">DATE OF CONFERENCE</label>
+                    </div>
+                    <a class="btn btn-light" id="dropdown" data-toggle="dropdown">Choose</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">party name 1</a>
+                        <a class="dropdown-item" href="#">party name 2</a>
+                    </div>
+                </div>
+                <!-- Time start -->
+                <div class="form-group">
+                    <div>
+                        <label for="DOC">START TIME OF CONFERENCE</label>
+                    </div>
+                    <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+                </div>
+                <!-- Time stop -->
+                <div class="form-group">
+                    <div>
+                        <label for="DOC">STOP TIME OF CONFERENCE</label>
+                    </div>
+                    <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container row">
+            <div class="col-sm">
+                <div class="form-gruop">
+                    <div>
+                        <label for="building">BUILDING NAME</label>
+                    </div>
+                    <a class="btn btn-light" id="dropdown" data-toggle="dropdown">Choose</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">party name 1</a>
+                        <a class="dropdown-item" href="#">party name 2</a>
+                    </div>
+                </div>
+                <Label>BUILDING NUMBER</Label>
+                <Label>XXX</Label>
+                <Label>BUILDING DETAIL</Label>
+            </div>
+            <div class="col-sm">
+                <label for="">TYPE</label>
+                <label for="">ZIP CODE</label>
+                <br>
+                <label for="">BUILDING STREET</label>
+            </div>
+            <div class="col-sm">
+                <picture>
+                    img
+                </picture>
+            </div>
+        </div>
+    </form>
+</div>

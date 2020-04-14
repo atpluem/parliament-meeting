@@ -1,0 +1,101 @@
+<div class="form-group card">
+    <h2>Council Member</h2>
+    <hr>
+    <form autocomplete="off">
+        <!-- ID Card -->
+        <div class="form-group ">
+            <label for="idcard">ID CARD</label>
+            <input type="text" placeholder="xxxxxxxxxxxxx" class="form-control" formControlName="idcard"
+                id="idcard" autocomplete="off" name="idcard">
+            <div class="error" *ngIf="councilMemberForm.controls['idcard'].hasError('required')
+                && councilMemberForm.controls['idcard'].touched">Please enter ID card</div>
+        </div>
+        <!-- Name -->
+        <div>
+            <label for="firstname" id="name-text">FIRST NAME </label> 
+            <label for="lastname" id="name-text">LAST NAME</label><br>    
+        </div>
+        <div class="form-group fullname">    
+            <input type="text" placeholder="Athispat" class="form-control" formControlName="firstname"
+                id="firstname" autocomplete="off" name="firstname">
+            <div class="error" *ngIf="councilMemberForm.controls['firstname'].hasError('required')
+                && councilMemberForm.controls['firstname'].touched">Please enter firstname</div>
+        </div>
+        <div class="form-group fullname">
+            <input type="text" placeholder="Phongampai" class="form-control" formControlName="lastname"
+                id="lastname" autocomplete="off" name="lastname">
+            <div class="error" *ngIf="councilMemberForm.controls['lastname'].hasError('required')
+                && councilMemberForm.controls['lastname'].touched">Please enter lastname</div>
+        </div>
+        <!-- Date of birth and Education -->
+        <div>
+            <label for="dob" id="dob-text">DATE OF BIRTH</label>
+            <label for="education" id="edu-text">EDUCATION</label>
+        </div>
+        <div class="form-group">
+            <input type="date" class="form-control" formControlName="DOB"
+                id="DOB" autocomplete="off" name="DOB">
+   
+            <input type="text" placeholder="Bechelor" class="form-control" formControlName="education"
+                id="education" autocomplete="off" name="education">
+        </div>
+        <!-- Council Position and Party name -->
+        <div>
+            <label for="councilpos" id="dob-text">COUNCIL POSITION</label>
+            <label for="partyname" id="edu-text">PARTY NAME</label>
+        </div>
+        <div class="form-group">
+            <div class="councilpos">
+                <a class="btn btn-light" id="dropdown" data-toggle="dropdown">
+                    Choose
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">council position 1</a>
+                    <a class="dropdown-item" href="#">council position 1</a>
+                </div>
+            </div>
+            <div class="partyname">
+                <a class="btn btn-light" id="dropdown" data-toggle="dropdown">Choose</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">party name 1</a>
+                    <a class="dropdown-item" href="#">party name 2</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- Subministry name and ministry position -->
+        <div>
+            <label for="councilpos" id="dob-text">SUBMINISTRY NAME</label>
+            <label for="partyname" id="edu-text">MINISTRY POSITION</label>
+        </div>
+        <div class="form-group">
+            <div class="councilpos">
+                <a class="btn btn-light" id="dropdown" data-toggle="dropdown">
+                    Choose
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">council position 1</a>
+                    <a class="dropdown-item" href="#">council position 1</a>
+                </div>
+            </div>
+            <div class="partyname">
+                <a class="btn btn-light" id="dropdown" data-toggle="dropdown">Choose</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">party name 1</a>
+                    <a class="dropdown-item" href="#">party name 2</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="file" name="img[]" class="file" accept="image/*">
+            <div class="input-group my-3">
+                <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
+                <div class="input-group-append">
+                    <button type="button" class="browse btn btn-primary">Browse...</button>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!councilMemberForm.valid">Submit</button>
+    </form>
+</div>

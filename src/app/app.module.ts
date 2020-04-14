@@ -9,12 +9,20 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { from } from 'rxjs';
+import { CouncilMemberComponent } from './components/form/council-member/council-member.component';
+import { ConferenceComponent } from './components/form/conference/conference.component';
+import { PartyComponent } from './components/form/party/party.component';
+import { UserviewComponent } from './components/userview/userview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    CouncilMemberComponent,
+    ConferenceComponent,
+    PartyComponent,
+    UserviewComponent
   ],
   imports: [
     BrowserModule,

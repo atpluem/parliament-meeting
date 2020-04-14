@@ -1,0 +1,54 @@
+#idcard {
+    width: 50%;
+}
+.card {
+    margin: 20px;
+    padding: 20px;
+}
+.fullname {
+    display: inline;
+}
+#firstname {
+    display: inline;
+    width: 30%;
+}
+#lastname {
+    display: inline;
+    margin-left: 20px;
+    width: 30%;
+}
+#name-text {
+    width: 35%;
+}
+#dob-text {
+    width: 35%;
+}
+#edu-text {
+    width: 30%;
+}
+
+#DOB {
+    display: inline;
+    width: 30%;
+}
+#education {
+    display: inline;
+    width: 30%;
+    margin-left: 20px;
+}
+.councilpos {
+    display: inline;
+    width: 30%;
+}
+.partyname {
+    display: inline;
+    width: 30%;
+}
+#dropdown {
+    width: 100px;
+    margin-right: 25%;
+}
+.file {
+    visibility: hidden;
+    position: absolute;
+}
