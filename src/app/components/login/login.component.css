@@ -6,20 +6,24 @@
 input{
    width: auto;
 }
-#suntopic {
-   margin-left: 10px;
-}
-#card-group {
+
+.card-group {
    width: 300px;
    margin-top: 15px;
    padding-top: 0px;
    padding-bottom: 10px;
+}
+.formgroup {
+   padding: 10px;
 }
 .login-text {
    text-align: center;
    margin-top: 100px;
    margin-bottom: 0;
    padding-bottom: 0;
+}
+.submit {
+   margin-top: 20px;
 }
 .coverUnder {
    position: absolute;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 import { LoginService } from '../../services/login.service';
+import * as $ from 'jquery';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -33,6 +34,15 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    $(document).ready(function() {
+      // Check for click events on the navbar burger icon
+      $(".navbar-burger").click(function() {
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          $(".navbar-burger").toggleClass("is-active");
+          $(".navbar-menu").toggleClass("is-active");
+      });
+    });
+    
   }
 
 }

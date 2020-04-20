@@ -1,32 +1,41 @@
 <div class="logo">
-    <a href="">
+    <a>
         <img src="assets/LogoBig.png" [routerLink]="['/home']" height="42" width="42">
     </a>
     <div>
         Sign in to Parliament
     </div> 
 </div>
-<div class="card form-group container" id="card-group">  
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off">           
+
+<div class="form-group card container card-group">  
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off" class="formgroup">           
         <!-- Username -->
         <div class="form-group">
-            <label for="username" id="suntopic">Username</label>
-            <input type="text" placeholder="Username" class="form-control" formControlName="username"
+            <span><strong>Username</strong></span>
+            <div>
+                <input type="text" placeholder="Username" class="form-control input" formControlName="username"
                 id="username" autocomplete="off" name="username">
+            </div>
             <div class="error" *ngIf="loginForm.controls['username'].hasError('required')
-                && loginForm.controls['username'].touched">Please enter user name</div>
+                && loginForm.controls['username'].touched">
+                Please enter user name
+            </div>
         </div>
         <!-- Password -->
         <div class="form-group">
-            <label for="pwd" id="suntopic">Password</label>
-            <input type="password" placeholder="Password" class="form-control" formControlName="password"
+            <span><strong>Password</strong></span>
+            <div>
+                <input type="password" placeholder="Password" class="form-control input" formControlName="password"
                 id="pwd" autocomplete="off" name="password">
+            </div>
             <div class="error" *ngIf="loginForm.controls['password'].hasError('required')
-                && loginForm.controls['password'].touched">Please enter password</div>
+                && loginForm.controls['password'].touched">
+                Please enter password
+            </div>
         </div>
 
-        <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Submit</button>
+        <button type="submit" class="button is-success submit" [disabled]="!loginForm.valid">Submit</button>
     </form>
 </div>
-<img class="coverUnder" src="assets/coverUnder.png" alt="">
-<img class="coverUpper" src="assets/coverUpper.png" alt="">
+<!-- <img class="coverUnder" src="assets/coverUnder.png" alt="">
+<img class="coverUpper" src="assets/coverUpper.png" alt=""> -->

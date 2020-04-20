@@ -1,30 +1,50 @@
 <!-- nav bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div>  
-    <a class="navbar-brand" href="#">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">  
+    <a class="navbar-item">
       <img class="nav-icon" src="assets/LogoSmall.png" alt="Parliament Meeting">
       Parliament
     </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">      
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" [routerLink]="['/home']">
+        Home
+      </a>
+      <a class="navbar-item">
+        About
+      </a>
+      <a class="navbar-item">
+        Meeting
+      </a>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav ml-auto">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">About</a>
-        <a class="nav-item nav-link" href="#">Meeting</a>
-        <button *ngIf="loginbtn" type="button" class="btn btn-outline-primary" [routerLink]="['/login']" routerLinkActive="active">Login</button>
-        <button *ngIf="logoutbtn" type="button" class="btn btn-danger btn-block" (click)="logout()">Logout</button>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a *ngIf="loginbtn" [routerLink]="['/login']" routerLinkActive="active" class="button is-primary">
+            <strong>Log in</strong>
+          </a>
+        </div>
+        <div class="buttons">
+          <a *ngIf="logoutbtn" (click)="logout()" class="button is-danger">
+            <strong>Log out</strong>
+          </a>
+        </div>
       </div>
+    </div>
   </div>
 </nav>
-
-<!-- <div class="cover">
-  <h1 class="topic">PARLIAMENT</h1>
-  <h1 class="subtopic">MEETING</h1> -->
-  <!-- <img class="coverUnder" src="assets/coverUnder.png" alt=""> -->
-  <!-- <img class="coverUpper" src="assets/coverUpper.png" alt=""> -->
+ <!-- <div class="cover">
+//   <h1 class="topic">PARLIAMENT</h1>
+//   <h1 class="subtopic">MEETING</h1> -->
+   <!-- <img class="coverUnder" src="assets/coverUnder.png" alt=""> -->
+   <!-- <img class="coverUpper" src="assets/coverUpper.png" alt=""> -->
 <!-- </div> -->
 
 
