@@ -42,7 +42,6 @@ export class HomeComponent implements OnInit {
           $(".navbar-menu").toggleClass("is-active");
       });
     });
-    
   }
 
 }

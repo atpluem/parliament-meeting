@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          const redirect = this.loginService.redirectUrl ? this.loginService.redirectUrl : '/home';
+          const redirect = this.loginService.redirectUrl ? this.loginService.redirectUrl : '/user';
           this.router.navigate([redirect]);
         },
         error => {

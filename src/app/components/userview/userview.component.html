@@ -1,8 +1,33 @@
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="../../../assets/LogoSmall.png">
+        </a>
+        
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">      
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navMenu" class="navbar-menu">
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a *ngIf="logoutbtn" (click)="logout()" class="button is-danger">
+                        <strong>Log out</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
     <div>
-        <p class="text-right">Welcome : </p>
+        <strong>Welcome</strong>
     </div>
-    <hr>
     <div class="row">
         <div class="col-sm">
             <img class="center" src="../../../assets/unnamed.png" alt="Profile" width="100px">
@@ -12,9 +37,5 @@
         </div>
     </div>
     <hr>
-    <div class="container row">
-        <div class="col-sm">
-            <button class="btn btn-outline-primary">asdsaf</button>
-        </div>
-    </div>
+    
 </div>

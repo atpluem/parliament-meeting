@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login.service'
 
 @Component({
   selector: 'app-userview',
@@ -6,10 +7,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userview.component.css']
 })
 export class UserviewComponent implements OnInit {
-  restURL;
-  constructor() { }
+  loginbtn: boolean;
+  logoutbtn: boolean;
 
-  ngOnInit(): void {
+  constructor(private loginService: LoginService) {
+    loginService.getLoggedInName.subscribe(name => this.changeName(name));
+    if(this.loginService.isLoggedIn()){
+      console.log("loggedin");
+      this.loginbtn=false;
+      this.logoutbtn=true;
+    }
+    else{
+      this.loginbtn=true;
+      this.logoutbtn=false;
+    }
+  }
+  private changeName(name: boolean):void {
+    this.logoutbtn = name;
+    this.loginbtn = !name;
+  }
+  logout() {
+    this.loginService.deleteToken();
+    window.location.href = window.location.href;
   }
 
+  ngOnInit(): void {
+    $(document).ready(function() {
+      // Check for click events on the navbar burger icon
+      $(".navbar-burger").click(function() {
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          $(".navbar-burger").toggleClass("is-active");
+          $(".navbar-menu").toggleClass("is-active");
+      });
+    });
+  }
 }

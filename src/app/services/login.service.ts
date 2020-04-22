@@ -1,8 +1,6 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-// import { EventEmitter } from 'protractor';
-// import { threadId } from 'worker_threads';
 
 @Injectable({
   providedIn: 'root'
