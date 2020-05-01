@@ -13,7 +13,7 @@
   </div>
 
   <div id="navMenu" class="navbar-menu">
-    <div class="navbar-start">
+    <div class="navbar-end">
       <a class="navbar-item" [routerLink]="['/home']">
         Home
       </a>
@@ -23,23 +23,18 @@
       <a class="navbar-item">
         Meeting
       </a>
-    </div>
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a *ngIf="loginbtn" [routerLink]="['/login']" routerLinkActive="active" class="button is-primary">
-            <strong>Log in</strong>
-          </a>
-        </div>
-        <div class="buttons">
-          <a *ngIf="logoutbtn" (click)="logout()" class="button is-danger">
-            <strong>Log out</strong>
-          </a>
-        </div>
+      <div class="navbar-item buttons">
+        <a *ngIf="loginbtn" [routerLink]="['/login']" routerLinkActive="active" class="button is-primary">
+          <strong>Log in</strong>
+        </a>
+        <a *ngIf="logoutbtn" (click)="logout()" class="button is-danger">
+          <strong>Log out</strong>
+        </a>
       </div>
     </div>
   </div>
 </nav>
+
  <!-- <div class="cover">
 //   <h1 class="topic">PARLIAMENT</h1>
 //   <h1 class="subtopic">MEETING</h1> -->

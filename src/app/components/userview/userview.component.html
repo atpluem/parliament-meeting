@@ -3,39 +3,70 @@
         <a class="navbar-item">
             <img src="../../../assets/LogoSmall.png">
         </a>
-        
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">      
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
     </div>
 
-    <div id="navMenu" class="navbar-menu">
+    <div class="navbar-menu" aria-expanded="false" aria-label="dropdown">
         <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a *ngIf="logoutbtn" (click)="logout()" class="button is-danger">
-                        <strong>Log out</strong>
-                    </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                  <strong>{{userDetail.Surname}}</strong>
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    Edit profile
+                  </a>
+                  <a *ngIf="logoutbtn" (click)="logout()" class="navbar-item is-danger">
+                    Log out
+                  </a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
 
-<div class="container">
-    <div>
-        <strong>Welcome</strong>
-    </div>
-    <div class="row">
-        <div class="col-sm">
-            <img class="center" src="../../../assets/unnamed.png" alt="Profile" width="100px">
+<div class="container is-widescreen profile card">
+    <div class="columns">
+        <div class="column is-one-quarter">
+            <figure class="image is-128x128 ">
+                <img src="../../../assets/unnamed.png">
+            </figure>
         </div>
-        <div class="col-sm">
-           <p>Detail</p>
+        <div class="column detail">
+            <div class="columns name">
+                <div class="column is-one-quarter">Name : {{userDetail.Surname}}</div>
+                <div class="column is-one-quarter">Lastname :  {{userDetail.Lastname}}</div>
+            </div>
+            <div>Date of birth : {{userDetail.DOB}}</div>
+            <div>Education : {{userDetail.EducationDegree}}</div>
+            <div>Council Position : {{userDetail.CouncilposName}}</div>
+            <div>Party : {{userDetail.PartyName}}</div>
+            <div>Party Position : {{userDetail.PartyPosName}}</div>
+            <div>Ministry : {{userDetail.MinistryPosName}}</div>
+            <div>Sub Ministry Name : </div>
         </div>
     </div>
-    <hr>
+</div>
+<div class="tabs is-toggle is-toggle-rounded is-centered" id="tabs">
+    <ul>
+        <li class="is-active tablinks" data-tab="1"><a>Conference</a></li>
+        <li class="tablinks" data-tab="2"><a>Council</a></li>
+        <li class="tablinks" data-tab="3"><a>Party</a></li>
+        <li class="tablinks" data-tab="4"><a>Ministry</a></li>
+    </ul>    
+</div>
     
+<div id="tab-content">
+    <div class="is-active" data-content="1">
+        <app-conference></app-conference>
+    </div>
+    <div data-content="2">
+a
+    </div>
+    <div data-content="3">
+fg
+    </div>
+    <div data-content="4">
+dfg
+    </div>
 </div>

@@ -32,6 +32,8 @@ export class LoginComponent implements OnInit {
         data => {
           const redirect = this.loginService.redirectUrl ? this.loginService.redirectUrl : '/user';
           this.router.navigate([redirect]);
+          this.loginService.setUser(loginForm.value.username);
+          // this.loginService.username = loginForm.value.username;
         },
         error => {
           alert("User name or password is incorrect")

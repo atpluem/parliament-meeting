@@ -1,6 +1,8 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Observable, from } from 'rxjs';
+import { Usermodule } from '../classes/usermodule';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +22,20 @@ export class LoginService {
       }));
   }
 
+  public getUserDetail(): Observable<Usermodule[]> {
+    return this.httpClient.get<Usermodule[]>(
+      this.baseUrl + '/getuser.php?' + 'username=' + this.getUser()
+    );
+  }
+
+  setUser(user: string) {
+    localStorage.setItem('user', user);
+  }
+  getUser() {
+    return localStorage.getItem('user');
+  }
+
+  // Token
   setToken(token: string) {
     localStorage.setItem('token', token);
   }

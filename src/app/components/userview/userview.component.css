@@ -1,0 +1,30 @@
+:host {
+    background-color: #dfeaf4;
+    size: 200px 200px;
+    display: block;
+}
+.profile {
+    margin: 50px;
+}
+.name {
+    margin-right: 0;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.image {
+    margin: auto;
+    margin-top: 40px;
+}
+.detail {
+    margin: 30px;
+}
+#tab {
+    width: 80px;
+}
+#tab-content div {
+    display: none;
+}
+#tab-content div.is-active {
+    display: block;
+}
