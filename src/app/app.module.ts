@@ -13,6 +13,10 @@ import { CouncilMemberComponent } from './components/form/council-member/council
 import { ConferenceComponent } from './components/form/conference/conference.component';
 import { PartyComponent } from './components/form/party/party.component';
 import { UserviewComponent } from './components/userview/userview.component';
+// Analysis report
+import { ChartsModule } from 'ng2-charts';
+import { AgeintervalComponent } from './components/analysis/ageinterval/ageinterval.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,8 @@ import { UserviewComponent } from './components/userview/userview.component';
     CouncilMemberComponent,
     ConferenceComponent,
     PartyComponent,
-    UserviewComponent
+    UserviewComponent,
+    AgeintervalComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,8 @@ import { UserviewComponent } from './components/userview/userview.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
