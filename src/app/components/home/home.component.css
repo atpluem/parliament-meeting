@@ -1,18 +1,114 @@
-.nav-icon{
-    margin-left: auto;
-    margin-bottom: 8px;
+body {
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
 }
 
-.topic {
-    font-size: 4em;
+/* part of navigation bar and header */
+.header-main {
+    overflow: hidden;
+    height: 500px;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://i.pinimg.com/originals/46/1d/25/461d254f8563f8945ce3a385f289df17.jpg);
+}
+
+.navbar {
+    padding: 5px 5px 5px 15px;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.navbar-end .navbar-item {
+    margin: 0px 15px 0px 0px;
+}
+
+.navbar-end button {
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+    outline: none;
+    transform: 0.2s;
+}
+
+.navbar-end button:hover {
+    border: 2px solid black;
+    color: black;
+    transition: 0.2s;
+}
+
+.buttonLogIn .button{
+    font-size: 16px;
+    padding: 20px;
+}
+
+.buttonLogOut .button{
+    font-size: 16px;
+    padding: 20px;
+}
+
+.sticky {
+    background-color: #fff;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+}
+
+#brand-font {
+    font-weight: bolder;
+    color: #b22732;
+}
+
+/* part of image in header part */
+.image-header p {
+    font-weight: bold;
+    font-size: 30px;
+    color: #b22732;
+    position: absolute;
+    top: 53%;
+    left: 37%;
+    transition: 0.2s;
+}
+
+.image-header img {
+    display: block;
     position: absolute;
     top: 20%;
-    left: 50%;
-    z-index: -1;
+    left: 42%;
+    overflow: hidden;
+    border: 5px solid #b22732;
+    border-radius: 100px;
+    padding: 20px;
+    transition: 0.2s;
 }
-.subtopic {
-    position: absolute;
-    top: 30%;
-    left: 75%;
-    z-index: -1;
+
+.image-header img:hover {
+    padding: 22px; 
+    left: 41.8%;
+    transition: 0.2s;
+}
+
+.image-header img:hover + p {
+    margin: 5px 0px 0px 0px;
+    font-size: 35px;
+    left: 35%;
+    transition: 0.2s;
+}
+
+
+/* part of content in webpage */
+section {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.content .meeting-content {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 }

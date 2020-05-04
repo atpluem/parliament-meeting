@@ -1,46 +1,70 @@
-<!-- nav bar -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">  
-    <a class="navbar-item">
-      <img class="nav-icon" src="assets/LogoSmall.png" alt="Parliament Meeting">
-      Parliament
-    </a>
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">      
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+<!----------------------- Header And Navigation --------------------------->
+<div class="header-main" id="parallax" (scroll)="onWindowScroll($event)" #home>
+  <div class="navbar" id="navbar">
 
-  <div id="navMenu" class="navbar-menu">
-    <div class="navbar-end">
-      <a class="navbar-item" [routerLink]="['/home']">
-        Home
-      </a>
+    <div class="navbar-brand">
       <a class="navbar-item">
-        About
+        <img class="nav-icon" src="assets/LogoSmall.png" alt="Parliament Meeting">
+        <h1 id="brand-font">Parliament</h1>
       </a>
-      <a class="navbar-item">
-        Meeting
+
+      <!------------- Navigation bar in smartphone form --------------->
+      <a role="button" class="navbar-burger buger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
-      <div class="navbar-item buttons">
-        <a *ngIf="loginbtn" [routerLink]="['/login']" routerLinkActive="active" class="button is-primary">
-          <strong>Log in</strong>
-        </a>
-        <a *ngIf="logoutbtn" (click)="logout()" class="button is-danger">
-          <strong>Log out</strong>
-        </a>
+
+    </div>
+
+    <div id="navmenu" class="navbar-menu">
+      <!-----------------------Second Part------------------->
+      <div class="navbar-end">
+        <div class="nav-end">
+          <div class="navbar-item">
+            <button (click)="SmoothTo(home)" class="navbar-item">Home</button>
+            <button (click)="SmoothTo(part1)" class="navbar-item">About</button>
+            <button (click)="SmoothTo(part2)" href="/home#part2" class="navbar-item">Meeting</button>
+            <div class="buttonLogIn">
+              <a *ngIf="loginbtn" [routerLink]="['/login']" routerLinkActive="active" class="button is-info">
+                <strong>Log In</strong>
+              </a>
+            </div>
+            <div class="buttonLogOut">
+              <a *ngIf="logoutbtn" (click)="logout()" class="button is-danger">
+                <strong>Log Out</strong>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</nav>
 
- <!-- <div class="cover">
-//   <h1 class="topic">PARLIAMENT</h1>
-//   <h1 class="subtopic">MEETING</h1> -->
-   <!-- <img class="coverUnder" src="assets/coverUnder.png" alt=""> -->
-   <!-- <img class="coverUpper" src="assets/coverUpper.png" alt=""> -->
-<!-- </div> -->
+  <div class="image-header">
+    <img src="assets\LogoBig.png" id="logoimg">
+    <p class="sublogo">PARLIAMENT MEETING</p>
+  </div>
 
+</div>
 
+<!---------------------------- Main Content ----------------------------->
+<div class="content">
+  <section class="about-content" id="part1" #part1>
+    <h1>About</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus assumenda obcaecati quos cumque! Natus repudiandae dolore facilis odio veniam magnam, neque explicabo magni quidem, tempore atque cumque corrupti sapiente ipsum enim expedita inventore sunt? Quidem sint sunt voluptate veritatis nemo modi perferendis vitae facilis enim non, commodi suscipit laudantium? Esse, explicabo! Neque corrupti architecto molestiae iusto illum a repudiandae ipsam. Ratione enim amet illum alias voluptate consequatur sint veniam voluptas quis officia, incidunt voluptates cum asperiores quas necessitatibus temporibus nesciunt aut ab dignissimos molestias iste! Nemo obcaecati modi animi, eos magnam adipisci, architecto autem, impedit incidunt enim minima cumque minus!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum beatae reiciendis explicabo minus nihil soluta quas optio. Neque fugiat adipisci aut quos doloremque beatae accusantium debitis, facere cum optio explicabo.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio ea saepe amet asperiores fugit incidunt, sint recusandae reprehenderit molestiae dolorum repellendus adipisci. Sed et natus labore voluptatum veniam pariatur porro nulla dicta impedit. Inventore ea suscipit pariatur quibusdam? Omnis, officia temporibus magni exercitationem tempore commodi quidem? Praesentium totam repellat hic illum velit eligendi laborum saepe exercitationem vel sit sunt soluta libero nisi aperiam recusandae est quae, voluptates at quam labore aut, quidem eum laboriosam corporis. Quae quis accusantium sunt vel commodi perferendis dignissimos harum, dolorum voluptatibus qui quisquam culpa iusto asperiores similique illum atque veniam! Itaque aliquam repudiandae praesentium.</p>
+  </section>
 
+  <section class="meeting-content" id="part2" #part2>
+    <h1>Meeting</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut assumenda consequatur ullam non reiciendis asperiores alias. Earum odit quos cupiditate voluptatum totam minima, beatae corrupti libero tempora, voluptates accusamus? A ut aperiam, laboriosam pariatur repellendus, quas quo sapiente laborum culpa nesciunt blanditiis sequi. Inventore tempore, temporibus soluta repellendus repellat cupiditate autem odit dolorem iure amet praesentium ipsum quas atque voluptas enim eius at vitae repudiandae similique, sequi excepturi maxime? Ullam ipsam eos ratione sint eaque placeat laborum consequuntur eveniet. Ad fugit obcaecati voluptate quod laboriosam hic quibusdam! Ullam eos animi consectetur inventore. Explicabo, alias sequi? Praesentium maiores quaerat aspernatur nulla?</p>
+  </section>
+
+</div>
+
+<!------------------------------ Footer -------------------------------->
+<div class="footer" id="1">
+  cradit by ..
+</div>
