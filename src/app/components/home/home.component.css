@@ -112,3 +112,19 @@ section {
 .content .meeting-content {
     border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+/* part of footer in webpage */
+.footer {
+    padding: 80px 0px 100px 80px;
+}
+
+.footer .navbar-item {
+    margin: 0;
+    padding: 0;
+}
+
+.footer .navbar-item h1 {
+    font-size: 20px;
+    color: #b22732;
+    font-weight: bold;
+}

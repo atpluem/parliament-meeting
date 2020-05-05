@@ -23,8 +23,8 @@
         <div class="nav-end">
           <div class="navbar-item">
             <button (click)="SmoothTo(home)" class="navbar-item">Home</button>
-            <button (click)="SmoothTo(part1)" href="/home#part1" class="navbar-item">Meeting</button>
-            <button (click)="SmoothTo(part2)" class="navbar-item">About</button>
+            <button (click)="SmoothTo(part1)" class="navbar-item">Meeting</button>
+            <button (click)="SmoothTo(part2)" href="/home#part2" class="navbar-item">About</button>
             <div class="buttonLogIn">
               <a *ngIf="loginbtn" [routerLink]="['/login']" routerLinkActive="active" class="button is-info">
                 <strong>Log In</strong>
@@ -50,20 +50,26 @@
 
 <!---------------------------- Main Content ----------------------------->
 <div class="content">
-  <section class="meeting-content" id="part1" #part1>
+  <section class="about-content" id="part1" #part1>
     <h1>Meeting</h1>
     <app-ageinterval></app-ageinterval>
   </section>
 
-  <section class="about-content" id="part2" #part2>
-    <h1>About</h1>
-    <p>Parliament meeting web application</p>
-    <p>Power by</p>
-    <p>งื้อออ</p>
+  <section class="meeting-content" id="part2" #part2>
+    <h1 class="title">About Me</h1>
+    <span>เว็บข้อมูลข่าวสารที่เกี่ยวกับการประชุมรัฐสภา เเละข้อมูลที่เกี่ยวข้องกับพรรคการเมืองในเเต่ละพรรค <br>
+          สามารถติดตามข่าวสาร รวมถึงการวิเคราะห์ สถิติต่าง ๆ ของการประชุมรัฐสภา
+    </span>
   </section>
 </div>
 
 <!------------------------------ Footer -------------------------------->
-<div class="footer" id="1">
-  cradit by ..
+<div class="footer">
+  <div class="navbar-item">
+    <img class="nav-icon" src="assets/LogoSmall.png" />
+    <h1>Parliament</h1>
+  </div>
+  Designed and built by <strong>งื้ออออ</strong> <br>
+  with the help of <strong>Angular Framework</strong> and <strong>Bulma Framework</strong> <br>
+  Status <strong>Developing (unfinish)</strong> 
 </div>
