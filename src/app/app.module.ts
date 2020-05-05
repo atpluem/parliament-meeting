@@ -14,7 +14,7 @@ import { ConferenceComponent } from './components/form/conference/conference.com
 import { PartyComponent } from './components/form/party/party.component';
 import { UserviewComponent } from './components/userview/userview.component';
 // Analysis report
-import { ChartsModule } from 'ng2-charts';
+import { ChartModule } from 'angular2-chartjs';
 import { AgeintervalComponent } from './components/analysis/ageinterval/ageinterval.component';
 
 
@@ -36,7 +36,7 @@ import { AgeintervalComponent } from './components/analysis/ageinterval/ageinter
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

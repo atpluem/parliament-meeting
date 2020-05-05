@@ -23,8 +23,8 @@
         <div class="nav-end">
           <div class="navbar-item">
             <button (click)="SmoothTo(home)" class="navbar-item">Home</button>
-            <button (click)="SmoothTo(part1)" class="navbar-item">About</button>
-            <button (click)="SmoothTo(part2)" href="/home#part2" class="navbar-item">Meeting</button>
+            <button (click)="SmoothTo(part1)" href="/home#part1" class="navbar-item">Meeting</button>
+            <button (click)="SmoothTo(part2)" class="navbar-item">About</button>
             <div class="buttonLogIn">
               <a *ngIf="loginbtn" [routerLink]="['/login']" routerLinkActive="active" class="button is-info">
                 <strong>Log In</strong>
@@ -50,19 +50,17 @@
 
 <!---------------------------- Main Content ----------------------------->
 <div class="content">
-  <section class="about-content" id="part1" #part1>
-    <h1>About</h1>
-    <p>test gitHub na ja!!!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus assumenda obcaecati quos cumque! Natus repudiandae dolore facilis odio veniam magnam, neque explicabo magni quidem, tempore atque cumque corrupti sapiente ipsum enim expedita inventore sunt? Quidem sint sunt voluptate veritatis nemo modi perferendis vitae facilis enim non, commodi suscipit laudantium? Esse, explicabo! Neque corrupti architecto molestiae iusto illum a repudiandae ipsam. Ratione enim amet illum alias voluptate consequatur sint veniam voluptas quis officia, incidunt voluptates cum asperiores quas necessitatibus temporibus nesciunt aut ab dignissimos molestias iste! Nemo obcaecati modi animi, eos magnam adipisci, architecto autem, impedit incidunt enim minima cumque minus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum beatae reiciendis explicabo minus nihil soluta quas optio. Neque fugiat adipisci aut quos doloremque beatae accusantium debitis, facere cum optio explicabo.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio ea saepe amet asperiores fugit incidunt, sint recusandae reprehenderit molestiae dolorum repellendus adipisci. Sed et natus labore voluptatum veniam pariatur porro nulla dicta impedit. Inventore ea suscipit pariatur quibusdam? Omnis, officia temporibus magni exercitationem tempore commodi quidem? Praesentium totam repellat hic illum velit eligendi laborum saepe exercitationem vel sit sunt soluta libero nisi aperiam recusandae est quae, voluptates at quam labore aut, quidem eum laboriosam corporis. Quae quis accusantium sunt vel commodi perferendis dignissimos harum, dolorum voluptatibus qui quisquam culpa iusto asperiores similique illum atque veniam! Itaque aliquam repudiandae praesentium.</p>
-  </section>
-
-  <section class="meeting-content" id="part2" #part2>
+  <section class="meeting-content" id="part1" #part1>
     <h1>Meeting</h1>
     <app-ageinterval></app-ageinterval>
   </section>
 
+  <section class="about-content" id="part2" #part2>
+    <h1>About</h1>
+    <p>Parliament meeting web application</p>
+    <p>Power by</p>
+    <p>งื้อออ</p>
+  </section>
 </div>
 
 <!------------------------------ Footer -------------------------------->
