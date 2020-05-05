@@ -1,41 +1,55 @@
-<div class="logo">
-    <a>
+<div class="pagelogin">
+    <!-------------------- Logo in part of log in ----------------->
+    <div class="logo">
         <img src="assets/LogoBig.png" [routerLink]="['/home']" height="42" width="42">
-    </a>
-    <div>
-        Sign in to Parliament
-    </div> 
-</div>
+        <p><strong>Sign in to Parliament</strong></p>
+    </div>
 
-<div class="form-group card container card-group">  
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off" class="formgroup">           
-        <!-- Username -->
-        <div class="form-group">
-            <span><strong>Username</strong></span>
-            <div>
-                <input type="text" placeholder="Username" class="form-control input" formControlName="username"
-                id="username" autocomplete="off" name="username">
-            </div>
-            <div class="error" *ngIf="loginForm.controls['username'].hasError('required')
+    <div class="form">
+        <form class="formgroup" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off">
+            <!--------------------- UserName Input Bar ---------------->
+            <div class="usernameBar">
+                <div class="field">
+                    <p><strong>Username</strong></p>
+                    <p class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Username" id="username" name="username"
+                        autocomplete="off" formControlName="username">
+                        <span class="icon is-small is-left">
+                            <img src="https://www.andamancenter.go.th/images/nopic-personal.jpg" alt="person" width="20" height="20">
+                        </span>
+                    </p>
+                </div>
+
+                <div class="help is-danger" *ngIf="loginForm.controls['username'].hasError('required')
                 && loginForm.controls['username'].touched">
-                Please enter username
+                    <p>Please Enter Username</p>
+                </div>
             </div>
-        </div>
-        <!-- Password -->
-        <div class="form-group">
-            <span><strong>Password</strong></span>
-            <div>
-                <input type="password" placeholder="Password" class="form-control input" formControlName="password"
-                id="pwd" autocomplete="off" name="password">
-            </div>
-            <div class="error" *ngIf="loginForm.controls['password'].hasError('required')
+
+            <!--------------------- PassWord Input Bar ---------------->
+            <div class="passwordBar">
+                <div class="field">
+                    <p><strong>Password</strong></p>
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Password" id="pwd" name="password"
+                        autocomplete="off" formControlName="password">
+                        <span class="icon is-small is-left">
+                            <img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698634-icon-118-lock-rounded-512.png" alt="lock" width="22" height="22">
+                        </span>
+                    </p>
+                </div>
+
+                <div class="help is-danger" *ngIf="loginForm.controls['password'].hasError('required')
                 && loginForm.controls['password'].touched">
-                Please enter password
+                    <p>Please Enter Password</p>
+                </div>
             </div>
-        </div>
-        
-        <button type="submit" class="button is-success submit" [disabled]="!loginForm.valid">Submit</button>
-    </form>
+            
+            <div class="level">
+                <div class="level-right"></div>
+                <button type="Submit" class="button is-success submit" [disabled]="!loginForm.valid">Submit</button>
+            </div>
+        </form>
+    </div>
+
 </div>
-<!-- <img class="coverUnder" src="assets/coverUnder.png" alt="">
-<img class="coverUpper" src="assets/coverUpper.png" alt=""> -->
