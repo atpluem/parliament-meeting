@@ -1,2 +1,24 @@
-<p>Age Interval</p>
-<p>{{ageInterval[0].Numbers}}</p>
+<div class="container columns">
+    <div class="column">
+        <chart [type]="typeChart" [data]="dataChart" [options]="optionsChart"></chart>
+        <label>ช่วงอายุของสมาชิก</label>
+    </div>
+    <div class="column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ช่วงอายุ</th>
+                    <th>จำนวน</th>
+                    <th>ร้อยละ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ag of ageInterval">
+                    <th>{{ag.age_Interval}}</th>
+                    <th>{{ag.Numbers}}</th>
+                    <th>{{ag.Percentage}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
