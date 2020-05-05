@@ -18,6 +18,7 @@ export class AgeintervalComponent implements OnInit {
   getAgeInterval() {
     this.analysis.getAgeInterval()
     .subscribe(data => {
+      this.ageInterval = data;
       this.dataChart = {
         labels: ["<30", "31-40", "41-50", "51-60", ">60"],
         datasets: [
