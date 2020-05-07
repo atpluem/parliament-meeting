@@ -1,33 +1,68 @@
+/* part background and height of this page */
+.pagelogin {
+   background-image: url(https://i.pinimg.com/originals/46/1d/25/461d254f8563f8945ce3a385f289df17.jpg);
+   background-attachment: fixed;
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 648px;   
+}
 
 .logo {
+   padding-top: 100px;
+   padding-bottom: 20px;
    text-align: center;
-   margin-top: 100px;
+} 
+
+.logo img {
+   cursor: pointer;
+   transition: 0.2s;
 }
 
-.card-group {
-   width: 300px;
-   margin-top: 15px;
-   padding-top: 0px;
-   padding-bottom: 10px;
+.logo img:hover {
+   width: 50px;
+   border: 2px solid #b22732;
+   border-radius: 100%;
+   padding: 5px;
+   transition: 0.2s;
 }
+
+/* part of form for fill username and password */
+.form {
+   margin: auto;
+   padding: 25px 70px;
+   width: 500px;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
 .formgroup {
+   margin: auto;
    padding: 10px;
 }
+
+.passwordBar {
+   padding: 10px 0px 40px 0px;
+}
+
+.button {
+   font-weight: bold;
+}
+
 .login-text {
    text-align: center;
    margin-top: 100px;
    margin-bottom: 0;
    padding-bottom: 0;
 }
-.submit {
-   margin-top: 20px;
-}
+
 .coverUnder {
    position: absolute;
    width: 100%;
    bottom: 0;
    z-index: -2;
 }
+
 .coverUpper {
    position: absolute;
    bottom: 0;
