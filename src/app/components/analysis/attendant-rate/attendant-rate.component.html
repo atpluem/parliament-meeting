@@ -1,0 +1,24 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ชื่อ</th>
+                    <th>นามสกลุล</th>
+                    <th>ตรงเวลา (ครั้ง)</th>
+                    <th>สาย (ครั้ง)</th>
+                    <th>ประเภทการประชุมที่สายมากที่สุด</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ar of attRate">
+                    <th>{{ar.SurName}}</th>
+                    <th>{{ar.LastName}}</th>
+                    <th>{{ar.ONTIME}}</th>
+                    <th>{{ar.LATE}}</th>
+                    <th>{{ar.MaxLateType}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

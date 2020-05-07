@@ -55,7 +55,7 @@ export class UserviewComponent implements OnInit {
           $(".navbar-burger").toggleClass("is-active");
           $(".navbar-menu").toggleClass("is-active");
       });
-
+      
       $('#tabs li').on('click', function() {
         var tab = $(this).data('tab');
 

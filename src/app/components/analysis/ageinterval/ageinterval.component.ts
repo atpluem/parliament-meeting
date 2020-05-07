@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalysisService } from '../../../services/analysis.service';
-import { AgeInteval } from '../../../classes/ageinterval';
 
 @Component({
   selector: 'app-ageinterval',

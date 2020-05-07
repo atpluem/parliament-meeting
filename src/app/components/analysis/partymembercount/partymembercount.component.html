@@ -1,0 +1,20 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ชื่อพรรค</th>
+                    <th>จำนวนสมาชิก</th>
+                    <th>ร้อยละ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pmc of partyMemberCount">
+                    <th>{{pmc.PartyName}}</th>
+                    <th>{{pmc.members}}</th>
+                    <th>{{pmc.parcentage}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

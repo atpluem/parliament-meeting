@@ -52,11 +52,39 @@
 <div class="content">
   <section class="about-content" id="part1" #part1>
     <h1>Meeting</h1>
-    <div class="container">
-      <app-ageinterval></app-ageinterval>
+    <!-- Dropdown choose analysis report -->
+    <div class="dropdown">
+      <div class="dropdown-trigger">
+        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+          <span>Analysis Report</span>
+        </button>
+      </div>
+      <div class="dropdown-menu" id="dropdown-menu" role="menu">
+        <div class="dropdown-content">
+          <a class="dropdown-item is-active" data-tab="1">Number of Member each Party</a>
+          <a class="dropdown-item is-active" data-tab="2">Attendant Rate</a>
+          <a class="dropdown-item" data-tab="3">Age Interval</a>
+          <a class="dropdown-item" data-tab="4">coming soon..</a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div id="tab-content">
+      <div data-content="1">
+        <app-partymembercount></app-partymembercount>
+      </div>
+      <div data-content="2">
+        <app-attendant-rate></app-attendant-rate>
+      </div>
+      <div data-content='3'>
+        <app-ageinterval></app-ageinterval>
+      </div>
+      <div data-content="4">
+        Coming soon...
+      </div>
     </div>
   </section>
-
+  
   <section class="meeting-content" id="part2" #part2>
     <h1 class="title">About Me</h1>
     <span>เว็บข้อมูลข่าวสารที่เกี่ยวกับการประชุมรัฐสภา เเละข้อมูลที่เกี่ยวข้องกับพรรคการเมืองในเเต่ละพรรค <br>

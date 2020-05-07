@@ -66,6 +66,22 @@ export class HomeComponent implements OnInit {
           $(".navbar-burger").toggleClass("is-active");
           $(".navbar-menu").toggleClass("is-active");
       });
+      $('div[data-content]').hide();
+      $('div[data-content=1]').show();
+    });
+    
+    $('.dropdown').on('click', function() {
+      event.stopPropagation();
+      this.classList.toggle('is-active');
+    });
+    
+    $('.dropdown-item').on('click', function() {
+      var item = $(this).data('tab');
+      $('.dropdown-item').removeClass('is-active');
+      $(this).addClass('is-active');
+
+      $('div[data-content]').hide();
+      $('div[data-content="' + item + '"]').show();
     });
   }
 

@@ -1,7 +1,6 @@
 import { Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AgeInteval } from '../classes/ageinterval'
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +11,21 @@ export class AnalysisService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAgeInterval(): Observable<AgeInteval[]> {
-    return this.httpClient.get<AgeInteval[]>(
+  public getAgeInterval(): Observable<any> {
+    return this.httpClient.get<any>(
       this.baseUrl + "Analysis_Report/Query07.php"
+    );
+  }
+
+  public getAttendant(): Observable<any>{
+    return this.httpClient.get<any>(
+      this.baseUrl + "Analysis_Report/Query05.php"
+    );
+  }
+
+  public getPartyMemberCount(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.baseUrl + "Analysis_Report/Query04.php"
     );
   }
 }

@@ -16,6 +16,8 @@ import { UserviewComponent } from './components/userview/userview.component';
 // Analysis report
 import { ChartModule } from 'angular2-chartjs';
 import { AgeintervalComponent } from './components/analysis/ageinterval/ageinterval.component';
+import { AttendantRateComponent } from './components/analysis/attendant-rate/attendant-rate.component';
+import { PartymembercountComponent } from './components/analysis/partymembercount/partymembercount.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { AgeintervalComponent } from './components/analysis/ageinterval/ageinter
     ConferenceComponent,
     PartyComponent,
     UserviewComponent,
-    AgeintervalComponent
+    AgeintervalComponent,
+    AttendantRateComponent,
+    PartymembercountComponent
   ],
   imports: [
     BrowserModule,
