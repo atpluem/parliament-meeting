@@ -7,7 +7,10 @@ import { AnalysisService } from '../../../services/analysis.service';
   styleUrls: ['./partymembercount.component.css']
 })
 export class PartymembercountComponent implements OnInit {
-  partyMemberCount: any[];
+  partyMemberCount: any;
+  typeChart: any;
+  dataChart: any;
+  optionsChart: any;
 
   constructor(private analysis: AnalysisService) { }
 

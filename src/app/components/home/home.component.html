@@ -61,25 +61,37 @@
       </div>
       <div class="dropdown-menu" id="dropdown-menu" role="menu">
         <div class="dropdown-content">
-          <a class="dropdown-item is-active" data-tab="1">Number of Member each Party</a>
-          <a class="dropdown-item is-active" data-tab="2">Attendant Rate</a>
-          <a class="dropdown-item" data-tab="3">Age Interval</a>
-          <a class="dropdown-item" data-tab="4">coming soon..</a>
+          <a class="dropdown-item is-active" data-tab="1">Top Argument Rank</a>
+          <a class="dropdown-item" data-tab="2">Conference Duration</a>
+          <a class="dropdown-item" data-tab="3">Cost per Building</a>
+          <a class="dropdown-item" data-tab="4">Number of Member each Party</a>
+          <a class="dropdown-item" data-tab="5">Attendant Rate</a>
+          <a class="dropdown-item" data-tab="6">Age Interval</a>
+          <a class="dropdown-item" data-tab="7">coming soon..</a>
         </div>
       </div>
     </div>
     <hr>
     <div id="tab-content">
       <div data-content="1">
-        <app-partymembercount></app-partymembercount>
+        <app-topargrank></app-topargrank>
       </div>
       <div data-content="2">
-        <app-attendant-rate></app-attendant-rate>
+        <app-conference-duration></app-conference-duration>
       </div>
-      <div data-content='3'>
-        <app-ageinterval></app-ageinterval>
+      <div data-content="3">
+        <app-costperbuilding></app-costperbuilding>
       </div>
       <div data-content="4">
+        <app-partymembercount></app-partymembercount>
+      </div>
+      <div data-content="5">
+        <app-attendant-rate></app-attendant-rate>
+      </div>
+      <div data-content='6'>
+        <app-ageinterval></app-ageinterval>
+      </div>
+      <div data-content="7">
         Coming soon...
       </div>
     </div>

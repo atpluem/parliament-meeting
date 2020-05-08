@@ -1,0 +1,20 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ชื่ออาคาร</th>
+                    <th>ประเภทการประชุม</th>
+                    <th>ค่าใช้จ่าย</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cpb of costPerBuilding">
+                    <th>{{cpb.BuildingName}}</th>
+                    <th>{{cpb.ConferenceType}}</th>
+                    <th>{{cpb.Costs}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

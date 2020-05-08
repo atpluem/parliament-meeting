@@ -1,0 +1,24 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ชื่อผู้อภิปราย</th>
+                    <th>นามสกุลผู้อภิปราย</th>
+                    <th>ชื่อผู้โต้อภิปราย</th>
+                    <th>นามสกุลผู้โต้อภิปราย</th>
+                    <th>เวลาที่ใช้</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tar of topArgRank">
+                    <th>{{tar.Speaker_Surname}}</th>
+                    <th>{{tar.Speaker_Lastname}}</th>
+                    <th>{{tar.Argumentator_Surname}}</th>
+                    <th>{{tar.Argumentator_Lastname}}</th>
+                    <th>{{tar.Time}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

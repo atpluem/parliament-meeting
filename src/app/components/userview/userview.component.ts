@@ -41,10 +41,10 @@ export class UserviewComponent implements OnInit {
     this.loginService.getUserDetail()
     .subscribe(data => {
       this.userDetail = data[0];
+      console.log(data);
     });
   }
-
-
+  
   ngOnInit(): void {
     this.getUserDetail();
 

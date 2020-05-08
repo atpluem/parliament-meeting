@@ -1,0 +1,18 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>หัวข้อการประชุม</th>
+                    <th>ระยะเวลา</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cd of conDuration">
+                    <th>{{cd.ConferenceTopic}}</th>
+                    <th>{{cd.duration}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -28,4 +28,22 @@ export class AnalysisService {
       this.baseUrl + "Analysis_Report/Query04.php"
     );
   }
-}
+
+  public getCostPerBuilding(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.baseUrl + "Analysis_Report/Query08.php"
+    );
+  }
+
+  public getConferenceDuration(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.baseUrl + "Analysis_Report/Query01.php"
+    );
+  }
+
+  public getTopArgumentRank(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.baseUrl + "Analysis_Report/Query09.php"
+    );
+  }
+} 

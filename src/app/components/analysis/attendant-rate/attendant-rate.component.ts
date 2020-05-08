@@ -17,7 +17,6 @@ export class AttendantRateComponent implements OnInit {
     this.analysis.getAttendant()
     .subscribe(data => {
       this.attRate = data;
-      console.log(this.attRate);
     });
   }
 

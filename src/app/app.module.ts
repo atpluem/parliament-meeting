@@ -18,6 +18,11 @@ import { ChartModule } from 'angular2-chartjs';
 import { AgeintervalComponent } from './components/analysis/ageinterval/ageinterval.component';
 import { AttendantRateComponent } from './components/analysis/attendant-rate/attendant-rate.component';
 import { PartymembercountComponent } from './components/analysis/partymembercount/partymembercount.component';
+import { CostperbuildingComponent } from './components/analysis/costperbuilding/costperbuilding.component';
+import { ConferenceDurationComponent } from './components/analysis/conference-duration/conference-duration.component';
+import { TopargrankComponent } from './components/analysis/topargrank/topargrank.component';
+import { ConferenceViewComponent } from './components/view/conference-view/conference-view.component';
+import { CouncilViewComponent } from './components/view/council-view/council-view.component';
 
 
 @NgModule({
@@ -31,7 +36,12 @@ import { PartymembercountComponent } from './components/analysis/partymembercoun
     UserviewComponent,
     AgeintervalComponent,
     AttendantRateComponent,
-    PartymembercountComponent
+    PartymembercountComponent,
+    CostperbuildingComponent,
+    ConferenceDurationComponent,
+    TopargrankComponent,
+    ConferenceViewComponent,
+    CouncilViewComponent
   ],
   imports: [
     BrowserModule,
