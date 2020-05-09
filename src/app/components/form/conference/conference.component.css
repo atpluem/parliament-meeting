@@ -1,4 +1,22 @@
-.card {
-    margin: 20px;
-    padding: 20px;
+#conferencetype{
+    width: 220px;
+
+}
+#dateconference{
+    width: 220px;
+}
+#chairmanIDlabel{
+    margin-top: 19px;
+}
+.field{
+    display: inline;
+}
+
+
+.error{
+    display: inline;
+}
+
+#buildingtype{
+    margin-bottom: -30px;
 }

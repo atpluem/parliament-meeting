@@ -1,4 +1,16 @@
-.card {
-    margin: 20px;
-    padding: 20px;
+#founderID{
+    position: relative;
+    width: 275px;
+}
+#leaderID{
+    position: relative;
+    width: 275px;
+}
+.img1{
+    max-width:  3in;
+    max-height: 3in;
+}
+.file-name {
+    max-width:  3in;
+    max-height: 3in;
 }

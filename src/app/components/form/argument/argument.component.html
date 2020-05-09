@@ -1,0 +1,537 @@
+<br>
+<div class="container ">
+    <div class="header ">
+        <label class="label is-size-1" id="header">ARGUMENT RECORD</label>
+    </div>
+</div>
+<br>
+
+<div class="columns is-mobile is-desktop is-multiline is-centered">
+
+    <div class="box is-narrow is-desktop is-mobile">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <label class="label is-large">ARGUMENT</label>
+            <!-- success register -->
+            <div class="notification is-success is-light" *ngIf="successfulregister">
+                <button class="delete"></button>
+                <strong>REGISTER SUCCESS</strong>
+              </div>
+              <!-- fail register -->
+              <div class="notification is-danger is-light" *ngIf="failregister">
+                <button class="delete"></button>
+                <strong>REGISTER FAIL</strong>
+              </div>
+            <hr>
+            <div class="columns">
+                <div class="column ">
+                    <div>
+                        <!-- CONFERENCE ID -->
+                        <label class="label">CONFERENCE ID</label>
+                        <div class="field">
+                            <div class="control">
+                                <div class="select">
+                                    <select ID="conferenceID" name="conferenceID" formControlName="conferenceID"
+                                        (ngModelChange)="onOptionsSelectedConference($event)">
+                                        <option value="">Select chairman ID</option>
+                                        <option *ngFor="let conferenceID of resultssubtopic | unique"
+                                            [ngValue]="conferenceID">
+                                            {{conferenceID.ConferenceID}}</option>
+                                    </select>
+                                    <div class="error" *ngIf="(conferenceID.invalid && conferenceID.touched)">
+                                        <div class="help is-danger">Conference ID is required</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div>
+                        <!-- SUBTOPIC NAME -->
+                        <label class="label">SUBTOPIC NAME</label>
+                        <div class="field">
+                            <div class="control">
+                                <div class="select">
+
+                                    <select ID="subtopicname" name="subtopicname " formControlName="subtopicname"
+                                        (ngModelChange)="onOptionsSelectedSubtopicname($event)">
+                                        <option value="">Select chairman ID</option>
+                                        <option *ngFor="let subtopicname of resultsSubtopicname "
+                                            [ngValue]="subtopicname">
+                                            {{subtopicname.SubTopicName}}</option>
+                                    </select>
+                                    <div class="error"
+                                        *ngIf="(subtopicname.invalid && subtopicname.touched) && conferenceID.valid">
+                                        <div class="help is-danger">Subtopic name is required</div>
+                                    </div>
+                                    <div class="error" *ngIf="(conferenceID.invalid && subtopicname.touched)">
+                                        <div class="help is-danger">Select Conference ID First</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div>
+                        <!-- ARGUMENTATOR ID    -->
+                        <label class="label">ARGUMENTATOR ID</label>
+                        <div class="field">
+                            <div class="control">
+                                <div class="select">
+                                    <select ID="argumentatorID" name="argumentatorID" formControlName="argumentatorID"
+                                        (ngModelChange)="onOptionsSelected($event)">
+                                        <option value="">Select chairman ID</option>
+                                        <option *ngFor="let argumentatorID of resultspersonalID"
+                                            [ngValue]="argumentatorID">
+                                            {{argumentatorID.PersonalID}}</option>
+                                    </select>
+                                    <div class="error" *ngIf="(argumentatorID.invalid && argumentatorID.touched)">
+                                        <div class="help is-danger">Argumentator ID is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div>
+
+                        <!-- START ARGUMENT TIME    -->
+                        <label class="label">START ARGUMENT TIME </label>
+
+                        <div class="columns ">
+                            <div class="column">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select">
+                                            <select ID="starttime" name="starttime" formControlName="starttime"
+                                                (ngModelChange)="onOptionsSelectedStarttime($event)">
+                                                <option>01</option>
+                                                <option>02</option>
+                                                <option>03</option>
+                                                <option>04</option>
+                                                <option>05</option>
+                                                <option>06</option>
+                                                <option>07</option>
+                                                <option>08</option>
+                                                <option>09</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                                <option>19</option>
+                                                <option>20</option>
+                                                <option>21</option>
+                                                <option>22</option>
+                                                <option>23</option>
+                                                <option>24</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label is-medium">:</label>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select">
+                                            <select ID="starttimemin" name="starttimemin" formControlName="starttimemin"
+                                                (ngModelChange)="onOptionsSelectedStarttime($event)">
+                                                <option>00</option>
+                                                <option>01</option>
+                                                <option>02</option>
+                                                <option>03</option>
+                                                <option>04</option>
+                                                <option>05</option>
+                                                <option>06</option>
+                                                <option>07</option>
+                                                <option>08</option>
+                                                <option>09</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                                <option>19</option>
+                                                <option>20</option>
+                                                <option>21</option>
+                                                <option>22</option>
+                                                <option>23</option>
+                                                <option>25</option>
+                                                <option>26</option>
+                                                <option>27</option>
+                                                <option>28</option>
+                                                <option>29</option>
+                                                <option>30</option>
+                                                <option>31</option>
+                                                <option>32</option>
+                                                <option>33</option>
+                                                <option>34</option>
+                                                <option>35</option>
+                                                <option>36</option>
+                                                <option>37</option>
+                                                <option>38</option>
+                                                <option>39</option>
+                                                <option>40</option>
+                                                <option>41</option>
+                                                <option>42</option>
+                                                <option>43</option>
+                                                <option>44</option>
+                                                <option>45</option>
+                                                <option>46</option>
+                                                <option>47</option>
+                                                <option>48</option>
+                                                <option>49</option>
+                                                <option>50</option>
+                                                <option>51</option>
+                                                <option>52</option>
+                                                <option>53</option>
+                                                <option>54</option>
+                                                <option>55</option>
+                                                <option>56</option>
+                                                <option>57</option>
+                                                <option>58</option>
+                                                <option>59</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label is-medium">:</label>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select">
+                                            <select ID="starttimesec" name="starttimesec" formControlName="starttimesec"
+                                                (ngModelChange)="onOptionsSelectedStarttime($event)">
+                                                <option>00</option>
+                                                <option>01</option>
+                                                <option>02</option>
+                                                <option>03</option>
+                                                <option>04</option>
+                                                <option>05</option>
+                                                <option>06</option>
+                                                <option>07</option>
+                                                <option>08</option>
+                                                <option>09</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                                <option>19</option>
+                                                <option>20</option>
+                                                <option>21</option>
+                                                <option>22</option>
+                                                <option>23</option>
+                                                <option>25</option>
+                                                <option>26</option>
+                                                <option>27</option>
+                                                <option>28</option>
+                                                <option>29</option>
+                                                <option>30</option>
+                                                <option>31</option>
+                                                <option>32</option>
+                                                <option>33</option>
+                                                <option>34</option>
+                                                <option>35</option>
+                                                <option>36</option>
+                                                <option>37</option>
+                                                <option>38</option>
+                                                <option>39</option>
+                                                <option>40</option>
+                                                <option>41</option>
+                                                <option>42</option>
+                                                <option>43</option>
+                                                <option>44</option>
+                                                <option>45</option>
+                                                <option>46</option>
+                                                <option>47</option>
+                                                <option>48</option>
+                                                <option>49</option>
+                                                <option>50</option>
+                                                <option>51</option>
+                                                <option>52</option>
+                                                <option>53</option>
+                                                <option>54</option>
+                                                <option>55</option>
+                                                <option>56</option>
+                                                <option>57</option>
+                                                <option>58</option>
+                                                <option>59</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="error" id="argumenterror" *ngIf="(starttime.invalid && starttime.touched) || (starttimemin.invalid && starttimemin.touched) ||
+                        (starttimesec.invalid && starttimesec.touched) ">
+                            <div class="help is-danger">Start argument time is required</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <!-- END ARGUMENT TIME    -->
+                        <label class="label">END ARGUMENT TIME </label>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select">
+                                            <select ID="endtime" name="endtime" formControlName="endtime"
+                                                (ngModelChange)="onOptionsSelectedStarttime($event)">
+                                                <option>01</option>
+                                                <option>02</option>
+                                                <option>03</option>
+                                                <option>04</option>
+                                                <option>05</option>
+                                                <option>06</option>
+                                                <option>07</option>
+                                                <option>08</option>
+                                                <option>09</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                                <option>19</option>
+                                                <option>20</option>
+                                                <option>21</option>
+                                                <option>22</option>
+                                                <option>23</option>
+                                                <option>24</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label is-medium">:</label>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select">
+                                            <select ID="endtimemin" name="endtimemin" formControlName="endtimemin"
+                                                (ngModelChange)="onOptionsSelectedStarttime($event)">
+                                                <option>00</option>
+                                                <option>01</option>
+                                                <option>02</option>
+                                                <option>03</option>
+                                                <option>04</option>
+                                                <option>05</option>
+                                                <option>06</option>
+                                                <option>07</option>
+                                                <option>08</option>
+                                                <option>09</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                                <option>19</option>
+                                                <option>20</option>
+                                                <option>21</option>
+                                                <option>22</option>
+                                                <option>23</option>
+                                                <option>25</option>
+                                                <option>26</option>
+                                                <option>27</option>
+                                                <option>28</option>
+                                                <option>29</option>
+                                                <option>30</option>
+                                                <option>31</option>
+                                                <option>32</option>
+                                                <option>33</option>
+                                                <option>34</option>
+                                                <option>35</option>
+                                                <option>36</option>
+                                                <option>37</option>
+                                                <option>38</option>
+                                                <option>39</option>
+                                                <option>40</option>
+                                                <option>41</option>
+                                                <option>42</option>
+                                                <option>43</option>
+                                                <option>44</option>
+                                                <option>45</option>
+                                                <option>46</option>
+                                                <option>47</option>
+                                                <option>48</option>
+                                                <option>49</option>
+                                                <option>50</option>
+                                                <option>51</option>
+                                                <option>52</option>
+                                                <option>53</option>
+                                                <option>54</option>
+                                                <option>55</option>
+                                                <option>56</option>
+                                                <option>57</option>
+                                                <option>58</option>
+                                                <option>59</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label is-medium">:</label>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select">
+                                            <select ID="endtimesec" name="endtimesec" formControlName="endtimesec"
+                                                (ngModelChange)="onOptionsSelectedStarttime($event)">
+                                                <option>00</option>
+                                                <option>01</option>
+                                                <option>02</option>
+                                                <option>03</option>
+                                                <option>04</option>
+                                                <option>05</option>
+                                                <option>06</option>
+                                                <option>07</option>
+                                                <option>08</option>
+                                                <option>09</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                                <option>19</option>
+                                                <option>20</option>
+                                                <option>21</option>
+                                                <option>22</option>
+                                                <option>23</option>
+                                                <option>25</option>
+                                                <option>26</option>
+                                                <option>27</option>
+                                                <option>28</option>
+                                                <option>29</option>
+                                                <option>30</option>
+                                                <option>31</option>
+                                                <option>32</option>
+                                                <option>33</option>
+                                                <option>34</option>
+                                                <option>35</option>
+                                                <option>36</option>
+                                                <option>37</option>
+                                                <option>38</option>
+                                                <option>39</option>
+                                                <option>40</option>
+                                                <option>41</option>
+                                                <option>42</option>
+                                                <option>43</option>
+                                                <option>44</option>
+                                                <option>45</option>
+                                                <option>46</option>
+                                                <option>47</option>
+                                                <option>48</option>
+                                                <option>49</option>
+                                                <option>50</option>
+                                                <option>51</option>
+                                                <option>52</option>
+                                                <option>53</option>
+                                                <option>54</option>
+                                                <option>55</option>
+                                                <option>56</option>
+                                                <option>57</option>
+                                                <option>58</option>
+                                                <option>59</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<div class="columns is-mobile is-desktop is-multiline is-centered">
+    <div class="box is-narrow is-desktop is-mobile">
+        <div class="columns">
+            <div class="column">
+                <br><br>
+                <div class="level-item has-text-centered ">
+                    <figure class="image is-sqaure">
+                        <img [src]="url" class="img1">
+                        <label class="label">SPEAKER</label>
+                    </figure>
+                </div>
+            </div>
+            <div class="column">
+                <br><br>
+                <div class="level-item has-text-centered ">
+                    <figure class="image is-sqaure">
+                        <img [src]="url2" class="img1">
+                        <label class="label">ARGUMENTATOR</label>
+                    </figure>
+
+                </div>
+            </div>
+            <div class="column">
+                <br><br><br><br><br>
+                <label class="label is-medium">TOTAL ARGUMENT TIME</label>
+                <div class="columns">
+                    <div class="column is-2">
+                    </div>
+                    <div class="column">
+                        <label class="label is-large">{{timeoutput}}</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <nav class="level-right is-mobile ">
+                <div class="level-item has-text-centered">
+
+                    <div>
+                        <button type="submit" class="button is-rounded" name="argument-submit"
+                            [disabled]="form.invalid">ADD</button>
+                    </div>
+
+                </div>
+            </nav>
+        </form>
+    </div>
+</div>

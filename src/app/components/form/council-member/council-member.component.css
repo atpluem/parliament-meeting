@@ -1,54 +1,73 @@
-#idcard {
-    width: 50%;
-}
-.card {
-    margin: 20px;
-    padding: 20px;
-}
-.fullname {
-    display: inline;
-}
-#firstname {
-    display: inline;
-    width: 30%;
-}
-#lastname {
-    display: inline;
-    margin-left: 20px;
-    width: 30%;
-}
-#name-text {
-    width: 35%;
-}
-#dob-text {
-    width: 35%;
-}
-#edu-text {
-    width: 30%;
+
+.header1{
+    font-size: 2000px; 
 }
 
-#DOB {
-    display: inline;
-    width: 30%;
+.field {
+    width: 100%;
 }
-#education {
+
+.image{
+    width: 75%;
+}
+.column{
+    margin-left: 5px;
+}
+
+.field{
     display: inline;
-    width: 30%;
+}
+#idcard{
+    margin-left: 5px;
+}
+#header1{
+    font-size: 200%;
     margin-left: 20px;
 }
-.councilpos {
-    display: inline;
-    width: 30%;
+.button{
+    margin-left: -20px;
 }
-.partyname {
-    display: inline;
-    width: 30%;
+
+.img1{
+    max-width:  3in;
+    max-height: 3in;
 }
-#dropdown {
-    width: 100px;
-    margin-right: 25%;
-}
+
 .file {
-    visibility: hidden;
-    position: absolute;
+    max-width:  3in;
+    max-height: 3in;
+}
+
+
+#inpFirstName{
+width: 250px;
+}
+#partyPos{
+    width: 250px;
+}
+#DOB{
+    width: 250px;
+}
+#concilPos{
+    width: 250px;
+}
+.error{
+    margin-bottom: 0px;
+}
+.p{
+    display: inline;
+}
+#passwordvalid{
+    margin-top: -25px;
+}
+#passwordvalid1{
+    margin-top: -25px;
+    margin-bottom: 25px;
+}
+#doberror{
+    margin-bottom: -17px;
+}
+
+#councilposadjust{
+    margin-top: -3px;
 }

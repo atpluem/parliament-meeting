@@ -1,136 +1,274 @@
-<div class="form-group card">
-    <h2>ADD INFORMATION OF PARTY</h2>
-    <hr>
-    <form autocomplete="off">
-        <div class="container row">
-            <!-- Party simbol -->
-            <div class="col-sm">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Upload</span>
-                </div>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input">
-                    <label for="inputGroupFile">choose file</label>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="form-group ">
-                    <label for="topicname">PARTY NAME</label>
-                    <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                        id="partyname" autocomplete="off" name="partyname">
-                    <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                        && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group ">
-                            <label for="topicname">FOUNDER ID</label>
-                            <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                                id="partyname" autocomplete="off" name="partyname">
-                            <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                                && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                        </div>   
-                    </div>
-                    <div class="col-sm">
-                        <div class="form-group ">
-                            <label for="topicname">LEADER ID</label>
-                            <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                                id="partyname" autocomplete="off" name="partyname">
-                            <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                                && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group ">
-                            <label for="topicname">TELEPHONE</label>
-                            <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                                id="partyname" autocomplete="off" name="partyname">
-                            <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                                && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                        </div>   
-                    </div>
-                    <div class="col-sm">
-                        <div class="form-group ">
-                            <label for="topicname">FOUNDERING DATE</label>
-                            <input type="date" placeholder="xxx" class="form-control" formControlName="partyname"
-                                id="partyname" autocomplete="off" name="partyname">
-                            <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                                && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <!-- Photoes -->
-        <div class="container row">
-            <div class="col-sm">
-                <img src="" alt="Founder">
-            </div>
-            <div class="col-sm">
-                <img src="" alt="Leader">
-            </div>
-        </div>
-        <hr>
-        <div class="container row">
-            <div class="col-sm">
-                <div class="form-group ">
-                    <label for="topicname">BUILDING NAME</label>
-                    <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                        id="partyname" autocomplete="off" name="partyname">
-                    <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                        && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                </div>
-                <div class="form-group ">
-                    <label for="topicname">BUILDING ID</label>
-                    <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                        id="partyname" autocomplete="off" name="partyname">
-                    <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                        && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                </div>
-                <div class="form-group ">
-                    <label for="topicname">BUILDING STREET</label>
-                    <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                        id="partyname" autocomplete="off" name="partyname">
-                    <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                        && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group ">
-                            <label for="topicname">TYPE</label>
-                            <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                                id="partyname" autocomplete="off" name="partyname">
-                            <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                                && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="form-group ">
-                            <label for="topicname">ZIP CODE</label>
-                            <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                                id="partyname" autocomplete="off" name="partyname">
-                            <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                                && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group ">
-                    <label for="topicname">BUILDING DETAIL</label>
-                    <input type="text" placeholder="xxx" class="form-control" formControlName="partyname"
-                        id="partyname" autocomplete="off" name="partyname">
-                    <div class="error" *ngIf="partyForm.controls['parrtyname'].hasError('required')
-                        && partyForm.controls['parrtyname'].touched">Please enter Topic</div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <img src="" alt="Party building">
-            </div>
-        </div>
+<br>
+<div class="container ">
+    <div class="header ">
+        <label class="label is-size-1" id="header">ADD INFORMATION OF PARTY</label>
+    </div>
+</div>
+<br>
 
-        <button type="cancel" class="btn btn-light float-right">Cancel</button>
-        <button type="submit" class="btn btn-success float-right" [disabled]="!partyForm.valid">Submit</button>
-    </form>
+<div class="columns is-mobile is-desktop is-multiline is-centered">
+    <div class="column is-6">
+        <div class="box is-narrow is-desktop is-mobile">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <label class="label is-large">PARTY</label>
+                 <!-- successful register -->
+                 <div class="notification is-success is-light" *ngIf="successfulregister">
+                    <button class="delete"></button>
+                    <strong>REGISTER SUCCESS</strong>
+                  </div>
+                  <!-- fail register -->
+                  <div class="notification is-danger is-light" *ngIf="failregister">
+                    <button class="delete"></button>
+                    <strong>REGISTER FAIL</strong>
+                  </div>
+                <hr>
+                <div class="columns">
+                    <div class="column is-5">
+                        <div class="level-item has-text-centered ">
+                            <figure class="image is-sqaure">
+                                <img [src]="url" class="img1">
+                                <div class="field">
+                                    <div class="file has-name">
+                                        <label class="file-label">
+                                            <input class="file-input" type="file" name="file" accept="image/*"
+                                                name="image" formControlName="image" (change)="onselectFile($event)">
+                                            <span class="file-cta">
+                                                <span class="file-icon">
+                                                    <i class="fas fa-upload"></i>
+                                                </span>
+                                                <span class="file-label">
+                                                    Choose file
+                                                </span>
+                                            </span>
+                                            <span class="file-name" id="file-name">
+                                                No file selected
+                                            </span>
+
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="error" *ngIf="image.invalid && image.touched">
+                                    <div class="help is-danger">image is required</div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div>
+                            <!-- partyname -->
+                            <div class="columns">
+                                <div class="column">
+                                    <div>
+                                        <div class="bd-notification is-info">
+                                            <label class="label">PARTY NAME</label>
+                                        </div>
+                                        <input class="input" type="text" placeholder="XXXXXXX" id="partyname"
+                                            name="partyname" formControlName="partyname">
+                                        <div class="error" *ngIf="partyname.invalid && partyname.touched">
+                                            <div class="help is-danger">Party name is required</div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <div class="columns is-mobile">
+                                            <div class="column">
+                                                <div class="bd-notification is-info">
+                                                    <div>
+                                                        <!-- FOUNDER ID  -->
+                                                        <label class="label">FOUNDER ID</label>
+                                                        <div class="field" id="founderID">
+                                                            <div class="control">
+                                                                <div class="select">
+                                                                    <select ID="founderID" name="founderID"
+                                                                        formControlName="founderID">
+                                                                        <option value="">Select founder ID</option>
+                                                                        <option
+                                                                            *ngFor="let founderID of resultspersonalID">
+                                                                            {{founderID.PersonalID}}</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div>
+                                                        <!-- TELEPHONE -->
+                                                        <label class="label">TELEPHONE</label>
+                                                        <input class="input" type="text" placeholder="XXXXXXX"
+                                                            id="telephone" name="telephone" formControlName="telephone" minlength="10" maxlength="10"
+                                                            (keypress)="numberOnly($event)">
+                                                        <div class="error"
+                                                            *ngIf="(telephone.invalid && telephone.touched) &&!(telephone.errors?.minlength)">
+                                                            <div class="help is-danger">Telephone is required</div>
+                                                        </div>
+                                                        <div *ngIf="telephone.errors?.minlength">
+                                                            <div class="help is-danger">Telephone must has 10 digits long.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="column">
+                                                <div class="bd-notification is-info">
+                                                    <label class="label">LEADER ID</label>
+                                                    <div class="field" id="leaderID">
+                                                        <div class="control">
+                                                            <div class="select">
+                                                                <select ID="leaderID" name="leaderID"
+                                                                    formControlName="leaderID">
+                                                                    <option value="">Select founder ID</option>
+                                                                    <option *ngFor="let leaderID of resultspersonalID">
+                                                                        {{leaderID.PersonalID}}</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div>
+                                                    <!-- DATE OF CONFERENCE -->
+                                                    <label class="label">FOUNDERING DATE</label>
+                                                    <input class="input" type="date" ID=founderdate name="founderdate"
+                                                        formControlName="founderdate">
+                                                    <div class="error"
+                                                        *ngIf="founderdate.invalid && founderdate.touched">
+                                                        <p class="help is-danger">Foundering Date is required</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="columns is-mobile is-desktop is-multiline is-centered">
+    <div class="column is-6">
+        <div class="box is-narrow is-desktop is-mobile">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="columns">
+                    <div class="column is-7">
+                        <div class="columns">
+                            <div class="column is-5">
+                                <div>
+                                    <!-- Building name -->
+                                    <label class="label">BUILDING NAME</label>
+                                    <input class="input" type="text" placeholder="XXXXXXX" id="buildingname"
+                                        name="buildingname" formControlName="buildingname">
+                                </div>
+                                <br>
+                                <div>
+                                    <!-- Building number -->
+                                    <label class="label">BUILDING NUMBER</label>
+                                    <input class="input" type="text" placeholder="XXXXXXX" id="buildingnumber"
+                                        name="buildingnumber" formControlName="buildingnumber" (keypress)="numberOnly($event)">
+                                    <div class="error" *ngIf="buildingnumber.invalid && buildingnumber.touched">
+                                        <div class="help is-danger">Building number is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div>
+                                    <!-- Building type -->
+                                    <label class="label">BUILDING TYPE</label>
+                                    <input class="input" type="text" placeholder="XXXXXXX" id="buildingtype"
+                                        name="buildingtype" formControlName="buildingtype">
+                                    <div class="error" *ngIf="buildingtype.invalid && buildingtype.touched">
+                                        <div class="help is-danger">Building type is required</div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <!-- Bilding street -->
+                                    <label class="label">BUILDING STREET</label>
+                                    <input class="input" type="text" placeholder="XXXXXXX" id="buildingstreet"
+                                        name="buildingstreet" formControlName="buildingstreet">
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div>
+                                    <!-- zip code -->
+                                    <label class="label">ZIP CODE</label>
+                                        <div class="field" id="founderID">
+                                            <div class="control">
+                                                <div class="select">
+                                                    <select ID="zipcode" name="zipcode"
+                                                        formControlName="zipcode">
+                                                        <option value="">Select zip code</option>
+                                                        <option
+                                                            *ngFor="let zipcode of resultsareas">
+                                                            {{zipcode.Zipcode}}</option>
+                                                    </select>
+                                                    <div class="error" *ngIf="zipcode.invalid && zipcode.touched">
+                                                        <div class="help is-danger">Zip code is required</div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    
+                                </div>
+                                <br>
+                                <div>
+                                    <!-- Subdistrict -->
+                                    <label class="label">SUBDISTRICT</label>
+                                    <input class="input" type="text" placeholder="XXXXXXX" id="subdistrict" name="subdistrict"
+                                        formControlName="subdistrict">
+                                    <div class="error" *ngIf="subdistrict.invalid && subdistrict.touched">
+                                        <div class="help is-danger">Subdistrict is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- BUILDING DETAIL -->
+                            <label class="label">BUILDING DETAIL</label>
+                            <textarea class="textarea" placeholder="XXXXXXXXXX"
+                                formControlName="buildingdetail"></textarea>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="level-item has-text-centered ">
+                            <figure class="image is-sqaure">
+                                <br>
+                                <img [src]="url2" class="img1">
+                                <div class="field">
+                                    <div class="file has-name">
+                                        <label class="file-label">
+                                            <input class="file-input" type="file" name="file" accept="image/*"
+                                                name="image2" formControlName="image2" (change)="onselectFile2($event)">
+                                            <span class="file-cta">
+                                                <span class="file-icon">
+                                                    <i class="fas fa-upload"></i>
+                                                </span>
+                                                <span class="file-label">
+                                                    Choose file
+                                                </span>
+                                            </span>
+                                            <span class="file-name" id="file-name2">
+                                                No file selected
+                                            </span>
+
+                                        </label>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <nav class="level-right is-mobile ">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <button type="submit" class="button is-rounded" name="conference-submit" [disabled]="form.invalid">ADD</button>
+                        </div>
+                    </div>
+                </nav>
+            </form>
+        </div>
+    </div>
 </div>

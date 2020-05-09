@@ -10,8 +10,6 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { from } from 'rxjs';
 import { CouncilMemberComponent } from './components/form/council-member/council-member.component';
-import { ConferenceComponent } from './components/form/conference/conference.component';
-import { PartyComponent } from './components/form/party/party.component';
 import { UserviewComponent } from './components/userview/userview.component';
 // Analysis report
 import { ChartModule } from 'angular2-chartjs';
@@ -21,9 +19,14 @@ import { PartymembercountComponent } from './components/analysis/partymembercoun
 import { CostperbuildingComponent } from './components/analysis/costperbuilding/costperbuilding.component';
 import { ConferenceDurationComponent } from './components/analysis/conference-duration/conference-duration.component';
 import { TopargrankComponent } from './components/analysis/topargrank/topargrank.component';
+// View
 import { ConferenceViewComponent } from './components/view/conference-view/conference-view.component';
 import { CouncilViewComponent } from './components/view/council-view/council-view.component';
-
+// Form
+import { ArgumentComponent } from './components/form/argument/argument.component';
+import { ConferenceComponent } from './components/form/conference/conference.component';
+import { UniquePipe } from './components/form/argument/uniqe.pipe';
+import { PartyComponent } from './components/form/party/party.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { CouncilViewComponent } from './components/view/council-view/council-vie
     ConferenceDurationComponent,
     TopargrankComponent,
     ConferenceViewComponent,
-    CouncilViewComponent
+    CouncilViewComponent,
+    ArgumentComponent,
+    UniquePipe
   ],
   imports: [
     BrowserModule,
