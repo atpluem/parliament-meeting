@@ -1,7 +1,12 @@
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item">
+        <a class="navbar-item card">
             <img src="../../../assets/LogoSmall.png">
+        </a>
+        <a role="button" class="navbar-burger buger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </a>
     </div>
 
@@ -11,7 +16,6 @@
                 <a class="navbar-link">
                   <strong>{{userDetail.Surname}}</strong>
                 </a>
-
                 <div class="navbar-dropdown">
                   <a class="navbar-item">
                     Edit profile
@@ -28,8 +32,9 @@
 <div class="container is-widescreen profile card">
     <div class="columns">
         <div class="column is-one-quarter">
-            <figure class="image is-128x128 ">
-                <img src="../../../assets/unnamed.png">
+            <figure class="image is-128x128">
+                <img [src]="transformImg()" [ngStyle]="{'width.px': 200,'height.px': 200}"
+                onerror="this.src='../../../assets/unnamed.png';">
             </figure>
         </div>
         <div class="column detail">
@@ -43,7 +48,7 @@
             <div>Party : {{userDetail.PartyName}}</div>
             <div>Party Position : {{userDetail.PartyPosName}}</div>
             <div>Ministry : {{userDetail.MinistryPosName}}</div>
-            <div>Sub Ministry Name : </div>
+            <div>Sub Ministry Name : {{(userDetail.SubMinistryName !== null) ? userDetail.SubMinistryName : "-"}}</div>
         </div>
     </div>
 </div>

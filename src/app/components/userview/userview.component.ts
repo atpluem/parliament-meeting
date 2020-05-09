@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { LoginService } from '../../services/login.service'
 import { Usermodule } from '../../classes/usermodule';
+
 
 @Component({
   selector: 'app-userview',
@@ -13,7 +15,7 @@ export class UserviewComponent implements OnInit {
   loginbtn: boolean;
   logoutbtn: boolean;
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private sanitizer: DomSanitizer) {
     loginService.getLoggedInName.subscribe(name => this.changeName(name));
     if(this.loginService.isLoggedIn()){
       console.log("loggedin");
@@ -41,8 +43,11 @@ export class UserviewComponent implements OnInit {
     this.loginService.getUserDetail()
     .subscribe(data => {
       this.userDetail = data[0];
-      console.log(data);
     });
+  }
+
+  transformImg() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl("data:image/png;base64," + this.userDetail.MemberPicture);
   }
   
   ngOnInit(): void {
@@ -66,5 +71,7 @@ export class UserviewComponent implements OnInit {
         $('div[data-content="' + tab + '"]').addClass('is-active');
       });
     });
+
+    this.transformImg();
   }
 }
