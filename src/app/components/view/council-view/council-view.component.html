@@ -1,7 +1,7 @@
 
 <div class="container is-fluid">
     <!-- Council member -->
-    <div class="modal">
+    <div class="modal council-member">
         <div class="modal-background"></div>
         <div class="modal-card">
           <header class="modal-card-head">
@@ -12,16 +12,18 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ช่วงอายุ</th>
-                        <th>จำนวน</th>
-                        <th>ร้อยละ</th>
+                        <th>ชื่อ</th>
+                        <th>นามสกลุล</th>
+                        <th>ตำแหน่งในรัฐสภา</th>
+                        <th>รายละเอียดเพิ่มเติม</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>as</th>
-                        <th>wcwc</th>
-                        <th>wewd</th>
+                    <tr *ngFor="let cm of counncilMember">
+                        <th>{{cm.Surname}}</th>
+                        <th>{{cm.Lastname}}</th>
+                        <th>{{cm.CouncilPosName}}</th>
+                        <th>{{(cm.CouncilPosDetail !== null) ? cm.CouncilPosDetail : "-"}}</th>
                     </tr>
                 </tbody>
             </table>
@@ -31,5 +33,16 @@
         </div>
     </div>
 
-    <button class="button" id="showModal"><h1>Council Member</h1></button>
+    <div class="columns" >
+        <div class="card column button" id="showModal">
+            <div class="card-content">
+              <p class="title">
+                “Council Member”
+              </p>
+              <p class="subtitle">
+                Member of council member 
+              </p>
+            </div>
+        </div>
+    </div>
 </div>
