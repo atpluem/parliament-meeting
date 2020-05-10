@@ -10,6 +10,7 @@ export class ConferenceViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

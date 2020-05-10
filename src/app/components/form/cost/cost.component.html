@@ -1,0 +1,97 @@
+<br>
+<div class="container ">
+    <div class="header ">
+        <label class="label is-size-1" id="header">MEETING COST</label>
+    </div>
+</div>
+<br>
+<div class="columns is-mobile is-desktop is-multiline is-centered">
+    <div class="box is-narrow is-desktop is-mobile">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="columns">
+                <div class="column">
+                    <label class="label">Billing ID</label>
+                    <input required class="input" type="text" placeholder="12345" formControlName="billingId">
+                    <div class="error" *ngIf="billingId.invalid && billingId.touched">
+                        <div class="help is-danger">Billing ID is required</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <label class="label">Conference ID</label>
+                    <div class="field">
+                        <div class="control">
+                            <div class="select">
+                                <select formControlName="conferenceId">
+                                    <option value="">Select conference ID</option>
+                                    <option *ngFor="let cDetail of conferenceDetail">{{cDetail.ConferenceTypeID}}</option>
+                                </select>
+                                <div class="error" *ngIf="conferenceId.invalid && conferenceId.touched">
+                                    <div class="help is-danger">Conference ID is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <label class="label">Cost detail</label>
+            <div class="columns">
+                <div class="column">
+                    <label class="label">Cost type ID</label>
+                    <div class="field">
+                        <div class="control">
+                            <div class="select">
+                                <select formControlName="costTypeId">
+                                    <option value="">Select cost type ID</option>
+                                    <option *ngFor="let ct of costsType">{{ct.CostTypeID}}</option>
+                                </select>
+                                <div class="error" *ngIf="costTypeId.invalid && costTypeId.touched">
+                                    <div class="help is-danger">Cost type is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <label class="label">Cost value</label>
+                    <input required class="input" type="text" placeholder="12345" formControlName="costValue">
+                    <div class="error" *ngIf="costValue.invalid && costValue.touched">
+                        <div class="help is-danger">Cost value is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <label class="label">Receipt name</label>
+                    <input required class="input" type="text" placeholder="xxxxx" formControlName="receiptName">
+                    <div class="error" *ngIf="receiptName.invalid && receiptName.touched">
+                        <div class="help is-danger">Receipt name is required</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <label class="label">Receipt Approve ID</label>
+                    <div class="field">
+                        <div class="control">
+                            <div class="select">
+                                <select formControlName="receiptApproveId">
+                                    <option value="">Select receipt approve ID</option>
+                                    <option *ngFor="let cm of councilMember">{{cm.PersonalID}}</option>
+                                </select>
+                                <div class="error" *ngIf="receiptApproveId.invalid && receiptApproveId.touched">
+                                    <div class="help is-danger">Receipt approve ID is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="level-right is-mobile ">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <button type="submit" class="button is-rounded" [disabled]="form.invalid" name="cost-submit">ADD</button>
+                  </div>
+                </div>
+              </nav>
+        </form>
+    </div>
+</div>

@@ -1,48 +1,47 @@
-
 <div class="container is-fluid">
-    <!-- Council member -->
-    <div class="modal council-member">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Council Member</p>
-            <button class="delete" aria-label="close"></button>
-          </header>
-          <section class="modal-card-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ชื่อ</th>
-                        <th>นามสกลุล</th>
-                        <th>ตำแหน่งในรัฐสภา</th>
-                        <th>รายละเอียดเพิ่มเติม</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let cm of counncilMember">
-                        <th>{{cm.Surname}}</th>
-                        <th>{{cm.Lastname}}</th>
-                        <th>{{cm.CouncilPosName}}</th>
-                        <th>{{(cm.CouncilPosDetail !== null) ? cm.CouncilPosDetail : "-"}}</th>
-                    </tr>
-                </tbody>
-            </table>
-          </section>
-          <footer class="modal-card-foot">
-          </footer>
-        </div>
-    </div>
+  <!-- Council member -->
+  <div class="modal council-member">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Council Member</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>ชื่อ</th>
+                      <th>นามสกลุล</th>
+                      <th>ตำแหน่งในรัฐสภา</th>
+                      <th>รายละเอียดเพิ่มเติม</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let cm of counncilMember">
+                      <th>{{cm.Surname}}</th>
+                      <th>{{cm.Lastname}}</th>
+                      <th>{{cm.CouncilPosName}}</th>
+                      <th>{{(cm.CouncilPosDetail !== null) ? cm.CouncilPosDetail : "-"}}</th>
+                  </tr>
+              </tbody>
+          </table>
+        </section>
+        <footer class="modal-card-foot">
+        </footer>
+      </div>
+  </div>
 
-    <div class="columns" >
-        <div class="card column button" id="showModal">
-            <div class="card-content">
-              <p class="title">
-                “Council Member”
-              </p>
-              <p class="subtitle">
-                Member of council member 
-              </p>
-            </div>
-        </div>
-    </div>
+  <div class="columns" >
+      <div class="card column button" id="showModal">
+          <div class="card-content">
+            <p class="title">
+              “Council Member”
+            </p>
+            <p class="subtitle">
+              Member of council member 
+            </p>
+          </div>
+      </div>
+  </div>
 </div>
