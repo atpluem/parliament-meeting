@@ -28,6 +28,7 @@ import { ConferenceComponent } from './components/form/conference/conference.com
 import { UniquePipe } from './components/form/argument/uniqe.pipe';
 import { PartyComponent } from './components/form/party/party.component';
 import { CostComponent } from './components/form/cost/cost.component';
+import { AttendeesComponent } from './components/form/attendees/attendees.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { CostComponent } from './components/form/cost/cost.component';
     CouncilViewComponent,
     ArgumentComponent,
     UniquePipe,
-    CostComponent
+    CostComponent,
+    AttendeesComponent
   ],
   imports: [
     BrowserModule,
