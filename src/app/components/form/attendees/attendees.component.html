@@ -3,7 +3,7 @@
 <div class="columns is-mobile is-desktop is-multiline is-centered">
     <div class="column is-6">
         <div class="box is-narrow is-desktop is-mobile">
-            <form>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <label class="label is-size-3">ATTENDEES</label>
                 <hr>
                 <!-------------------------- Colums ID  --------------------------->
@@ -15,7 +15,7 @@
                                 <label class="label">PERSONAL ID</label>
                             </div>
                             <input class="input" type="text" placeholder="XXXXXXXXXXXXX" formControlName="personalID">
-                            <div class="error">
+                            <div class="error" *ngIf="personalID.invalid && personalID.touched">
                                 <div class="help is-danger">Personal ID is required</div>
                             </div>
                         </div>
@@ -27,9 +27,14 @@
                             <div class="bd-notification is-info">
                                 <label class="label">CONFERENCE ID</label>
                             </div>
-                            <input class="input" type="text" placeholder="XXXXXXXXXXXXX" formControlName="conferenceID">
+                            <div class="select">
+                                <select formControlName="conferenceID">
+                                    <option value="">Select Conference ID</option>
+                                    <option *ngFor="let Data of conferenceData">{{Data.ConferenceTypeID}}</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="error">
+                        <div class="error" *ngIf="conferenceID.invalid && conferenceID.touched">
                             <div class="help is-danger">Conference ID is required</div>
                         </div>
                     </div>
@@ -39,6 +44,12 @@
                 <!--------------------------- Box for select time -------------------------->
                 <div class="box-time">
                     <div class="columns">
+                        <div class="column has-text-centered">
+                            <div class="bd-notification is-info">
+                                <label class="label">CONFERENCE DATE</label>
+                            </div>
+                            <input class="input" type="date" formControlName="conferencedate">
+                        </div>
                         <!----------------------------- Attendant time -------------------------------->
                         <div class="column has-text-centered">
                             <div class="bd-notification is-info">
@@ -248,7 +259,7 @@
                 <!----------------------------- Button for Submit -------------------------------->
                 <nav class="level-right is-mobile">
                     <div class="level-item has-text-centered">
-                        <button type="submit" class="button is-rounded" name="attendees-submit">ADD</button>
+                        <button type="submit" class="button is-rounded" name="attendees-submit" [disabled]="form.invalid">ADD</button>
                     </div>
                 </nav>
             

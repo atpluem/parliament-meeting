@@ -8,8 +8,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./attendees.component.css']
 })
 export class AttendeesComponent implements OnInit {
-  attendees: FormGroup;
   constructor(public http : HttpClient) { }
+  
+  attendees: FormGroup;
+  conferenceData: any;
 
   check: string;
   checkfail: string;
@@ -19,6 +21,7 @@ export class AttendeesComponent implements OnInit {
   form = new FormGroup ({
     personalID : new FormControl('', [Validators.required]),
     conferenceID : new FormControl('', [Validators.required]),
+    conferencedate : new FormControl('', [Validators.required]),
     starttime : new FormControl('',),
     starttimemin : new FormControl('',),
     endtime : new FormControl('',),
@@ -27,21 +30,32 @@ export class AttendeesComponent implements OnInit {
 
   get personalID() {return this.form.get('personalID')}
   get conferenceID() {return this.form.get('conferenceID')}
+  get conferencedate() {return this.form.get('conferencedate')}
   get starttime() {return this.form.get('starttime')}
   get starttimemin() {return this.form.get('starttimemin')}
   get endtime() {return this.form.get('endtime')}
   get endtimemin() {return this.form.get('endtimemin')}
 
 
+  //Get data from conference table
+  GetDataConference() {
+    this.http.get('https://parliament-meeting-api.herokuapp.com/form/GetAPIcouncilconference.php').subscribe (
+      data => {
+        this.conferenceData = data;
+      });
+    error => console.log(error);
+  }
+
+
   //Submit data to database
-  onsubmit() {
+  onSubmit() {
     const From = new FormData();
 
     let headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
     let jsonform = JSON.parse(JSON.stringify(this.form.getRawValue()));
     console.log(jsonform);
 
-    this.http.post('https://github.com/atpluem/parliament-meeting-api/edit/master/form/AttendeesForm.php', { jsonform }, { responseType: "text", headers: headers }).subscribe (
+    this.http.post('https://parliament-meeting-api.herokuapp.com/form/AttendeesForm.php', { jsonform }, { responseType: "text", headers: headers }).subscribe (
       data => {
         console.log("Success!", this.check = data);
         this.form.reset();
@@ -60,6 +74,8 @@ export class AttendeesComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    this.GetDataConference();
+    console.log(this.conferenceData);
   }
 
 }
