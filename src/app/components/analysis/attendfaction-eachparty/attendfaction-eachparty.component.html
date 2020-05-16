@@ -1,0 +1,20 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ชื่อพรรคการเมือง</th>
+                    <th>จำนวนคนที่เข้าร่วมประชุม</th>
+                    <th>ร้อยละ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of attendFaction">
+                    <th>{{data.PartyName}}</th>
+                    <th>{{data.Number}}</th>
+                    <th>{{data.Percentage}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

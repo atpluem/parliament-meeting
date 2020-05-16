@@ -1,0 +1,20 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>หัวข้อย่อยของการประชุม</th>
+                    <th>จำนวนคนที่ไม่เห็นด้วย</th>
+                    <th>ร้อยละ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of SubtopicReject">
+                    <th>{{data.SubTopicName}}</th>
+                    <th>{{(data.NumberRejector !== null) ? data.NumberRejector : "None"}}</th>
+                    <th>{{(data.Percentage !== null) ? data.Percentage : "None"}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

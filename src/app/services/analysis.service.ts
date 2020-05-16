@@ -46,4 +46,40 @@ export class AnalysisService {
       this.baseUrl + "Analysis_Report/Query09.php"
     );
   }
+
+  public getAverageTimeOfTypeMeet(): Observable<any> {
+    return this.httpClient.get<any> (
+      this.baseUrl + "Analysis_Report/Query02.php"
+    );
+  }
+
+  public getTimesOfTypeMeeting(): Observable<any> {
+    return this.httpClient.get<any> (
+      this.baseUrl + "Analysis_Report/Query03.php"
+    );
+  }
+
+  public getTimesMeetingOfAnyBuilding(): Observable<any> {
+    return this.httpClient.get<any> (
+      this.baseUrl + "Analysis_Report/Query06.php"
+    );
+  }
+
+  public getCountOfEducationDegree(): Observable<any> {
+    return this.httpClient.get<any> (
+      this.baseUrl + "Analysis_Report/Query10.php"
+    );
+  }
+
+  public getAttendOfAnyParty(): Observable<any> {
+    return this.httpClient.get<any> (
+      this.baseUrl + "Analysis_Report/Query11.php"
+    );
+  }
+
+  public getSubtopicRejectRate(): Observable<any> {
+    return this.httpClient.get<any> (
+      this.baseUrl + "Analysis_Report/Query12.php"
+    );
+  }
 } 

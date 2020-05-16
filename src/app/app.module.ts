@@ -31,6 +31,12 @@ import { UniquePipe } from './components/form/argument/uniqe.pipe';
 import { PartyComponent } from './components/form/party/party.component';
 import { CostComponent } from './components/form/cost/cost.component';
 import { AttendeesComponent } from './components/form/attendees/attendees.component';
+import { TypemeetingAvgtimeComponent } from './components/analysis/typemeeting-avgtime/typemeeting-avgtime.component';
+import { TimesMeettypeComponent } from './components/analysis/times-meettype/times-meettype.component';
+import { TimesmeetEachbuilingComponent } from './components/analysis/timesmeet-eachbuiling/timesmeet-eachbuiling.component';
+import { CountEducationComponent } from './components/analysis/count-education/count-education.component';
+import { AttendfactionEachpartyComponent } from './components/analysis/attendfaction-eachparty/attendfaction-eachparty.component';
+import { SubtopicRejectrateComponent } from './components/analysis/subtopic-rejectrate/subtopic-rejectrate.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +60,13 @@ import { AttendeesComponent } from './components/form/attendees/attendees.compon
     CostComponent,
     AttendeesComponent,
     PartyViewComponent,
-    MinistryViewComponent
+    MinistryViewComponent,
+    TypemeetingAvgtimeComponent,
+    TimesMeettypeComponent,
+    TimesmeetEachbuilingComponent,
+    CountEducationComponent,
+    AttendfactionEachpartyComponent,
+    SubtopicRejectrateComponent
   ],
   imports: [
     BrowserModule,

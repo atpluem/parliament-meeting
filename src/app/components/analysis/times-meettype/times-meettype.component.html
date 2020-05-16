@@ -1,0 +1,18 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ประเภทของการประชุม</th>
+                    <th>จำนวนครั้งที่ประชุม</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of TimesTypeMeet">
+                    <th>{{data.ConferenceTypeName}}</th>
+                    <th>{{(data.Times !== null) ? data.Times : "None"}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
