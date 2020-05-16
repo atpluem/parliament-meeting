@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LoginService } from '../../services/login.service'
 import { Usermodule } from '../../classes/usermodule';
+import { element } from 'protractor';
 
 
 @Component({
@@ -48,6 +49,19 @@ export class UserviewComponent implements OnInit {
 
   transformImg() {
     return this.sanitizer.bypassSecurityTrustResourceUrl("data:image/png;base64," + this.userDetail.MemberPicture);
+  }
+
+  //function for fixed navigation bar 
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+    if(window.pageYOffset > 15) {
+      let element = document.getElementById('navbar');
+      element.classList.add('scrollDown');
+    }
+    else {
+      let element = document.getElementById('navbar');
+      element.classList.remove('scrollDown');
+    }
   }
   
   ngOnInit(): void {

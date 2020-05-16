@@ -14,9 +14,21 @@ body {
     background-size: cover;
     background-image: url(https://i.pinimg.com/originals/46/1d/25/461d254f8563f8945ce3a385f289df17.jpg);
 }
-.user {
-    margin-right: 10px;
+
+.navbar-item .user {
+    margin-right: 15px;
+    color: #f14668;
+    border: 2px solid #f14668;
+    transition: 0.2;
 }
+
+.navbar-item .user:hover {
+    color: white;
+    background-color: #f14668;
+    border: 2px solid #f14668;
+    transition: 0.2s;
+}
+
 .navbar {
     padding: 5px 5px 5px 15px;
     background-color: transparent;
