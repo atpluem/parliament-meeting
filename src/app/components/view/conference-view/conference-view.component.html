@@ -1,43 +1,109 @@
 <div class="container is-fullhd">
-  <div class="columns">
-      <div class="column card is-three-quarters">
-          <table class="table">
-              <thead>
-                  <tr>
-                      <th>ชื่อ</th>
-                      <th>นามสกุล</th>
-                      <th>พรรค</th>
-                      <th>ตำแหน่งในพรรค</th>
-                      <th>รายละเอียดเพิ่มเติม</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="">
-                      <th></th>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-      <div class="column">
-          <div class="button is-primary" id="showModalParty">
-              Add Party
-          </div>
-      </div>
-  </div>
+    <div class="columns">
+        <div class="column card is-three-quarters">
+            <table class="table is-scrollable">
+                <thead>
+                    <tr>
+                        <th>เลขที่</th>
+                        <th>หัวข้อ</th>
+                        <th>ประเภท</th>
+                        <th>เวลาเริ่ม</th>
+                        <th>เวลาสิ้นสุด</th>
+                        <th>วันที่</th>
+                        <th>ประธาน</th>
+                        <th>สถานที่</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of conference">
+                        <th>{{c.ConferenceID}}</th>
+                        <th>{{c.ConferenceTopic}}</th>
+                        <th>{{c.ConferenceTypeName}}</th>
+                        <th>{{c.StartTime}}</th>
+                        <th>{{c.EndTime}}</th>
+                        <th>{{c.Dates}}</th>
+                        <th>{{c.Surname}} {{c.Lastname}}</th>
+                        <th>{{c.BuildingName}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Form button -->
+        <div class="column">
+            <div class="button is-primary" id="showModalConference">
+                Add conference
+            </div>
+            <br>
+            <div class="button is-primary" id="showModalArgument">
+                Add argument
+            </div>
+            <br>
+            <div class="button is-primary" id="showModalAttendees">
+                Add attendees
+            </div>
+            <div class="button is-primary" id="showModalCost">
+                Add cost
+            </div>
+        </div>
+    </div>
 </div>
-
-<!-- Modal of add party member -->
-<div class="modal council-member">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-      <header class="modal-card-head">
-          <p class="modal-card-title">Party Member</p>
-          <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-          <app-party></app-party>
-      </section>
-      <footer class="modal-card-foot">
-      </footer>
-  </div>
+<!-- Add conference modal -->
+<div class="modal conference">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Conference</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <app-conference></app-conference>
+        </section>
+        <footer class="modal-card-foot">
+        </footer>
+    </div>
+</div>
+<!-- Add argument modal -->
+<div class="modal argument">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Argument</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <app-argument></app-argument>
+        </section>
+        <footer class="modal-card-foot">
+        </footer>
+    </div>
+</div>
+<!-- Add attendees -->
+<div class="modal attendees">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Attendees</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <app-attendees></app-attendees>
+        </section>
+        <footer class="modal-card-foot">
+        </footer>
+    </div>
+</div>
+<!-- Add costs -->
+<div class="modal cost">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Cost</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <app-cost></app-cost>
+        </section>
+        <footer class="modal-card-foot">
+        </footer>
+    </div>
 </div>

@@ -11,6 +11,12 @@ export class ViewService {
 
   constructor(private httpClient: HttpClient) { }
 
+  getConference(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.baseUrl + "view/conference.php"
+    );
+  }
+
   getCouncilMember(): Observable<any> {
     return this.httpClient.get<any>(
       this.baseUrl + "view/council-member.php"
@@ -20,6 +26,12 @@ export class ViewService {
   getPartyMember(): Observable<any> {
     return this.httpClient.get<any>(
       this.baseUrl + "view/party-member.php"
+    );
+  }
+
+  getMinistryMember(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.baseUrl + "view/ministry-member.php"
     );
   }
 }

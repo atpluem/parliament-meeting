@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewService } from 'src/app/services/view.service';
 
 @Component({
   selector: 'app-ministry-view',
@@ -6,10 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ministry-view.component.css']
 })
 export class MinistryViewComponent implements OnInit {
+  ministryMember: any;
 
-  constructor() { }
+  constructor(private view: ViewService) { }
+
+  getMinistruMember() {
+    this.view.getMinistryMember()
+    .subscribe(data =>{
+      this.ministryMember = data;
+    });
+  }
 
   ngOnInit(): void {
+    this.getMinistruMember();
+
+    $("#showModalMinistry").click(function() {
+      $(".ministry-member").addClass("is-active");  
+    });
+    
+    $(".delete").click(function() {
+       $(".modal").removeClass("is-active");
+    });
   }
 
 }

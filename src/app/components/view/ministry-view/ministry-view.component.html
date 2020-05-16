@@ -1,1 +1,49 @@
-<p>ministry-view works!</p>
+<div class="container is-fullhd">
+    <div class="columns">
+      <div class="column card is-three-quarters">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ชื่อ</th>
+              <th>นามสกุล</th>
+              <th>สังกัดกระทรวง</th>
+              <th>รายละเอียด</th>
+              <th>กระทรวงย่อย</th>
+              <th>ตำแหน่งในกระทรวง</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let mm of ministryMember">
+              <th>{{mm.Surname}}</th>
+              <th>{{mm.Lastname}}</th>
+              <th>{{mm.MinistryName}}</th>
+              <th>{{mm.MinistryDetail}}</th>
+              <th>{{(mm.SubMinistryName !== null) ? mm.SubMinistryName : "-"}}</th>
+              <th>{{mm.MinistryPosName}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="column">
+        <div class="button is-primary" id="showModalMinistry">
+          Add ministry member
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal of add council member -->
+  <div class="modal ministry-member">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Council Member</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        ---
+      </section>
+      <footer class="modal-card-foot">
+      </footer>
+    </div>
+  </div>
