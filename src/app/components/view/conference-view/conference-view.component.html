@@ -1,33 +1,43 @@
-
-<div class="container is-fluid">
-    <!-- Conference member -->
-    <div class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title">Modal title</p>
-          <button class="delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-          <!-- Content ... -->
-        </section>
-        <footer class="modal-card-foot">
-          <button class="button is-success">Save changes</button>
-          <button class="button">Cancel</button>
-        </footer>
+<div class="container is-fullhd">
+  <div class="columns">
+      <div class="column card is-three-quarters">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>ชื่อ</th>
+                      <th>นามสกุล</th>
+                      <th>พรรค</th>
+                      <th>ตำแหน่งในพรรค</th>
+                      <th>รายละเอียดเพิ่มเติม</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="">
+                      <th></th>
+                  </tr>
+              </tbody>
+          </table>
       </div>
-    </div>
+      <div class="column">
+          <div class="button is-primary" id="showModalParty">
+              Add Party
+          </div>
+      </div>
+  </div>
+</div>
 
-    <div class="columns" >
-        <div class="card column button" id="showModal">
-            <div class="card-content">
-              <p class="title">
-                “Conference”
-              </p>
-              <p class="subtitle">
-                conference 
-              </p>
-            </div>
-        </div>
-    </div>
+<!-- Modal of add party member -->
+<div class="modal council-member">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+      <header class="modal-card-head">
+          <p class="modal-card-title">Party Member</p>
+          <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+          <app-party></app-party>
+      </section>
+      <footer class="modal-card-foot">
+      </footer>
+  </div>
 </div>

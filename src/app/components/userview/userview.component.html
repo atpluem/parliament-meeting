@@ -1,6 +1,6 @@
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item card">
+        <a class="navbar-item card " [routerLink]="['/home']" routerLinkActive="active">
             <img src="../../../assets/LogoSmall.png">
         </a>
         <a role="button" class="navbar-burger buger" aria-label="menu" aria-expanded="false" data-target="navMenu">
@@ -17,9 +17,9 @@
                   <strong>{{userDetail.Surname}}</strong>
                 </a>
                 <div class="navbar-dropdown">
-                  <a class="navbar-item">
+                  <!-- <a class="navbar-item">
                     Edit profile
-                  </a>
+                  </a> -->
                   <a *ngIf="logoutbtn" (click)="logout()" class="navbar-item is-danger">
                     Log out
                   </a>
@@ -63,9 +63,8 @@
 
 <div id="tab-content">
     <div class="is-active" data-content="1">
-        <h1>Coming Soon ..</h1>
         <!-- <app-ministry-view></app-ministry-view> -->
-        <!-- <app-conference-view></app-conference-view> -->
+        <app-conference-view></app-conference-view>
     </div>
     <div data-content="2">
         <app-council-view></app-council-view>

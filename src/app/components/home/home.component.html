@@ -30,6 +30,11 @@
                 <strong>Log In</strong>
               </a>
             </div>
+            <div class="user">
+              <a *ngIf="logoutbtn" class="button is-info" [routerLink]="['/user']" routerLinkActive="active">
+                <strong>User</strong>
+              </a>
+            </div>
             <div class="buttonLogOut">
               <a *ngIf="logoutbtn" (click)="logout()" class="button is-danger">
                 <strong>Log Out</strong>
