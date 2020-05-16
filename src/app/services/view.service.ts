@@ -16,4 +16,10 @@ export class ViewService {
       this.baseUrl + "view/council-member.php"
     );
   }
+
+  getPartyMember(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.baseUrl + "view/party-member.php"
+    );
+  }
 }

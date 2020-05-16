@@ -22,6 +22,8 @@ import { TopargrankComponent } from './components/analysis/topargrank/topargrank
 // View
 import { ConferenceViewComponent } from './components/view/conference-view/conference-view.component';
 import { CouncilViewComponent } from './components/view/council-view/council-view.component';
+import { PartyViewComponent } from './components/view/party-view/party-view.component';
+import { MinistryViewComponent } from './components/view/ministry-view/ministry-view.component';
 // Form
 import { ArgumentComponent } from './components/form/argument/argument.component';
 import { ConferenceComponent } from './components/form/conference/conference.component';
@@ -50,7 +52,9 @@ import { AttendeesComponent } from './components/form/attendees/attendees.compon
     ArgumentComponent,
     UniquePipe,
     CostComponent,
-    AttendeesComponent
+    AttendeesComponent,
+    PartyViewComponent,
+    MinistryViewComponent
   ],
   imports: [
     BrowserModule,

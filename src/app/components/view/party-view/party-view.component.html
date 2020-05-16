@@ -1,0 +1,47 @@
+<div class="container is-fullhd">
+    <div class="columns">
+        <div class="column card is-three-quarters">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ชื่อ</th>
+                        <th>นามสกุล</th>
+                        <th>พรรค</th>
+                        <th>ตำแหน่งในพรรค</th>
+                        <th>รายละเอียดเพิ่มเติม</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pm of partyMember">
+                        <th>{{pm.Surname}}</th>
+                        <th>{{pm.Lastname}}</th>
+                        <th>{{pm.PartyName}}</th>
+                        <th>{{pm.PartyPosName}}</th>
+                        <th>{{(pm.PartyPosDetail !== null) ? pm.CouncilPosDetail : "-"}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
+            <div class="button is-primary" id="showModalParty">
+                Add Party member
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal of add party member -->
+<div class="modal council-member">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Party Member</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <app-party></app-party>
+        </section>
+        <footer class="modal-card-foot">
+        </footer>
+    </div>
+</div>

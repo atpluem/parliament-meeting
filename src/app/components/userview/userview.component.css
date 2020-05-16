@@ -1,7 +1,7 @@
 :host {
     background-color: #dfeaf4;
     size: 200px 200px;
-    display: block;
+    display: grid;
 }
 .profile {
     margin: 50px;

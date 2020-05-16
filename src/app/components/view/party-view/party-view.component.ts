@@ -2,26 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { ViewService } from 'src/app/services/view.service';
 
 @Component({
-  selector: 'app-council-view',
-  templateUrl: './council-view.component.html',
-  styleUrls: ['./council-view.component.css']
+  selector: 'app-party-view',
+  templateUrl: './party-view.component.html',
+  styleUrls: ['./party-view.component.css']
 })
-export class CouncilViewComponent implements OnInit {
-  counncilMember: any[];
+export class PartyViewComponent implements OnInit {
+  partyMember: any;
 
   constructor(private view: ViewService) { }
 
-  getCouncilMember() {
-    this.view.getCouncilMember()
+  getPartyMember() {
+    this.view.getPartyMember()
     .subscribe(data => {
-      this.counncilMember = data;
+      this.partyMember = data;
+      console.log(this.partyMember);
     });
   }
 
   ngOnInit(): void {
-    this.getCouncilMember();
+    this.getPartyMember();
 
-    $("#showModalCouncil").click(function() {
+    $("#showModalParty").click(function() {
       $(".council-member").addClass("is-active");  
     });
     

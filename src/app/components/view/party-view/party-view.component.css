@@ -1,4 +1,4 @@
-  .button {
+.button {
     font-size: 30px;
   }
   #cardview {
@@ -13,5 +13,5 @@
     margin-bottom: 50px;
   }
   .modal-card {
-    width: auto;
+    width: 90%;
   }
