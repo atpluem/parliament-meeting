@@ -1,6 +1,23 @@
-.button {
-    font-size: 50px;
-  }
   #cardview {
     margin: 20px;
+  }
+  .button {
+    width: 180px;
+    margin: 5px;
+  }
+  .modal-card {
+    width: auto;
+  }
+  .table {
+    width: auto;
+    margin: auto;
+  }
+  .container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .table .is-scrollable tbody {
+    overflow-y: scroll;
+      width: auto;
+      position: absolute;
   }
