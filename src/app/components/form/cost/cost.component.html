@@ -23,7 +23,7 @@
                             <div class="select">
                                 <select formControlName="conferenceId">
                                     <option value="">Select conference ID</option>
-                                    <option *ngFor="let cDetail of conferenceDetail">{{cDetail.ConferenceTypeID}}</option>
+                                    <option *ngFor="let cDetail of conferenceDetail">{{cDetail.ConferenceID}}</option>
                                 </select>
                                 <div class="error" *ngIf="conferenceId.invalid && conferenceId.touched">
                                     <div class="help is-danger">Conference ID is required</div>

@@ -188,7 +188,7 @@ export class PartyComponent implements OnInit {
       },
       error => console.log(error)
     );
-    this.http.get('https://parliament-meeting-api.herokuapp.com/form/GETAPIareas.php').subscribe(
+    this.http.get('https://parliament-meeting-api.herokuapp.com/form/GetAPIareas.php').subscribe(
       data => {
         this.resultsareas = data;
         console.log(this.resultsareas);

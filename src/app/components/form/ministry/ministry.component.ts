@@ -119,15 +119,15 @@ export class MinistryComponent implements OnInit {
   resultsareas: any;
   resultspersonalID: any;
   ngOnInit(): void {
-    $("#clicktomodal").click(function () {
+    $("#tosubministry").click(function () {
       $("#subministrymodal").addClass("is-active");
     });
 
-    $("#delete").click(function () {
-      $(".modal").removeClass("is-active");
+    $(".savesubministry").click(function () {
+      $("#subministrymodal").removeClass("is-active");
     });
 
-    this.http.get('https://parliament-meeting-api.herokuapp.com/form/GETAPIareas.php').subscribe(
+    this.http.get('https://parliament-meeting-api.herokuapp.com/form/GetAPIareas.php').subscribe(
       data => {
         this.resultsareas = data;
         console.log(this.resultsareas);

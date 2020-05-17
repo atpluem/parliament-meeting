@@ -93,20 +93,21 @@ export class BuildingComponent implements OnInit {
   }
   resultsareas: any;
   ngOnInit(): void {
-    this.http.get('https://parliament-meeting-api.herokuapp.com/form/GETAPIareas.php').subscribe(
+    this.http.get('https://parliament-meeting-api.herokuapp.com/form/GetAPIareas.php').subscribe(
       data => {
         this.resultsareas = data;
         console.log(this.resultsareas);
       },
       error => console.log(error)
     );
-    $("#clicktomodal").click(function () {
-      $(".modal").addClass("is-active");
+  
+    $("#toaddroom").click(function () {
+      $("#addroommodal").addClass("is-active");
     });
 
-    $("#delete").click(function () {
-      $(".modal").removeClass("is-active");
-    });
+    $(".saveroom").click(function () {
+      $("#addroommodal").removeClass("is-active");
+    })
   }
 }
   

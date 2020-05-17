@@ -38,6 +38,10 @@ export class ConferenceViewComponent implements OnInit {
       $(".cost").addClass("is-active");  
     });
     
+    $("#showModalBuilding").click(function() {
+      $(".building").addClass("is-active");  
+    });
+
     $(".delete").click(function() {
        $(".modal").removeClass("is-active");
     });

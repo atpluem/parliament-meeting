@@ -7,7 +7,7 @@
 <br>
 
 <div class="columns is-mobile is-desktop is-multiline is-centered">
-    <div class="column is-6">
+    <div class="column">
         <div class="box is-narrow is-desktop is-mobile">
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <label class="label is-size-3" id="header">Building</label>
@@ -128,16 +128,16 @@
                     <div class="column is-2">
                         <div>
                             <form [formGroup]="form2">
-                                <button class="button is-large" id="clicktomodal">ADD ROOM</button>
+                                <button class="button is-large" id="toaddroom">ADD ROOM</button>
                             </form>
 
-                            <div class="modal">
+                            <div class="modal" id="addroommodal">
                                 <div class="modal-background"></div>
                                 <div class="modal-card">
                                     <header class="modal-card-head">
                                         <p class="modal-card-title">ROOM</p>
                                         <form [formGroup]="form2">
-                                            <button class="delete" aria-label="close" id="delete"></button>
+                                            <!-- <button class="delete" aria-label="close" id="delete"></button> -->
                                         </form>
                                     </header>
                                     <section class="modal-card-body">
@@ -188,6 +188,7 @@
                                         </div>
                                     </section>
                                     <footer class="modal-card-foot">
+                                        <button class="button saveroom">Save</button>
                                     </footer>
                                 </div>
                             </div>   
