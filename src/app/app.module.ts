@@ -31,6 +31,8 @@ import { UniquePipe } from './components/form/argument/uniqe.pipe';
 import { PartyComponent } from './components/form/party/party.component';
 import { CostComponent } from './components/form/cost/cost.component';
 import { AttendeesComponent } from './components/form/attendees/attendees.component';
+import { BuildingComponent } from './components/form/building/building.component';
+import { MinistryComponent } from './components/form/ministry/ministry.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { AttendeesComponent } from './components/form/attendees/attendees.compon
     UniquePipe,
     CostComponent,
     AttendeesComponent,
+    BuildingComponent,
+    MinistryComponent,
     PartyViewComponent,
     MinistryViewComponent
   ],

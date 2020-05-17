@@ -16,17 +16,27 @@ export class PartyComponent implements OnInit {
     image: new FormControl(''),
     founderID: new FormControl('',),
     leaderID: new FormControl('',),
-    telephone: new FormControl('',[Validators.required,Validators.maxLength(10)]),
+    telephone: new FormControl('',[Validators.required]),
     founderdate: new FormControl('',[Validators.required]),
     buildingname: new FormControl('',),
     buildingnumber: new FormControl('',[Validators.required]),
-    buildingtype: new FormControl('',[Validators.required]),
+    buildingtype: new FormControl('',),
     buildingstreet: new FormControl('',),
     zipcode: new FormControl('',[Validators.required]),
     image2: new FormControl(''),
     subdistrict: new FormControl('',[Validators.required]),
     buildingdetail: new FormControl('',),
-    
+
+    id: new FormControl(''),
+    firstname: new FormControl(''),
+    dob: new FormControl(''),
+    councilpos: new FormControl(''),
+    subministryname: new FormControl(''),
+    lastname: new FormControl(''),
+    education: new FormControl(''),
+    ministrypos: new FormControl(''),
+    password: new FormControl(''),
+    partyPos: new FormControl(''),
    },)
    
    get partyname(){return this.form.get('partyname')}
@@ -43,6 +53,17 @@ export class PartyComponent implements OnInit {
    get leaderID(){return this.form.get('leaderID')}
    get buildingdetail(){return this.form.get('leaderID')}
    get subdistrict(){return this.form.get('subdistrict')}
+
+   get firstname() { return this.form.get('firstname') }
+   get id() { return this.form.get('id') }
+   get dob() { return this.form.get('dob') }
+   get councilpos() { return this.form.get('councilpos') }
+   get subministryname() { return this.form.get('subministryname') }
+   get lastname() { return this.form.get('lastname') }
+   get education() { return this.form.get('education') }
+   get ministrypos() { return this.form.get('ministrypos') }
+   get password() { return this.form.get('password') }
+   get partyPos() { return this.form.get('partyPos') }
    
  
    url = "https://bulma.io/images/placeholders/256x256.png"
@@ -79,10 +100,38 @@ export class PartyComponent implements OnInit {
       }
     }
   }
+
+  url3 = "https://bulma.io/images/placeholders/256x256.png"
+  onselectFile3(e) {
+    //preview name of building
+    if (e.target.files.length > 0) {
+      var infoArea3 = document.getElementById('file-name3');
+      infoArea3.textContent = e.target.files[0].name;
+      console.log(e.target.files[0].name);
+    }
+    if (e.target.files) {
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload = (event: any) => {
+        this.url3 = event.target.result;
+        // console.log(event.target.result);
+      }
+    }
+  }
+
+
   //numberonly
   numberOnly(event) {
     const charCode = (event.which) ? event.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
+  //numberonly
+  numberOnlyBuilding(event) {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if ((charCode > 31 && (charCode < 48 || charCode > 57)) && charCode != 47) {
       return false;
     }
     return true;
@@ -98,8 +147,9 @@ export class PartyComponent implements OnInit {
     let jsonform = JSON.parse(JSON.stringify(this.form.getRawValue()));
     let image = JSON.parse(JSON.stringify(this.url));
     let image2 = JSON.parse(JSON.stringify(this.url2));
-    console.log({jsonform,image,image2});
-    this.http.post('https://parliament-meeting-api.herokuapp.com/form/partyForm.php', { jsonform, image,image2 }, { responseType: "text", headers: headers })
+    let image3 = JSON.parse(JSON.stringify(this.url3));
+    //console.log({jsonform,image,image2,image3});
+    this.http.post('https://parliament-meeting-api.herokuapp.com/form/partyForm.php', { jsonform, image,image2,image3 }, { responseType: "text", headers: headers })
       .subscribe(
         data => {
           console.log("success!",data);
@@ -125,6 +175,10 @@ export class PartyComponent implements OnInit {
   }
   public resultspersonalID: any;
   public resultsareas: any;
+  resultspartypos:any;
+  resultscouncilpos:any;
+  resultssubministryname:any;
+  resultsministrypos:any;
   ngOnInit(): void {
     //personalID
     this.http.get('https://parliament-meeting-api.herokuapp.com/form/GetAPIcouncilmember.php').subscribe(
@@ -141,6 +195,48 @@ export class PartyComponent implements OnInit {
       },
       error => console.log(error)
     );
+    $("#tosubparty").click(function () {
+      $("#subpartymodal").addClass("is-active");
+    });
+
+    $(".savesubparty").click(function () {
+      $("#subpartymodal").removeClass("is-active");
+    })
+
+    this.http.get('https://parliament-meeting-api.herokuapp.com/form/councilmemberGetAPIpartypos.php').subscribe(
+      data => {
+      this.resultspartypos = data;
+        console.log(this.resultspartypos);
+      },
+      error => console.log(error)
+    );
+
+    this.http.get('https://parliament-meeting-api.herokuapp.com/form/councilmemberGetAPIcouncilpos.php').subscribe(
+      data => {
+      this.resultscouncilpos = data;
+        console.log(this.resultscouncilpos);
+      },
+      error => console.log(error)
+    );
+
+    this.http.get('https://parliament-meeting-api.herokuapp.com/form/councilmemberGetAPIsubministryname.php').subscribe(
+      data => {
+      this.resultssubministryname = data;
+        console.log(this.resultssubministryname);
+      },
+      error => console.log(error)
+    );
+    this.http.get('https://parliament-meeting-api.herokuapp.com/form/councilmemberGetAPIministrypos.php').subscribe(
+      data => {
+      this.resultsministrypos = data;
+        console.log(this.resultsministrypos);
+      },
+      error => console.log(error)
+    );
+
   }
+  form2 = new FormGroup({
+    
+  })
 
 }

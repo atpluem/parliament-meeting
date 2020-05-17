@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewService } from 'src/app/services/view.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-council-view',
@@ -18,6 +19,16 @@ export class CouncilViewComponent implements OnInit {
     });
   }
 
+  deleteCouncil(personalID) {
+    this.view.deleteCouncilMember(personalID)
+    .subscribe(data => {
+      console.log("delete success!", data);
+    },
+    error => {
+      console.error("couldn't delete because", error);
+    });
+  }
+
   ngOnInit(): void {
     this.getCouncilMember();
 
@@ -26,7 +37,7 @@ export class CouncilViewComponent implements OnInit {
     });
     
     $(".delete").click(function() {
-       $(".modal").removeClass("is-active");
+      $(".modal").removeClass("is-active");
     });
   }
 

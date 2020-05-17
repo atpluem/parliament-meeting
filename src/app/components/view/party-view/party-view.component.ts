@@ -23,12 +23,12 @@ export class PartyViewComponent implements OnInit {
     this.getPartyMember();
 
     $("#showModalParty").click(function() {
-      $(".council-member").addClass("is-active");  
+      $(".party").addClass("is-active");  
     });
     
     $(".delete").click(function() {
-       $(".modal").removeClass("is-active");
-    });
+      $(".modal").removeClass("is-active");
+   });
   }
 
 }

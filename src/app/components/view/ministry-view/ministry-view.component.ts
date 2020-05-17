@@ -13,20 +13,20 @@ export class MinistryViewComponent implements OnInit {
 
   getMinistruMember() {
     this.view.getMinistryMember()
-    .subscribe(data =>{
-      this.ministryMember = data;
-    });
+      .subscribe(data => {
+        this.ministryMember = data;
+      });
   }
 
   ngOnInit(): void {
     this.getMinistruMember();
 
-    $("#showModalMinistry").click(function() {
-      $(".ministry-member").addClass("is-active");  
+    $("#showModalMinistry").click(function () {
+      $(".ministry-member").addClass("is-active");
     });
-    
-    $(".delete").click(function() {
-       $(".modal").removeClass("is-active");
+
+    $(".delete").click(function () {
+      $(".modal").removeClass("is-active");
     });
   }
 
