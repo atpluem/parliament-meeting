@@ -1,0 +1,18 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ชื่อสถานที่</th>
+                    <th>จำนวนครั้งที่จัดประชุมในช่วง(1900-2000)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of TimesMeetBuilding">
+                    <th>{{data.BuildingName}}</th>
+                    <th>{{data.UseTimes}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

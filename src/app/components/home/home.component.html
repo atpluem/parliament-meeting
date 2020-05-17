@@ -25,14 +25,10 @@
             <button (click)="SmoothTo(home)" class="navbar-item">Home</button>
             <button (click)="SmoothTo(part1)" class="navbar-item">Meeting</button>
             <button (click)="SmoothTo(part2)" href="/home#part2" class="navbar-item">About</button>
+            <button *ngIf="logoutbtn" class="navbar-item user" [routerLink]="['/user']" routerLinkActive="active">User View</button>
             <div class="buttonLogIn">
               <a *ngIf="loginbtn" [routerLink]="['/login']" routerLinkActive="active" class="button is-info">
                 <strong>Log In</strong>
-              </a>
-            </div>
-            <div class="user">
-              <a *ngIf="logoutbtn" class="button is-info" [routerLink]="['/user']" routerLinkActive="active">
-                <strong>User</strong>
               </a>
             </div>
             <div class="buttonLogOut">
@@ -72,7 +68,12 @@
           <a class="dropdown-item" data-tab="4">Number of Member each Party</a>
           <a class="dropdown-item" data-tab="5">Attendant Rate</a>
           <a class="dropdown-item" data-tab="6">Age Interval</a>
-          <a class="dropdown-item" data-tab="7">coming soon..</a>
+          <a class="dropdown-item" data-tab="7">Averang Time of Conference each type</a>
+          <a class="dropdown-item" data-tab="8">Times Meeting of each Conference type</a>
+          <a class="dropdown-item" data-tab="9">Times Meeting of each Building</a>
+          <a class="dropdown-item" data-tab="10">Number of each Eduacation Degree</a>
+          <a class="dropdown-item" data-tab="11">Attend Faction of each Party </a>
+          <a class="dropdown-item" data-tab="12">Recjector of each SubTopic Rate</a>
         </div>
       </div>
     </div>
@@ -94,11 +95,26 @@
         <app-attendant-rate></app-attendant-rate>
       </div>
       <div data-content='6'>
-    <app-ageinterval></app-ageinterval>
-    </div>
-    <div data-content="7">
-      Coming soon...
-    </div>
+        <app-ageinterval></app-ageinterval>
+      </div>
+      <div data-content="7">
+        <app-typemeeting-avgtime></app-typemeeting-avgtime>
+      </div>
+      <div data-content="8">
+        <app-times-meettype></app-times-meettype>
+      </div>
+      <div data-content="9">
+        <app-timesmeet-eachbuiling></app-timesmeet-eachbuiling>
+      </div>
+      <div data-content="10">
+        <app-count-education></app-count-education>
+      </div>
+      <div data-content="11">
+        <app-attendfaction-eachparty></app-attendfaction-eachparty>
+      </div>
+      <div data-content="12">
+        <app-subtopic-rejectrate></app-subtopic-rejectrate>
+      </div>
   </div>
   </section>
 

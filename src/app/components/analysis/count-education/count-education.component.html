@@ -1,0 +1,18 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ระดับการศึกษา</th>
+                    <th>จำนวน/คน</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of CountEducation">
+                    <th>{{data.EducationDegree}}</th>
+                    <th>{{data.Number}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

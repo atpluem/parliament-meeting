@@ -2,29 +2,70 @@
     background-color: #dfeaf4;
     size: 200px 200px;
     display: grid;
+    scroll-behavior: smooth;
 }
+
+/* Part of Navigation Bar */
+.navbar {
+    padding: 5px 10px 5px 15px;
+}
+
+.sticky {
+    background-color: #fff;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+    top: 0;
+    height: 70px;
+    width: 100%;
+}
+
+.scrollDown {
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.3);
+    position: fixed;
+}
+
+.nav-item img {
+    cursor: pointer;
+}
+
+#brand-font {
+    font-weight: bolder;
+    color: #b22732;
+}
+
+.navbar-menu .navbar-end {
+    margin-right: 40px;
+}
+
+
+/* Part of User Profile */
 .profile {
     margin: 50px;
 }
+
 .name {
     margin-right: 0;
     margin-top: auto;
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
 .image {
     margin: auto;
     margin-top: 40px;
 }
+
 .detail {
     margin: 30px;
 }
+
 #tab {
     width: 80px;
 }
+
 #tab-content div {
     display: none;
 }
+
 #tab-content div.is-active {
     display: block;
 }

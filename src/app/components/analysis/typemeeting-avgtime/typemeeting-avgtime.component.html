@@ -1,0 +1,18 @@
+<div class="columns">
+    <div class="card column">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ประเภทของการประชุม</th>
+                    <th>เวลาในการประชุมเฉลี่ย</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of AVGTimeMeeting">
+                    <th>{{data.ConferenceTypeName}}</th>
+                    <th>{{(data.AverageTime !== null) ? data.AverageTime : "None"}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

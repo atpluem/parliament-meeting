@@ -1,7 +1,8 @@
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light sticky" role="navigation" aria-label="main navigation" (scroll)="onWindowScroll($event)" id="navbar">
     <div class="navbar-brand">
-        <a class="navbar-item card " [routerLink]="['/home']" routerLinkActive="active">
+        <a class="navbar-item" [routerLink]="['/home']" routerLinkActive="active">
             <img src="../../../assets/LogoSmall.png">
+            <h1 id="brand-font">Parliament</h1>
         </a>
         <a role="button" class="navbar-burger buger" aria-label="menu" aria-expanded="false" data-target="navMenu">
             <span aria-hidden="true"></span>
@@ -20,8 +21,8 @@
                   <!-- <a class="navbar-item">
                     Edit profile
                   </a> -->
-                  <a *ngIf="logoutbtn" (click)="logout()" class="navbar-item is-danger">
-                    Log out
+                  <a *ngIf="logoutbtn" (click)="logout()" class="navbar-item is-danger logoutbtn">
+                    <strong style="color: red;">Log Out</strong>
                   </a>
                 </div>
             </div>
@@ -39,16 +40,16 @@
         </div>
         <div class="column detail">
             <div class="columns name">
-                <div class="column is-one-quarter">Name : {{userDetail.Surname}}</div>
-                <div class="column is-one-quarter">Lastname :  {{userDetail.Lastname}}</div>
+                <div class="column is-one-quarter"><strong>NAME :</strong> {{userDetail.Surname}}</div>
+                <div class="column is-one-quarter"><strong>LASTNAME :</strong>  {{userDetail.Lastname}}</div>
             </div>
-            <div>Date of birth : {{userDetail.DOB}}</div>
-            <div>Education : {{userDetail.EducationDegree}}</div>
-            <div>Council Position : {{userDetail.CouncilposName}}</div>
-            <div>Party : {{userDetail.PartyName}}</div>
-            <div>Party Position : {{userDetail.PartyPosName}}</div>
-            <div>Ministry : {{userDetail.MinistryPosName}}</div>
-            <div>Sub Ministry Name : {{(userDetail.SubMinistryName !== null) ? userDetail.SubMinistryName : "-"}}</div>
+            <div><strong>DATE OF BIRTH :</strong> {{userDetail.DOB}}</div>
+            <div><strong>EDUCATION :</strong> {{userDetail.EducationDegree}}</div>
+            <div><strong>COUNCIL POSITION :</strong> {{userDetail.CouncilposName}}</div>
+            <div><strong>PARTY :</strong> {{userDetail.PartyName}}</div>
+            <div><strong>PARY POSITION :</strong> {{userDetail.PartyPosName}}</div>
+            <div><strong>MINISTRY :</strong> {{userDetail.MinistryPosName}}</div>
+            <div><strong>SUB MINISTRY NAME :</strong> {{(userDetail.SubMinistryName !== null) ? userDetail.SubMinistryName : "-"}}</div>
         </div>
     </div>
 </div>
