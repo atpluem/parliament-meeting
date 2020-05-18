@@ -15,7 +15,6 @@ export class ConferenceViewComponent implements OnInit {
     this.view.getConference()
     .subscribe(data => {
       this.conference = data;
-      console.log("<<<"+this.conference+">>>");
     });
   }
 
