@@ -22,10 +22,8 @@ export class CouncilViewComponent implements OnInit {
   deleteCouncil(personalID) {
     this.view.deleteCouncilMember(personalID)
     .subscribe(data => {
-      console.log("delete success!", data);
-    },
-    error => {
-      console.error("couldn't delete because", error);
+      console.log("Record deleted successfully");
+      
     });
   }
 
