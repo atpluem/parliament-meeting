@@ -58,8 +58,8 @@
     margin: 30px;
 }
 
-#tab {
-    width: 80px;
+#tabs {
+    width: 100%;
 }
 
 #tab-content div {

@@ -18,6 +18,6 @@
   }
   .table .is-scrollable tbody {
     overflow-y: scroll;
-      width: auto;
-      position: absolute;
+    width: auto;
+    position: absolute;
   }

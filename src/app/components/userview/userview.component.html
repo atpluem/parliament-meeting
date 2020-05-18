@@ -53,26 +53,30 @@
         </div>
     </div>
 </div>
-<div class="tabs is-toggle is-toggle-rounded is-centered" id="tabs">
-    <ul>
-        <li class="is-active tablinks" data-tab="1"><a>Conference</a></li>
-        <li class="tablinks" data-tab="2"><a>Council</a></li>
-        <li class="tablinks" data-tab="3"><a>Party</a></li>
-        <li class="tablinks" data-tab="4"><a>Ministry</a></li>
-    </ul>    
-</div>
 
-<div id="tab-content">
-    <div class="is-active" data-content="1">
-        <app-conference-view></app-conference-view>
+<div class="container" id="tabs-data">
+    <div class="tabs is-right is-toggle-rounded is-centered" id="tabs">
+        <ul>
+            <li class="is-active tablinks" data-tab="1"><a><strong>Conference</strong></a></li>
+            <li class="tablinks" data-tab="2"><a><strong>Council</strong></a></li>
+            <li class="tablinks" data-tab="3"><a><strong>Party</strong></a></li>
+            <li class="tablinks" data-tab="4"><a><strong>Ministry</strong></a></li>
+        </ul>    
     </div>
-    <div data-content="2">
-        <app-council-view></app-council-view>
-    </div>
-    <div data-content="3">
-        <app-party-view></app-party-view>
-    </div>
-    <div data-content="4">
-        <app-ministry-view></app-ministry-view>
+
+    <!---------------- Part of tab-content ------------------->
+    <div class="container is-fullhd" id="tab-content">
+        <div class="is-active" data-content="1">
+            <app-conference-view></app-conference-view>
+        </div>
+        <div data-content="2">
+            <app-council-view></app-council-view>
+        </div>
+        <div data-content="3">
+            <app-party-view></app-party-view>
+        </div>
+        <div data-content="4">
+            <app-ministry-view></app-ministry-view>
+        </div>
     </div>
 </div>
