@@ -69,7 +69,7 @@
                             <div class="select">
                               <select ID="partyPos" name="partyPos" formControlName="partyPos">
                                 <option value="">Select party position</option>
-                                <option *ngFor="let partypos of resultspartypos">{{partypos.PartyPosName}}</option>
+                                <option *ngFor="let partypos of resultspartypos" [ngValue]="partypos">{{partypos.PartyPosName}}</option>
                               </select>
                               <div class="error" *ngIf="partyPos.invalid && partyPos.touched">
                                 <p class="help is-danger"> Party position is required</p>
@@ -78,7 +78,6 @@
                           </div>
                         </div>
                       </div>
-
                     </div>
                     <br>
 
@@ -111,7 +110,7 @@
                         <div class="control">
                           <div class="select">
                             <select ID="concilPos" name="subministryname" formControlName="subministryname">
-                              <option >Select subministry name</option>
+                              <option value="">Select subministry name</option>
                               
                               <option *ngFor="let subministryname of resultssubministryname">{{subministryname.SubministryName}}</option>
                             </select>
@@ -129,7 +128,7 @@
                   <div class="bd-notification is-info">
                     
 
-                    <div>
+                    <!-- <div>
                       <div class="error"
                         *ngIf="(conpassword.invalid && conpassword.touched) && !conpassword.errors?.notEqual"
                         id="passwordvalid">
@@ -138,7 +137,7 @@
                       <div class="error" *ngIf="conpassword.touched && conpassword.errors?.notEqual">
                         <div class="help is-danger">must be match with password</div>
                       </div>
-                    </div>
+                    </div> -->
                     <div>
                       <!-- password -->
                       <label class="label">PASSWORD</label>
@@ -163,7 +162,7 @@
                           <div class="select">
                             <select ID="concilPos" name="concilpos" formControlName="councilpos">
                               <option value="">Select council position</option>
-                              <option *ngFor="let concilpos of resultscouncilpos">{{concilpos.CouncilPosName}}</option>
+                              <option *ngFor="let concilpos of resultscouncilpos" [ngValue]="concilpos" >{{concilpos.CouncilPosName}}</option>
                             </select>
                             <div class="error" *ngIf="councilpos.invalid && councilpos.touched">
                               <p class="help is-danger">Council position is required</p>
@@ -212,7 +211,7 @@
                           <div class="select">
                             <select ID="concilPos" name="ministrypos" formControlName="ministrypos">
                               <option value="">Select ministry position</option>
-                              <option *ngFor="let ministrypos of resultsministrypos">{{ministrypos.MinistryPosName}}
+                              <option *ngFor="let ministrypos of resultsministrypos" [ngValue]="ministrypos">{{ministrypos.MinistryPosName}}
                             </select>
                             <div class="error" *ngIf="ministrypos.invalid && ministrypos.touched">
                               <p class="help is-danger"> Ministry position is required</p>

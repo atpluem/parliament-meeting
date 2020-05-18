@@ -15,7 +15,6 @@ export class ConferenceViewComponent implements OnInit {
     this.view.getConference()
     .subscribe(data => {
       this.conference = data;
-      console.log("<<<"+this.conference+">>>");
     });
   }
 
@@ -38,6 +37,10 @@ export class ConferenceViewComponent implements OnInit {
       $(".cost").addClass("is-active");  
     });
     
+    $("#showModalBuilding").click(function() {
+      $(".building").addClass("is-active");  
+    });
+
     $(".delete").click(function() {
        $(".modal").removeClass("is-active");
     });

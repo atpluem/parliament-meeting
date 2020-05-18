@@ -60,17 +60,16 @@ export class CouncilMemberComponent implements OnInit {
           var infoArea = document.getElementById('file-name');
           infoArea.textContent = "No file selected";
           var successText = document.getElementById('successfulregister')
+          this.failregister = false;
           this.successfulregister = !this.successfulregister;
         },
         error => {
           console.error("couldn't post because", this.checkfail = error)
+          this.successfulregister = false;
           this.failregister = !this.failregister;
         }
 
       );
-    if (this.check !== "" && this.checkfail === "") {
-      this.successfulregister = !this.successfulregister;
-    }
   }
 
   numberOnly(event) {
@@ -93,9 +92,7 @@ export class CouncilMemberComponent implements OnInit {
     ministrypos: new FormControl('', Validators.required),
     image: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
-    conpassword: new FormControl('', Validators.required),
     partyPos: new FormControl('', Validators.required),
-
   })
 
   get firstname() { return this.form.get('firstname') }
@@ -109,7 +106,6 @@ export class CouncilMemberComponent implements OnInit {
   get ministrypos() { return this.form.get('ministrypos') }
   get image() { return this.form.get('image') }
   get password() { return this.form.get('password') }
-  get conpassword() { return this.form.get('conpassword') }
   get partyPos() { return this.form.get('partyPos') }
 
 

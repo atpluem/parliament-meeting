@@ -11,16 +11,16 @@
         <div class="box is-narrow is-desktop is-mobile">
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <label class="label is-large">PARTY</label>
-                 <!-- successful register -->
-                 <div class="notification is-success is-light" *ngIf="successfulregister">
+                <!-- successful register -->
+                <div class="notification is-success is-light" *ngIf="successfulregister">
                     <button class="delete"></button>
                     <strong>REGISTER SUCCESS</strong>
-                  </div>
-                  <!-- fail register -->
-                  <div class="notification is-danger is-light" *ngIf="failregister">
+                </div>
+                <!-- fail register -->
+                <div class="notification is-danger is-light" *ngIf="failregister">
                     <button class="delete"></button>
                     <strong>REGISTER FAIL</strong>
-                  </div>
+                </div>
                 <hr>
                 <div class="columns">
                     <div class="column is-5">
@@ -95,14 +95,16 @@
                                                         <!-- TELEPHONE -->
                                                         <label class="label">TELEPHONE</label>
                                                         <input class="input" type="text" placeholder="XXXXXXX"
-                                                            id="telephone" name="telephone" formControlName="telephone" minlength="10" maxlength="10"
+                                                            id="telephone" name="telephone" formControlName="telephone"
+                                                            minlength="10" maxlength="10"
                                                             (keypress)="numberOnly($event)">
                                                         <div class="error"
                                                             *ngIf="(telephone.invalid && telephone.touched) &&!(telephone.errors?.minlength)">
                                                             <div class="help is-danger">Telephone is required</div>
                                                         </div>
                                                         <div *ngIf="telephone.errors?.minlength">
-                                                            <div class="help is-danger">Telephone must has 10 digits long.</div>
+                                                            <div class="help is-danger">Telephone must has 10 digits
+                                                                long.</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -166,7 +168,8 @@
                                     <!-- Building number -->
                                     <label class="label">BUILDING NUMBER</label>
                                     <input class="input" type="text" placeholder="XXXXXXX" id="buildingnumber"
-                                        name="buildingnumber" formControlName="buildingnumber" (keypress)="numberOnly($event)">
+                                        name="buildingnumber" formControlName="buildingnumber"
+                                        (keypress)="numberOnlyBuilding($event)">
                                     <div class="error" *ngIf="buildingnumber.invalid && buildingnumber.touched">
                                         <div class="help is-danger">Building number is required</div>
                                     </div>
@@ -194,31 +197,28 @@
                                 <div>
                                     <!-- zip code -->
                                     <label class="label">ZIP CODE</label>
-                                        <div class="field" id="founderID">
-                                            <div class="control">
-                                                <div class="select">
-                                                    <select ID="zipcode" name="zipcode"
-                                                        formControlName="zipcode">
-                                                        <option value="">Select zip code</option>
-                                                        <option
-                                                            *ngFor="let zipcode of resultsareas">
-                                                            {{zipcode.Zipcode}}</option>
-                                                    </select>
-                                                    <div class="error" *ngIf="zipcode.invalid && zipcode.touched">
-                                                        <div class="help is-danger">Zip code is required</div>
-                                                    </div>
+                                    <div class="field" id="founderID">
+                                        <div class="control">
+                                            <div class="select">
+                                                <select ID="zipcode" name="zipcode" formControlName="zipcode">
+                                                    <option value="">Select zip code</option>
+                                                    <option *ngFor="let zipcode of resultsareas">
+                                                        {{zipcode.Zipcode}}</option>
+                                                </select>
+                                                <div class="error" *ngIf="zipcode.invalid && zipcode.touched">
+                                                    <div class="help is-danger">Zip code is required</div>
                                                 </div>
-                                               
                                             </div>
+
                                         </div>
-                                    
+                                    </div>
                                 </div>
                                 <br>
                                 <div>
                                     <!-- Subdistrict -->
                                     <label class="label">SUBDISTRICT</label>
-                                    <input class="input" type="text" placeholder="XXXXXXX" id="subdistrict" name="subdistrict"
-                                        formControlName="subdistrict">
+                                    <input class="input" type="text" placeholder="XXXXXXX" id="subdistrict"
+                                        name="subdistrict" formControlName="subdistrict">
                                     <div class="error" *ngIf="subdistrict.invalid && subdistrict.touched">
                                         <div class="help is-danger">Subdistrict is required</div>
                                     </div>
@@ -261,14 +261,229 @@
                         </div>
                     </div>
                 </div>
+                <div class="columns is-mobile is-centered">
+                    <div class="column is-one-quarter">
+                        <form [formGroup]="form2">
+                            <button class="button is-large" id="tosubparty">ADD SUB TOPIC</button>
+                        </form>
+                        <div class="modal" id="subpartymodal">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">ADD MEMBER</p>
+                                    <form [formGroup]="form2">
+                                        <!-- <button class="delete" aria-label="close"></button> -->
+                                    </form>
+                                </header>
+                                <section class="modal-card-body">
+                                    <div class="columns">
+                                        <div class="column">
+                                            <div class="columns is-mobile">
+                                                <div class="column is-6">
+                                                    <div class="bd-notification is-info">
+                                                        <!-- ID -->
+                                                        <div>
+                                                            <label class="label" id="header">ID CARD</label>
+                                                            <input class="input" type="text" placeholder="6107050123456"
+                                                                name="id" (keypress)="numberOnly($event)"
+                                                                formControlName="id" minlength="13" maxlength="13">
+                                                        </div>
+                                                        <br>
+                                                        <div>
+                                                            <!-- Firstname -->
+                                                            <label class="label">FIRST NAME</label>
+                                                            <input class="input" type="text" placeholder="Thanathorn"
+                                                                id="firstname" name="firstname"
+                                                                formControlName="firstname">
+                                                        </div>
+                                                        <br>
+                                                        <div>
+                                                            <!-- Education -->
+                                                            <label class="label">EDUCATION</label>
+                                                            <div class="field">
+                                                                <div class="control">
+                                                                    <div class="select">
+                                                                        <select ID="education" name="education"
+                                                                            formControlName="education">
+                                                                            <option value="">Select education</option>
+                                                                            <option>Bachelor Degree</option>
+                                                                            <option>Masters Degree</option>
+                                                                            <option>Doctoral Degree</option>
+                                                                            <option>Associate degree</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div>
+                                                            <!-- Party position -->
+                                                            <label class="label">PARTY POSITION</label>
+                                                            <div class="field">
+                                                                <div class="control">
+                                                                    <div class="select">
+                                                                        <select ID="partyPos" name="partyPos"
+                                                                            formControlName="partyPos">
+                                                                            <option value="">Select party position
+                                                                            </option>
+                                                                            <option [ngValue]="partypos"
+                                                                                *ngFor="let partypos of resultspartypos">
+                                                                                {{partypos.PartyPosName}}</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div>
+                                                            <!-- subministry name -->
+                                                            <label class="label">SUBMINISTRY NAME</label>
+                                                            <div class="field">
+                                                                <div class="control">
+                                                                    <div class="select">
+                                                                        <select ID="subministryname"
+                                                                            name="subministryname"
+                                                                            formControlName="subministryname">
+                                                                            <option value="">Select subministry name</option>
+
+                                                                            <option [ngValue]="subministryname.SubministryName"
+                                                                                *ngFor="let subministryname of resultssubministryname">
+                                                                                {{subministryname.SubministryName}}
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="column">
+                                                    <div class="bd-notification is-info">
+                                                        <!-- ID -->
+                                                        <div>
+                                                            <label class="label">PASSWORD</label>
+                                                            <div class="field">
+                                                                <div class="control">
+                                                                    <input class="input" type="password"
+                                                                        placeholder="Password" id="password"
+                                                                        name="password" formControlName="password">
+                                                                    <span class="icon is-small is-left">
+                                                                        <i class="fas fa-lock"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <!-- Lastname -->
+                                                            <label class="label">LAST NAME</label>
+                                                            <input class="input" type="text" placeholder="Jingjung"
+                                                                id="lastname" name="lname" formControlName="lastname">
+                                                        </div>
+                                                        <br>
+                                                        <div>
+                                                            <!-- DOB -->
+                                                            <label class="label">DATE OF BIRTH</label>
+                                                            <input class="input" type="date" ID=DOB name="dob"
+                                                                formControlName="dob">
+                                                        </div>
+                                                        <br>
+                                                        <div>
+                                                            <!-- council position -->
+                                                            <label class="label" id="councilposadjust">COUNCIL
+                                                                POSITION</label>
+                                                            <div class="field">
+                                                                <div class="control">
+                                                                    <div class="select">
+                                                                        <select ID="concilPos" name="concilpos"
+                                                                            formControlName="councilpos">
+                                                                            <option value="">Select council position
+                                                                            </option>
+                                                                            <option [ngValue]="concilpos"
+                                                                                *ngFor="let concilpos of resultscouncilpos">
+                                                                                {{concilpos.CouncilPosName}}</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div>
+                                                            <!-- ministry pos -->
+                                                            <label class="label">MINISTRY POSITION</label>
+                                                            <div class="field">
+                                                                <div class="control">
+                                                                    <div class="select">
+                                                                        <select ID="ministrypos" name="ministrypos"
+                                                                            formControlName="ministrypos">
+                                                                            <option value="">Select ministry position
+                                                                            </option>
+                                                                            <option [ngValue]="ministrypos"
+                                                                                *ngFor="let ministrypos of resultsministrypos">
+                                                                                {{ministrypos.MinistryPosName}}
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="bd-notification is-danger">
+                                                <div class="level-item has-text-centered ">
+                                                    <figure class="image is-sqaure">
+                                                        <br><br><br>
+                                                        <img [src]="url3" class="img1">
+                                                        <div class="field">
+                                                            <div class="file has-name">
+                                                                <label class="file-label">
+                                                                    <input class="file-input" type="file" name="file"
+                                                                        (change)="onselectFile3($event)"
+                                                                        accept="image/*" name="image"
+                                                                        formControlName="image">
+                                                                    <span class="file-cta">
+                                                                        <span class="file-icon">
+                                                                            <i class="fas fa-upload"></i>
+                                                                        </span>
+                                                                        <span class="file-label">
+                                                                            Choose file
+                                                                        </span>
+                                                                    </span>
+                                                                    <span class="file-name" id="file-name3">
+                                                                        No file selected
+                                                                    </span>
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="error" *ngIf="image.invalid && image.touched">
+                                                            <div class="help is-danger">image is required</div>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="button savesubparty">Save</button>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <nav class="level-right is-mobile ">
                     <div class="level-item has-text-centered">
                         <div>
-                            <button type="submit" class="button is-rounded" name="conference-submit" [disabled]="form.invalid">ADD</button>
+                            <button type="submit" class="button is-rounded" name="conference-submit"
+                                [disabled]="form.invalid">ADD</button>
                         </div>
                     </div>
                 </nav>
             </form>
+
         </div>
     </div>
 </div>

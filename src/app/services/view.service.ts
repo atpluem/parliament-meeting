@@ -34,4 +34,10 @@ export class ViewService {
       this.baseUrl + "view/ministry-member.php"
     );
   }
+
+  deleteCouncilMember(username) {
+    return this.httpClient.get<any>(
+      this.baseUrl + 'delete/del-council-member.php?' + 'username=' + username
+    );
+  }
 }

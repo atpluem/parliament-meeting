@@ -16,6 +16,11 @@
             <th>{{cm.Lastname}}</th>
             <th>{{cm.CouncilPosName}}</th>
             <th>{{(cm.CouncilPosDetail !== null) ? cm.CouncilPosDetail : "-"}}</th>
+            <th>
+              <a (click)="deleteCouncil(cm.PersonalID)">
+                <img src="../../../../assets/delete.png" alt="" width="15">
+              </a>
+            </th>
           </tr>
         </tbody>
       </table>

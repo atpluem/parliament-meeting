@@ -59,7 +59,7 @@ export class ArgumentComponent implements OnInit {
   url = "https://bulma.io/images/placeholders/256x256.png"
   imageSelected: any;
   onOptionsSelected(e) {
-    // this.imageSelected = [this.argumentatorID.value];
+    this.imageSelected = this.argumentatorID.value;
     var output = [];
     //console.log(this.argumentatorID.value['MemberPicture']);
     this.imageSelected = "data:image/jpg;base64," + this.argumentatorID.value['MemberPicture'];
@@ -151,6 +151,9 @@ export class ArgumentComponent implements OnInit {
         }
       )
   }
+
+
+
 }
 
 

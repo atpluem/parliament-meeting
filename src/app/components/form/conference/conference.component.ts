@@ -16,15 +16,25 @@ export class ConferenceComponent implements OnInit {
   //validator form
   form = new FormGroup({
     topicname: new FormControl('', [Validators.required]),
-    chairmanID: new FormControl('', [Validators.required, Validators.minLength(13)]),
-    conferencetype: new FormControl('', [Validators.required]),
-    starttime: new FormControl('', [Validators.required]),
-    starttimemin: new FormControl('', [Validators.required]),
-    endtime: new FormControl('', [Validators.required]),
-    endtimemin: new FormControl('', [Validators.required]),
-    dateconference: new FormControl('', [Validators.required]),
-    buildingname: new FormControl('', [Validators.required]),
-    roomnumber: new FormControl('', [Validators.required]),
+    chairmanID: new FormControl('',),
+    conferencetype: new FormControl('',),
+    starttime: new FormControl('',),
+    starttimemin: new FormControl('',),
+    endtime: new FormControl('',),
+    endtimemin: new FormControl('',),
+    dateconference: new FormControl('',),
+    buildingname: new FormControl('',),
+    roomnumber: new FormControl('',),
+    subtopicname: new FormControl('',),
+    speakerID: new FormControl('',),
+    acceptor: new FormControl('',),
+    rejector: new FormControl('',),
+    nonvoter: new FormControl('',),
+    substarttime: new FormControl('',),
+    substarttimemin: new FormControl('',),
+    subendtime: new FormControl('',),
+    subendtimemin: new FormControl('',),
+    datesubtopic: new FormControl('',),
   })
 
   get topicname() { return this.form.get('topicname') }
@@ -37,6 +47,16 @@ export class ConferenceComponent implements OnInit {
   get dateconference() { return this.form.get('dateconference') }
   get buildingname() { return this.form.get('buildingname') }
   get roomnumber() { return this.form.get('roomnumber') }
+  get subtopicname() { return this.form.get('subtopicname') }
+  get speakerID() { return this.form.get('speakerID') }
+  get acceptor() { return this.form.get('acceptor') }
+  get rejector() { return this.form.get('rejector') }
+  get nonvoter() { return this.form.get('nonvoter') }
+  get substarttime() { return this.form.get('substarttime') }
+  get substarttimemin() { return this.form.get('substarttimemin') }
+  get subendtime() { return this.form.get('subendtime') }
+  get subendtimemin() { return this.form.get('subendtimemin') }
+  get datesubtopic() { return this.form.get('datesubtopic') }
 
   public resultsbuildingSelected: any;
   public resultsbuildingtype: [];
@@ -59,8 +79,6 @@ export class ConferenceComponent implements OnInit {
     
   }
 
-
-
   //numonly
   numberOnly(event) {
     const charCode = (event.which) ? event.which : event.keyCode;
@@ -76,11 +94,11 @@ export class ConferenceComponent implements OnInit {
     let headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
     let jsonform = JSON.parse(JSON.stringify(this.form.getRawValue()));
     console.log(jsonform)
-    this.http.post('https://parliament-meeting-api.herokuapp.com/form/conferenceForm.php', jsonform, { responseType: "text", headers: headers })
+    this.http.post('https://parliament-meeting-api.herokuapp.com/form/ConferenceForm.php', jsonform, { responseType: "text", headers: headers })
       .subscribe(
         data => {
           console.log("success!", data);
-          this.form.reset();
+          //this.form.reset();
           this.url = "https://bulma.io/images/placeholders/256x256.png";
           this.failregister = false;
           this.successfulregister = !this.successfulregister;
@@ -134,5 +152,19 @@ export class ConferenceComponent implements OnInit {
       },
       error => console.log(error)
     );
+
+    $("#tosubconference").click(function () {
+      $("#subconferencemodal").addClass("is-active");
+    });
+
+    $(".savesubconference").click(function () {
+      $("#subconferencemodal").removeClass("is-active");
+    })
   }
+
+  form2 = new FormGroup({
+    
+  })
+
+
 }

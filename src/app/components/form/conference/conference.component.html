@@ -15,19 +15,18 @@
                 <div class="notification is-success is-light" *ngIf="successfulregister">
                     <button class="delete"></button>
                     <strong>REGISTER SUCCESS</strong>
-                  </div>
-                  <!-- fail register -->
-                  <div class="notification is-danger is-light" *ngIf="failregister">
+                </div>
+                <!-- fail register -->
+                <div class="notification is-danger is-light" *ngIf="failregister">
                     <button class="delete"></button>
                     <strong>REGISTER FAIL</strong>
-                  </div>
+                </div>
                 <hr>
                 <div class="columns">
                     <div class="column ">
                         <div class="columns">
                             <div class="column">
                                 <div>
-                                    
                                     <!-- TOPIC NAME -->
                                     <label class="label">TOPIC NAME</label>
                                     <textarea class="textarea" rows="9" placeholder="XXXXXXXXXX" id="topicname"
@@ -39,7 +38,6 @@
                                 <div>
                                     <!-- Chair man ID -->
                                     <label class="label" id=chairmanIDlabel>CHAIR MAN ID</label>
-
                                     <div class="field">
                                         <div class="control">
                                             <div class="select">
@@ -48,10 +46,6 @@
                                                     <option *ngFor="let chairmanID of resultspersonalID">
                                                         {{chairmanID.PersonalID}}</option>
                                                 </select>
-                                                <div class="error"
-                                                    *ngIf="(chairmanID.invalid && chairmanID.touched) && !(chairmanID.errors.minlength)">
-                                                    <div class="help is-danger">Chair man ID is required</div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -71,10 +65,7 @@
                                                         [ngValue]="conferencetype">
                                                         {{conferencetype.ConferenceTypeName}}</option>
                                                 </select>
-                                                <div class="error"
-                                                    *ngIf="conferencetype.invalid && conferencetype.touched">
-                                                    <p class="help is-danger">Conference type is required</p>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -139,6 +130,7 @@
                                                                     <div class="select">
                                                                         <select ID="starttimemin" name="starttimemin"
                                                                             formControlName="starttimemin">
+                                                                            <option>00</option>
                                                                             <option>01</option>
                                                                             <option>02</option>
                                                                             <option>03</option>
@@ -204,12 +196,6 @@
                                                             </div>
                                                         </label>
                                                     </p>
-                                                </div>
-                                                <div class="column">
-                                                    <div class="error" id="errortime"
-                                                        *ngIf="(starttimemin.invalid && starttimemin.touched) || starttime.invalid && starttime.touched">
-                                                        <p class="help is-danger">Start time is required</p>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -272,6 +258,7 @@
                                                                     <div class="select">
                                                                         <select ID="endtimemin" name="endtimemin"
                                                                             formControlName="endtimemin">
+                                                                            <option>00</option>
                                                                             <option>01</option>
                                                                             <option>02</option>
                                                                             <option>03</option>
@@ -331,20 +318,11 @@
                                                                             <option>58</option>
                                                                             <option>59</option>
                                                                         </select>
-                                                                        <!-- <div class="error" *ngIf="endtime.invalid && endtime.touched">
-                                                              <p class="help is-danger">End time is required</p>
-                                                            </div> -->
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </label>
                                                     </p>
-                                                </div>
-                                                <div class="column">
-                                                    <div class="error" id="errorendtime"
-                                                        *ngIf="(endtime.invalid && endtime.touched) || (endtimemin.invalid && endtimemin.touched)">
-                                                        <p class="help is-danger">End time is required</p>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -353,10 +331,7 @@
                                         <!-- DATE OF CONFERENCE -->
                                         <label class="label">DATE OF CONFERENCE</label>
                                         <input class="input" type="date" ID=dateconference name="dateconference"
-                                            formControlName="dateconference">
-                                        <div class="error" *ngIf="dateconference.invalid && dateconference.touched">
-                                            <p class="help is-danger">Date of conference is required</p>
-                                        </div>
+                                            formControlName="dateconference"> 
                                     </div>
                                 </div>
                             </div>
@@ -368,7 +343,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="columns is-mobile is-desktop is-multiline is-centered">
     <div class="column">
@@ -392,9 +366,7 @@
                                                         [ngValue]="buildingname">
                                                         {{buildingname.BuildingName}}</option>
                                                 </select>
-                                                <div class="error" *ngIf="buildingname.invalid && buildingname.touched">
-                                                    <div class="help is-danger">Building name is required</div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -420,12 +392,9 @@
                                                     <option *ngFor="let roomnumber of resultsroom2"
                                                         [ngValue]="roomnumber">
                                                         {{roomnumber.RoomNo}}</option>
-                                                </select>
-                                                <div class="error" *ngIf="(buildingname.invalid && roomnumber.touched) ">
-                                                    <div class="help is-danger" id="errorroom">Select building name first
-                                                    </div>
-                                                </div>
-                                                <div class="error" *ngIf="(roomnumber.invalid && roomnumber.touched && buildingname.valid) ">
+                                                </select>                                         
+                                                <div class="error"
+                                                    *ngIf="(roomnumber.invalid && roomnumber.touched && buildingname.valid) ">
                                                     <div class="help is-danger" id="errorroom">Room number is required
                                                     </div>
                                                 </div>
@@ -469,8 +438,323 @@
                         <div class="level-item has-text-centered ">
                             <figure class="image is-sqaure">
                                 <br>
-                                <img src="https://bulma.io/images/placeholders/256x256.png" class="img1">
+                                <img [src]="url" class="img1">
                             </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-mobile is-centered">
+                    <div class="column is-one-quarter">
+                        <form [formGroup]="form2">
+                            <button class="button is-large" id="tosubconference">ADD SUB TOPIC</button>
+                        </form>
+                        <div class="modal" id="subconferencemodal">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">SUB TOPIC</p>
+                                    <form [formGroup]="form2">
+                                        <!-- <button class="delete" aria-label="close"></button> -->
+                                    </form>
+                                </header>
+                                <section class="modal-card-body">
+                                    <div class="columns">
+                                        <div class="column">
+                                            <!-- subtopic -->
+                                            <div>
+                                                <label class="label">SUB TOPIC NAME</label>
+                                                <textarea class="textarea" rows="9" placeholder="XXXXXXXXXX"
+                                                    id="subtopicname" name="subtopicname"
+                                                    formControlName="subtopicname"></textarea>
+                                            </div>
+                                            <br>
+                                            <div >
+                                                <!-- Speaker ID SUB -->
+                                                <label class="label">SPEAKER ID</label>
+                                                <div class="field">
+                                                    <div class="control">
+                                                        <div class="select">
+                                                            <select ID="speakerID" name="speakerID" formControlName="speakerID">
+                                                                <option value="">Select speaker ID</option>
+                                                                <option *ngFor="let speakerID of resultspersonalID">
+                                                                    {{speakerID.PersonalID}}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div>
+                                                <div class="columns">
+                                                    <div class="column">
+                                                        <label class="label">Acceptor</label>
+                                                        <input class="input" type="text" placeholder="100" id="acceptor"
+                                                            name="acceptor" formControlName="acceptor"
+                                                            (keypress)="numberOnly($event)">
+                                                    </div>
+                                                    <div class="column">
+                                                        <label class="label">Rejector</label>
+                                                        <input class="input" type="text" placeholder="100" id="rejector"
+                                                            name="rejector" formControlName="rejector"
+                                                            (keypress)="numberOnly($event)">
+                                                    </div>
+                                                    <div class="column">
+                                                        <label class="label">Nonvoter</label>
+                                                        <input class="input" type="text" placeholder="100" id="nonvoter"
+                                                            name="nonvoter" formControlName="nonvoter"
+                                                            (keypress)="numberOnly($event)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <label class="label">START TIME OF SUB TOPIC</label>
+                                                <div class="columns">
+                                                    <div class="column is-4">
+                                                        <!-- Start time sub-->
+                                                        <div class="field">
+                                                            <div class="control">
+                                                                <div class="select">
+                                                                    <select ID="substarttime" name="substarttime"
+                                                                        formControlName="substarttime">
+                                                                        <option>00</option>
+                                                                        <option>01</option>
+                                                                        <option>02</option>
+                                                                        <option>03</option>
+                                                                        <option>04</option>
+                                                                        <option>05</option>
+                                                                        <option>06</option>
+                                                                        <option>07</option>
+                                                                        <option>08</option>
+                                                                        <option>09</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                        <option>14</option>
+                                                                        <option>15</option>
+                                                                        <option>16</option>
+                                                                        <option>17</option>
+                                                                        <option>18</option>
+                                                                        <option>19</option>
+                                                                        <option>20</option>
+                                                                        <option>21</option>
+                                                                        <option>22</option>
+                                                                        <option>23</option>
+                                                                        <option>24</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="column is-2">
+                                                        <label class="label is-medium">:</label>
+                                                    </div>
+                                                    <div class="column">
+                                                        <div class="field">
+                                                            <div class="control">
+                                                                <div class="select">
+                                                                    <select ID="substarttimemin" name="substarttimemin"
+                                                                        formControlName="substarttimemin">
+                                                                        <option>00</option>
+                                                                        <option>01</option>
+                                                                        <option>02</option>
+                                                                        <option>03</option>
+                                                                        <option>04</option>
+                                                                        <option>05</option>
+                                                                        <option>06</option>
+                                                                        <option>07</option>
+                                                                        <option>08</option>
+                                                                        <option>09</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                        <option>14</option>
+                                                                        <option>15</option>
+                                                                        <option>16</option>
+                                                                        <option>17</option>
+                                                                        <option>18</option>
+                                                                        <option>19</option>
+                                                                        <option>20</option>
+                                                                        <option>21</option>
+                                                                        <option>22</option>
+                                                                        <option>23</option>
+                                                                        <option>25</option>
+                                                                        <option>26</option>
+                                                                        <option>27</option>
+                                                                        <option>28</option>
+                                                                        <option>29</option>
+                                                                        <option>30</option>
+                                                                        <option>31</option>
+                                                                        <option>32</option>
+                                                                        <option>33</option>
+                                                                        <option>34</option>
+                                                                        <option>35</option>
+                                                                        <option>36</option>
+                                                                        <option>37</option>
+                                                                        <option>38</option>
+                                                                        <option>39</option>
+                                                                        <option>40</option>
+                                                                        <option>41</option>
+                                                                        <option>42</option>
+                                                                        <option>43</option>
+                                                                        <option>44</option>
+                                                                        <option>45</option>
+                                                                        <option>46</option>
+                                                                        <option>47</option>
+                                                                        <option>48</option>
+                                                                        <option>49</option>
+                                                                        <option>50</option>
+                                                                        <option>51</option>
+                                                                        <option>52</option>
+                                                                        <option>53</option>
+                                                                        <option>54</option>
+                                                                        <option>55</option>
+                                                                        <option>56</option>
+                                                                        <option>57</option>
+                                                                        <option>58</option>
+                                                                        <option>59</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <label class="label">END TIME OF SUB TOPIC</label>
+                                                <div class="columns">
+                                                    <div class="column is-4">
+                                                        <!-- Start time sub-->
+                                                        <div class="field">
+                                                            <div class="control">
+                                                                <div class="select">
+                                                                    <select ID="subendtime" name="subendtime"
+                                                                        formControlName="subendtime">
+                                                                        <option>00</option>
+                                                                        <option>01</option>
+                                                                        <option>02</option>
+                                                                        <option>03</option>
+                                                                        <option>04</option>
+                                                                        <option>05</option>
+                                                                        <option>06</option>
+                                                                        <option>07</option>
+                                                                        <option>08</option>
+                                                                        <option>09</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                        <option>14</option>
+                                                                        <option>15</option>
+                                                                        <option>16</option>
+                                                                        <option>17</option>
+                                                                        <option>18</option>
+                                                                        <option>19</option>
+                                                                        <option>20</option>
+                                                                        <option>21</option>
+                                                                        <option>22</option>
+                                                                        <option>23</option>
+                                                                        <option>24</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="column is-2">
+                                                        <label class="label is-medium">:</label>
+                                                    </div>
+                                                    <div class="column">
+                                                        <div class="field">
+                                                            <div class="control">
+                                                                <div class="select">
+                                                                    <select ID="subendtimemin" name="subendtimemin"
+                                                                        formControlName="subendtimemin">
+                                                                        <option>00</option>
+                                                                        <option>01</option>
+                                                                        <option>02</option>
+                                                                        <option>03</option>
+                                                                        <option>04</option>
+                                                                        <option>05</option>
+                                                                        <option>06</option>
+                                                                        <option>07</option>
+                                                                        <option>08</option>
+                                                                        <option>09</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                        <option>14</option>
+                                                                        <option>15</option>
+                                                                        <option>16</option>
+                                                                        <option>17</option>
+                                                                        <option>18</option>
+                                                                        <option>19</option>
+                                                                        <option>20</option>
+                                                                        <option>21</option>
+                                                                        <option>22</option>
+                                                                        <option>23</option>
+                                                                        <option>25</option>
+                                                                        <option>26</option>
+                                                                        <option>27</option>
+                                                                        <option>28</option>
+                                                                        <option>29</option>
+                                                                        <option>30</option>
+                                                                        <option>31</option>
+                                                                        <option>32</option>
+                                                                        <option>33</option>
+                                                                        <option>34</option>
+                                                                        <option>35</option>
+                                                                        <option>36</option>
+                                                                        <option>37</option>
+                                                                        <option>38</option>
+                                                                        <option>39</option>
+                                                                        <option>40</option>
+                                                                        <option>41</option>
+                                                                        <option>42</option>
+                                                                        <option>43</option>
+                                                                        <option>44</option>
+                                                                        <option>45</option>
+                                                                        <option>46</option>
+                                                                        <option>47</option>
+                                                                        <option>48</option>
+                                                                        <option>49</option>
+                                                                        <option>50</option>
+                                                                        <option>51</option>
+                                                                        <option>52</option>
+                                                                        <option>53</option>
+                                                                        <option>54</option>
+                                                                        <option>55</option>
+                                                                        <option>56</option>
+                                                                        <option>57</option>
+                                                                        <option>58</option>
+                                                                        <option>59</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <div>
+                                                    <!-- DATE OF SUBTOPIC -->
+                                                    <label class="label">DATE OF SUBTOPIC</label>
+                                                    <input class="input" type="date" ID=datesubtopic name="datesubtopic"
+                                                        formControlName="datesubtopic"> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="button savesubconference">Save</button>
+                                </footer>
+                            </div>
                         </div>
                     </div>
                 </div>

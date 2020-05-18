@@ -2,3 +2,10 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
+  .table {
+    width: auto;
+    margin: auto;
+  }
+  .modal-card {
+    width: auto;
+  }
