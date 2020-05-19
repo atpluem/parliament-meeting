@@ -54,8 +54,8 @@
 
                                     <select ID="subtopicname" name="subtopicname " formControlName="subtopicname"
                                         (ngModelChange)="onOptionsSelectedSubtopicname($event)">
-                                        <option value="">Select chairman ID</option>
-                                        <option *ngFor="let subtopicname of resultsSubtopicname "
+                                        <option value="">Select subtopic ID</option>
+                                        <option *ngFor="let subtopicname of resultssubtopic"
                                             [ngValue]="subtopicname">
                                             {{subtopicname.SubTopicName}}</option>
                                     </select>
@@ -80,7 +80,7 @@
                                 <div class="select">
                                     <select ID="argumentatorID" name="argumentatorID" formControlName="argumentatorID"
                                         (ngModelChange)="onOptionsSelected($event)">
-                                        <option value="">Select chairman ID</option>
+                                        <option value="">Select argumentator ID</option>
                                         <option *ngFor="let argumentatorID of resultspersonalID"
                                             [ngValue]="argumentatorID">
                                             {{argumentatorID.PersonalID}}</option>
