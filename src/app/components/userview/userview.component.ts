@@ -63,9 +63,17 @@ export class UserviewComponent implements OnInit {
 
     this.http.post('https://parliament-meeting-api.herokuapp.com/editpass.php', { jsonform } , { responseType: "text", headers: headers })
     .subscribe(data => {
-      console.log("success!");
-      this.form.reset();
-      this.successfulregister = !this.successfulregister;
+      if(data != ''){
+        console.log("success!");
+        this.form.reset();
+        this.successfulregister = !this.successfulregister;
+      }
+      else {
+        console.log("fail!");
+        this.form.reset();
+        this.failregister = !this.failregister;
+      }
+      
     },
     error => {
       console.error("couldn't post because ", this.checkfail = error)
