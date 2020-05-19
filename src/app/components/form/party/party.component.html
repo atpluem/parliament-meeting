@@ -344,9 +344,11 @@
                                                                         <select ID="subministryname"
                                                                             name="subministryname"
                                                                             formControlName="subministryname">
-                                                                            <option value="">Select subministry name</option>
+                                                                            <option value="">Select subministry name
+                                                                            </option>
 
-                                                                            <option [ngValue]="subministryname.SubministryName"
+                                                                            <option
+                                                                                [ngValue]="subministryname.SubministryName"
                                                                                 *ngFor="let subministryname of resultssubministryname">
                                                                                 {{subministryname.SubministryName}}
                                                                             </option>
@@ -468,7 +470,9 @@
                                     </div>
                                 </section>
                                 <footer class="modal-card-foot">
-                                    <button class="button savesubparty">Save</button>
+                                    <form [formGroup]="form2">
+                                        <button class="button savesubparty">Save</button>
+                                    </form>
                                 </footer>
                             </div>
                         </div>
