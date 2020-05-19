@@ -1,6 +1,17 @@
+<!------------------------ Button for call pop up form  --------------------------->
+<div [hidden]="userrole !== 'HR officer'" class="container">
+    <div class="columns">
+        <div class="button is-primary" id="showModalParty">
+            <span><Strong>  ADD PARTY</Strong></span>
+        </div>
+    </div>
+  </div>
+  
+  
+  <!-------------------------- Part of report data from database -------------------------------->
 <div class="container is-fullhd">
     <div class="columns">
-        <div class="column card is-three-quarters">
+        <div class="column card">
             <table class="table">
                 <thead>
                     <tr>
@@ -21,11 +32,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="column">
-            <div *ngIf="userrole == 'HR officer'" class="button is-primary" id="showModalParty">
-                Add Party
-            </div>
         </div>
     </div>
 </div>

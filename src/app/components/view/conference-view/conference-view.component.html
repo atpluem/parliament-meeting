@@ -1,6 +1,48 @@
+<!------------------------ Button for call pop up form  --------------------------->
+<div class="container is-center">
+    <div class="columns">
+        <div class="column">
+            <div [hidden]="userrole !== 'Document officer'">
+                <div class="button is-primary" id="showModalConference">
+                    <span><strong>ADD CONFERENCE</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div [hidden]="userrole !== 'Document officer'">
+                <div class="button is-primary" id="showModalArgument">
+                    <span><strong>ADD ARGUMENT</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div [hidden]="userrole !== 'Document officer'">
+                <div class="button is-primary" id="showModalAttendees">
+                    <span><strong>ADD ATTENDEES</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div [hidden]="userrole !== 'Financial officer'">
+                <div class="button is-primary" id="showModalCost">
+                    <span><strong>ADD COST</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div [hidden]="userrole !== 'HR officer'">
+                <div class="button is-primary" id="showModalBuilding">
+                    <span><strong>ADD BUILDING</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------------------- Part of report data from database -------------------------------->
 <div class="container is-fullhd">
     <div class="columns">
-        <div class="column card is-three-quarters">
+        <div class="column card">
             <table class="table is-scrollable">
                 <thead>
                     <tr>
@@ -28,28 +70,10 @@
                 </tbody>
             </table>
         </div>
-        <!-- Form button -->
-        <div class="column">
-            <div *ngIf="userrole == 'Document officer'" class="button is-primary" id="showModalConference">
-                Add conference
-            </div>
-            <br>
-            <div *ngIf="userrole == 'Document officer'" class="button is-primary" id="showModalArgument">
-                Add argument
-            </div>
-            <br>
-            <div *ngIf="userrole == 'Document officer'" class="button is-primary" id="showModalAttendees">
-                Add attendees
-            </div>
-            <div *ngIf="userrole == 'Financial officer'" class="button is-primary" id="showModalCost">
-                Add cost
-            </div>
-            <div *ngIf="userrole == 'HR officer'"  class="button is-primary" id="showModalBuilding">
-                Add building
-            </div>
-        </div>
     </div>
 </div>
+
+
 <!-- Add conference modal -->
 <div class="modal conference">
     <div class="modal-background"></div>
@@ -65,6 +89,7 @@
         </footer>
     </div>
 </div>
+
 <!-- Add argument modal -->
 <div class="modal argument">
     <div class="modal-background"></div>
@@ -80,6 +105,7 @@
         </footer>
     </div>
 </div>
+
 <!-- Add attendees -->
 <div class="modal attendees">
     <div class="modal-background"></div>
@@ -95,6 +121,7 @@
         </footer>
     </div>
 </div>
+
 <!-- Add costs -->
 <div class="modal cost">
     <div class="modal-background"></div>
@@ -110,6 +137,7 @@
         </footer>
     </div>
 </div>
+
 <!-- Add building -->
 <div class="modal building">
     <div class="modal-background"></div>

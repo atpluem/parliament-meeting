@@ -1,11 +1,19 @@
+
 .container {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  .table {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.button {
+  padding: 10px;
+  width: 100%;
+}
+
+.table {
     width: auto;
     margin: auto;
   }
-  .modal-card {
+  
+.modal-card {
     width: auto;
   }

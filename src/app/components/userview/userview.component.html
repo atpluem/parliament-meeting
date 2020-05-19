@@ -90,7 +90,17 @@
                 <button class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
-
+                <!-- success register -->
+                <div class="notification is-success is-light" *ngIf="successfulregister">
+                    <button class="delete"></button>
+                    <strong>CHANGE SUCCESS</strong>
+                </div>
+                <!-- fail register -->
+                <div class="notification is-danger is-light" *ngIf="failregister">
+                    <button class="delete"></button>
+                    <strong>CHANGE FAIL</strong>
+                </div>
+                <hr>
                 <div class="select">
                     <select formControlName="personalid">
                         <option value="">Select Personal ID</option>
@@ -101,12 +111,12 @@
                     </div>
                 </div>
                 <label class="label">Password</label>
-                <input required class="input" type="text" placeholder="12345" formControlName="password">
+                <input required class="input" type="password" placeholder="12345" formControlName="password">
                 <div class="error" *ngIf="password.invalid && password.touched">
                     <div class="help is-danger">Password is required</div>
                 </div>
                 <label class="label">New Password</label>
-                <input required class="input" type="text" placeholder="12345" formControlName="newpassword">
+                <input required class="input" type="password" placeholder="12345" formControlName="newpassword">
                 <div class="error" *ngIf="newpassword.invalid && newpassword.touched">
                     <div class="help is-danger">New password is required</div>
                 </div>

@@ -64,7 +64,6 @@ export class UserviewComponent implements OnInit {
     this.http.post('https://parliament-meeting-api.herokuapp.com/editpass.php', { jsonform } , { responseType: "text", headers: headers })
     .subscribe(data => {
       console.log("success!");
-      alert("Password has been changed!");
       this.form.reset();
       this.successfulregister = !this.successfulregister;
     },
