@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ViewService } from 'src/app/services/view.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { ViewService } from 'src/app/services/view.service';
   styleUrls: ['./ministry-view.component.css']
 })
 export class MinistryViewComponent implements OnInit {
+  @Input() userrole = '';
   ministryMember: any;
 
   constructor(private view: ViewService) { }

@@ -3,6 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { LoginService } from '../../services/login.service'
 import { Usermodule } from '../../classes/usermodule';
 import { element } from 'protractor';
+import { FormGroup, FormBuilder, Validators, FormControl, Form } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,12 +13,30 @@ import { element } from 'protractor';
   styleUrls: ['./userview.component.css']
 })
 export class UserviewComponent implements OnInit {
-  username: string;
+  userrole: string;
   userDetail: Usermodule;
   loginbtn: boolean;
   logoutbtn: boolean;
 
-  constructor(private loginService: LoginService, private sanitizer: DomSanitizer) {
+  checkfail: string;
+  successfulregister: boolean = false;
+  failregister: boolean = false;
+
+  form = new FormGroup({
+    personalid: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    newpassword: new FormControl('', Validators.required)
+  });
+
+  get personalid() {return this.form.get('personalid')}
+  get newpassword() { return this.form.get('newpassword') }
+  get password() {return this.form.get('password')}
+
+
+  constructor(private loginService: LoginService
+    , private sanitizer: DomSanitizer
+    , private fb: FormBuilder
+    , private http: HttpClient) {
     loginService.getLoggedInName.subscribe(name => this.changeName(name));
     if(this.loginService.isLoggedIn()){
       console.log("loggedin");
@@ -34,6 +54,25 @@ export class UserviewComponent implements OnInit {
     this.logoutbtn = name;
     this.loginbtn = !name;
   }
+
+  onSubmit() {
+    const Form = new FormData();
+    
+    let headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
+    let jsonform = JSON.parse(JSON.stringify(this.form.getRawValue()));
+
+    this.http.post('https://parliament-meeting-api.herokuapp.com/editpass.php', { jsonform } , { responseType: "text", headers: headers })
+    .subscribe(data => {
+      console.log("success!");
+      alert("Password has been changed!");
+      this.form.reset();
+      this.successfulregister = !this.successfulregister;
+    },
+    error => {
+      console.error("couldn't post because ", this.checkfail = error)
+      this.failregister = !this.failregister;
+    });
+  }
   
   logout() {
     this.loginService.deleteToken();
@@ -44,6 +83,7 @@ export class UserviewComponent implements OnInit {
     this.loginService.getUserDetail()
     .subscribe(data => {
       this.userDetail = data[0];
+      console.log(data[0]);
     });
   }
 
@@ -85,6 +125,14 @@ export class UserviewComponent implements OnInit {
         $('div[data-content="' + tab + '"]').addClass('is-active');
       });
     });
+
+    $("#showModalPassword").click(function() {
+      $(".editpass").addClass("is-active");  
+    });
+    
+    $(".delete").click(function() {
+      $(".modal").removeClass("is-active");
+   });
 
     this.transformImg();
   }

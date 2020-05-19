@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ViewService } from 'src/app/services/view.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./council-view.component.css']
 })
 export class CouncilViewComponent implements OnInit {
+  @Input() userrole = '';
   counncilMember: any[];
 
   constructor(private view: ViewService) { }

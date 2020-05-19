@@ -1,4 +1,5 @@
-<nav class="navbar is-light sticky" role="navigation" aria-label="main navigation" (scroll)="onWindowScroll($event)" id="navbar">
+<nav class="navbar is-light sticky" role="navigation" aria-label="main navigation" (scroll)="onWindowScroll($event)"
+    id="navbar">
     <div class="navbar-brand">
         <a class="navbar-item" [routerLink]="['/home']" routerLinkActive="active">
             <img src="../../../assets/LogoSmall.png">
@@ -15,15 +16,15 @@
         <div class="navbar-end">
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-                  <strong>{{userDetail.Surname}}</strong>
+                    <strong>{{userDetail.Surname}}</strong>
                 </a>
                 <div class="navbar-dropdown">
-                  <!-- <a class="navbar-item">
-                    Edit profile
-                  </a> -->
-                  <a *ngIf="logoutbtn" (click)="logout()" class="navbar-item is-danger logoutbtn">
-                    <strong style="color: red;">Log Out</strong>
-                  </a>
+                    <a class="navbar-item" id="showModalPassword">
+                        <strong>Edit password</strong>
+                    </a>
+                    <a *ngIf="logoutbtn" (click)="logout()" class="navbar-item is-danger logoutbtn">
+                        <strong style="color: red;">Log Out</strong>
+                    </a>
                 </div>
             </div>
         </div>
@@ -35,21 +36,24 @@
         <div class="column is-one-quarter">
             <figure class="image is-128x128">
                 <img [src]="transformImg()" [ngStyle]="{'width.px': 200,'height.px': 200}"
-                onerror="this.src='../../../assets/unnamed.png';">
+                    onerror="this.src='../../../assets/unnamed.png';">
             </figure>
         </div>
         <div class="column detail">
             <div class="columns name">
                 <div class="column is-one-quarter"><strong>NAME :</strong> {{userDetail.Surname}}</div>
-                <div class="column is-one-quarter"><strong>LASTNAME :</strong>  {{userDetail.Lastname}}</div>
+                <div class="column is-one-quarter"><strong>LASTNAME :</strong> {{userDetail.Lastname}}</div>
             </div>
             <div><strong>DATE OF BIRTH :</strong> {{userDetail.DOB}}</div>
             <div><strong>EDUCATION :</strong> {{userDetail.EducationDegree}}</div>
             <div><strong>COUNCIL POSITION :</strong> {{userDetail.CouncilposName}}</div>
-            <div><strong>PARTY :</strong> {{userDetail.PartyName}}</div>
-            <div><strong>PARY POSITION :</strong> {{userDetail.PartyPosName}}</div>
-            <div><strong>MINISTRY :</strong> {{userDetail.MinistryPosName}}</div>
-            <div><strong>SUB MINISTRY NAME :</strong> {{(userDetail.SubMinistryName !== null) ? userDetail.SubMinistryName : "-"}}</div>
+            <div><strong>PARTY :</strong> {{(userDetail.PartyName !== null) ? userDetail.PartyName : "-"}}</div>
+            <div><strong>PARY POSITION :</strong> {{(userDetail.PartyPosName !== null) ? userDetail.PartyPosName : "-"}}
+            </div>
+            <div><strong>MINISTRY :</strong>
+                {{(userDetail.MinistryPosName !== null) ? userDetail.MinistryPosName : "-"}}</div>
+            <div><strong>SUB MINISTRY NAME :</strong>
+                {{(userDetail.SubMinistryName !== null) ? userDetail.SubMinistryName : "-"}}</div>
         </div>
     </div>
 </div>
@@ -59,20 +63,57 @@
         <li class="tablinks" data-tab="2"><a>Council</a></li>
         <li class="tablinks" data-tab="3"><a>Party</a></li>
         <li class="tablinks" data-tab="4"><a>Ministry</a></li>
-    </ul>    
+    </ul>
 </div>
 
 <div id="tab-content">
     <div class="is-active" data-content="1">
-        <app-conference-view></app-conference-view>
+        <app-conference-view [userrole]="userDetail.CouncilposName"></app-conference-view>
     </div>
     <div data-content="2">
-        <app-council-view></app-council-view>
+        <app-council-view [userrole]="userDetail.CouncilposName"></app-council-view>
     </div>
     <div data-content="3">
-        <app-party-view></app-party-view>
+        <app-party-view [userrole]="userDetail.CouncilposName"></app-party-view>
     </div>
     <div data-content="4">
-        <app-ministry-view></app-ministry-view>
+        <app-ministry-view [userrole]="userDetail.CouncilposName"></app-ministry-view>
+    </div>
+</div>
+<!-- Edit password modal -->
+<div class="modal editpass">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Edit Password</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+
+                <div class="select">
+                    <select formControlName="personalid">
+                        <option value="">Select Personal ID</option>
+                        <option>{{userDetail.PersonalID}}</option>
+                    </select>
+                    <div class="error" *ngIf="personalid.invalid && personalid.touched">
+                        <div class="help is-danger">Personal ID is required</div>
+                    </div>
+                </div>
+                <label class="label">Password</label>
+                <input required class="input" type="text" placeholder="12345" formControlName="password">
+                <div class="error" *ngIf="password.invalid && password.touched">
+                    <div class="help is-danger">Password is required</div>
+                </div>
+                <label class="label">New Password</label>
+                <input required class="input" type="text" placeholder="12345" formControlName="newpassword">
+                <div class="error" *ngIf="newpassword.invalid && newpassword.touched">
+                    <div class="help is-danger">New password is required</div>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button type="submit" [disabled]="form.invalid" class="button">Submit</button>
+            </footer>
+        </form>
     </div>
 </div>

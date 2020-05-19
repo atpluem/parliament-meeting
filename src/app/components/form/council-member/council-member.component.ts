@@ -15,7 +15,6 @@ import { throwError, Observable } from 'rxjs';
 export class CouncilMemberComponent implements OnInit {
   councilMemberForm: FormGroup;
   constructor(public http: HttpClient, private fb: FormBuilder) { }
-
   currentInput;
   check: string;
   checkfail: string;
@@ -39,29 +38,32 @@ export class CouncilMemberComponent implements OnInit {
       }
     }
   }
-
-
-
+  
   //submitform
-
   onSubmit() {
     const Form = new FormData();
     //Form.append(jsonform,this.url);
     let headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
     let jsonform = JSON.parse(JSON.stringify(this.form.getRawValue()));
     let image = JSON.parse(JSON.stringify(this.url));
-    console.log(jsonform);
-    this.http.post('https://parliament-meeting-api.herokuapp.com/form/councilmemberForm.php', { jsonform, image }, { responseType: "text", headers: headers })
+    let editclick = JSON.parse(JSON.stringify(this.editclick));
+    let addclick = JSON.parse(JSON.stringify(this.addclick));
+    let deleteclick = JSON.parse(JSON.stringify(this.deleteclick));
+    console.log(jsonform,editclick);
+    this.http.post('https://parliament-meeting-api.herokuapp.com/form/councilmemberForm.php', { jsonform, image, editclick,deleteclick,addclick}, { responseType: "text", headers: headers })
       .subscribe(
         data => {
           console.log("success!", this.check = data);
-          this.form.reset();
+          //this.form.reset();
           this.url = "https://bulma.io/images/placeholders/256x256.png";
           var infoArea = document.getElementById('file-name');
           infoArea.textContent = "No file selected";
           var successText = document.getElementById('successfulregister')
           this.failregister = false;
           this.successfulregister = !this.successfulregister;
+          this.addclick = false;
+          this.editclick = false;
+          this.deleteclick = false;
         },
         error => {
           console.error("couldn't post because", this.checkfail = error)
@@ -79,20 +81,37 @@ export class CouncilMemberComponent implements OnInit {
     }
     return true;
   }
+
+  form2 = new FormGroup({
+
+  })
+  editclick:boolean =  false;
+  addclick:boolean = false;
+  deleteclick:boolean = false;
+  public onEditClick(){
+    this.editclick = true;
+  }
+  public onAddClick(){
+    this.addclick = true;
+  }
+  public onDeleteClick(){
+    this.deleteclick = true;
+  }
+  
   //form validation
   form = new FormGroup({
     id: new FormControl('', [Validators.required, Validators.minLength(13)]),
     firstname: new FormControl('', Validators.required),
     dob: new FormControl('', Validators.required),
     councilpos: new FormControl('', Validators.required),
-    subministryname: new FormControl('', Validators.required),
+    subministryname: new FormControl('',),
     lastname: new FormControl('', Validators.required),
     education: new FormControl('', Validators.required),
-    partyname: new FormControl('', Validators.required),
-    ministrypos: new FormControl('', Validators.required),
+    partyname: new FormControl(''),
+    ministrypos: new FormControl(''),
     image: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-    partyPos: new FormControl('', Validators.required),
+    password: new FormControl('',Validators.required),
+    partyPos: new FormControl('',),
   })
 
   get firstname() { return this.form.get('firstname') }
@@ -107,9 +126,6 @@ export class CouncilMemberComponent implements OnInit {
   get image() { return this.form.get('image') }
   get password() { return this.form.get('password') }
   get partyPos() { return this.form.get('partyPos') }
-
-
-
 
   public resultspartypos: any;
   public resultspartyname: any;

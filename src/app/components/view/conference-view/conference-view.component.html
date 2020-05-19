@@ -30,21 +30,21 @@
         </div>
         <!-- Form button -->
         <div class="column">
-            <div class="button is-primary" id="showModalConference">
+            <div *ngIf="userrole == 'Document officer'" class="button is-primary" id="showModalConference">
                 Add conference
             </div>
             <br>
-            <div class="button is-primary" id="showModalArgument">
+            <div *ngIf="userrole == 'Document officer'" class="button is-primary" id="showModalArgument">
                 Add argument
             </div>
             <br>
-            <div class="button is-primary" id="showModalAttendees">
+            <div *ngIf="userrole == 'Document officer'" class="button is-primary" id="showModalAttendees">
                 Add attendees
             </div>
-            <div class="button is-primary" id="showModalCost">
+            <div *ngIf="userrole == 'Financial officer'" class="button is-primary" id="showModalCost">
                 Add cost
             </div>
-            <div class="button is-primary" id="showModalBuilding">
+            <div *ngIf="userrole == 'HR officer'"  class="button is-primary" id="showModalBuilding">
                 Add building
             </div>
         </div>

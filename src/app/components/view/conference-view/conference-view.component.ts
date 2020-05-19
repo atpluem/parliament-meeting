@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ViewService } from 'src/app/services/view.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { ViewService } from 'src/app/services/view.service';
   styleUrls: ['./conference-view.component.css']
 })
 export class ConferenceViewComponent implements OnInit {
+  @Input() userrole = '';
   conference: any;
 
   constructor(private view: ViewService) { }

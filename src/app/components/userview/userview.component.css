@@ -69,3 +69,6 @@
 #tab-content div.is-active {
     display: block;
 }
+.select {
+    margin-bottom: 15px;
+}
