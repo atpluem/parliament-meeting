@@ -29,7 +29,7 @@
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "locales": "0.0.2",
-    "moment": "^2.25.3",
+    "moment": "^2.29.2",
     "ng2-charts": "^2.3.0",
     "path": "^0.12.7",
     "popper.js": "^1.16.1",
