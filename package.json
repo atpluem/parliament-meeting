@@ -26,7 +26,7 @@
     "angular2-chartjs": "^0.5.1",
     "bulma": "^0.8.2",
     "chart.js": "^2.9.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jquery": "^3.4.1",
     "locales": "0.0.2",
     "moment": "^2.25.3",
